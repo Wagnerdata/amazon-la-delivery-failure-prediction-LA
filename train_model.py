@@ -52,21 +52,29 @@ plt.rcParams.update({
 })
 
 # ── Feature definitions ───────────────────────────────────────────────────────
-CATEGORICAL_FEATURES = ['package_type', 'shift', 'carrier', 'weather_risk']
-NUMERIC_FEATURES     = ['route_distance_km', 'packages_in_route', 'days_in_fc']
-BINARY_FEATURES      = ['double_scan', 'locker_issue', 'damaged_on_arrival', 'cr_number_missing']
-TARGET               = 'delivery_failed'
+CATEGORICAL_FEATURES = ['package_type', 'shift', 'carrier']
+NUMERIC_FEATURES     = ['dist_bucket', 'packages_in_route']
+BINARY_FEATURES      = ['double_scan', 'locker_issue', 'cr_number_missing']
+TARGET               = 'damaged_on_arrival'  # Delivery Failure Proxy — NOT a feature
+
+# route_distance_km is binned into an ordinal dist_bucket before modelling
+DIST_BINS   = [0, 15, 30, 50, 70, 85]
+DIST_LABELS = [0, 1, 2, 3, 4]          # 0=0–15 km … 4=71–85 km
 
 ENCODED_FEATURES = [
-    'package_type_enc', 'shift_enc', 'carrier_enc',
-    'route_distance_km', 'packages_in_route',
-    'double_scan', 'locker_issue', 'damaged_on_arrival',
-    'weather_enc', 'cr_number_missing', 'days_in_fc',
+    'carrier_enc',
+    'shift_enc',
+    'package_type_enc',
+    'dist_bucket',
+    'packages_in_route',
+    'double_scan',
+    'locker_issue',
+    'cr_number_missing',
 ]
 
 
 def load_and_encode(path: Path) -> tuple[pd.DataFrame, dict]:
-    """Load CSV, encode categoricals, return (df_encoded, encoders)."""
+    """Load CSV, encode categoricals, bin distance, return (df_encoded, encoders)."""
     df = pd.read_csv(path)
     encoders = {}
 
@@ -74,11 +82,15 @@ def load_and_encode(path: Path) -> tuple[pd.DataFrame, dict]:
         ('package_type', 'package_type_enc'),
         ('shift',        'shift_enc'),
         ('carrier',      'carrier_enc'),
-        ('weather_risk', 'weather_enc'),
     ]:
         le = LabelEncoder()
         df[enc_col] = le.fit_transform(df[col])
         encoders[col] = le
+
+    # Bin route distance into ordinal integer buckets (0–4)
+    df['dist_bucket'] = pd.cut(
+        df['route_distance_km'], bins=DIST_BINS, labels=DIST_LABELS
+    ).astype(int)
 
     return df, encoders
 
@@ -179,7 +191,6 @@ def main():
         ('package_type', 'package_type_enc'),
         ('shift',        'shift_enc'),
         ('carrier',      'carrier_enc'),
-        ('weather_risk', 'weather_enc'),
     ]:
         val_df[enc_col] = encoders[col].transform(val_df[col])
 

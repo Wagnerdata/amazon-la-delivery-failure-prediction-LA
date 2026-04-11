@@ -16,19 +16,19 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-# ── Paths ─────────────────────────────────────────────────────────────────────
+# ── Paths ────────────────────────────────────
 ROOT        = Path(__file__).parent.parent
 DATA_PATH   = ROOT / 'data' / 'packages_train.csv'
 MODEL_PATH  = ROOT / 'artifacts' / 'delivery_model.pkl'
 
-# ── Amazon brand colours ──────────────────────────────────────────────────────
+# ── Amazon brand colours ─────────────────────
 AMAZON_ORANGE = '#FF9900'
 AMAZON_NAVY   = '#232F3E'
 AMAZON_BLUE   = '#146EB4'
 AMAZON_GREEN  = '#067D62'
 AMAZON_RED    = '#CC0C39'
 
-# ── Page config ───────────────────────────────────────────────────────────────
+# ── Page config ─────────────────────────────
 st.set_page_config(
     page_title='Amazon LA — Delivery Failure Prediction',
     page_icon='📦',
@@ -36,7 +36,7 @@ st.set_page_config(
     initial_sidebar_state='expanded',
 )
 
-# ── Custom CSS — Amazon styling ───────────────────────────────────────────────
+# ── Custom CSS — Amazon styling ────
 st.markdown(f"""
 <style>
     /* Main background */
@@ -99,7 +99,7 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 
-# ── Data & model loaders ──────────────────────────────────────────────────────
+# ── Data & model loaders ─
 @st.cache_data
 def load_data():
     return pd.read_csv(DATA_PATH)
@@ -111,31 +111,36 @@ def load_model():
         return pickle.load(f)
 
 
+DIST_BINS = [0, 15, 30, 50, 70, 85]
+
+
+def _dist_bucket(km: float) -> int:
+    """Convert route distance (km) to ordinal bucket 0–4, matching train_model.py bins."""
+    for i, edge in enumerate([15, 30, 50, 70]):
+        if km <= edge:
+            return i
+    return 4
+
+
 def predict_failure(artifact: dict, input_dict: dict) -> tuple[float, str]:
-    """Score a single package and return (probability, risk_label)."""
+    """Score a single package using the 8 LMRC features. Returns (probability, risk_label).
+
+    Features (order must match ENCODED_FEATURES in train_model.py):
+        carrier_enc, shift_enc, package_type_enc, dist_bucket,
+        packages_in_route, double_scan, locker_issue, cr_number_missing
+    """
     model    = artifact['model']
     encoders = artifact['encoders']
-    features = artifact['features']
-
-    encoded = {
-        'package_type_enc': encoders['package_type'].transform([input_dict['package_type']])[0],
-        'shift_enc':        encoders['shift'].transform([input_dict['shift']])[0],
-        'carrier_enc':      encoders['carrier'].transform([input_dict['carrier']])[0],
-        'weather_enc':      encoders['weather_risk'].transform([input_dict['weather_risk']])[0],
-    }
 
     row = [
-        encoded['package_type_enc'],
-        encoded['shift_enc'],
-        encoded['carrier_enc'],
-        input_dict['route_distance_km'],
+        encoders['carrier'].transform([input_dict['carrier']])[0],
+        encoders['shift'].transform([input_dict['shift']])[0],
+        encoders['package_type'].transform([input_dict['package_type']])[0],
+        _dist_bucket(input_dict['route_distance_km']),
         input_dict['packages_in_route'],
         input_dict['double_scan'],
         input_dict['locker_issue'],
-        input_dict['damaged_on_arrival'],
-        encoded['weather_enc'],
         input_dict['cr_number_missing'],
-        input_dict['days_in_fc'],
     ]
 
     prob = model.predict_proba([row])[0][1]
@@ -174,9 +179,9 @@ def make_bar_chart(x_labels, y_values, title, ylabel, color=AMAZON_ORANGE,
     return fig
 
 
-# ═════════════════════════════════════════════════════════════════════════════
+# ═════════════════════════════════════════════
 # SIDEBAR NAVIGATION
-# ═════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════
 st.sidebar.markdown(f"""
 <div style='background:{AMAZON_NAVY}; padding:1rem; border-radius:8px; text-align:center;'>
     <span style='color:{AMAZON_ORANGE}; font-size:2rem;'>📦</span><br>
@@ -201,13 +206,13 @@ st.sidebar.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# ── Load resources ────────────────────────────────────────────────────────────
+# ── Load resources ──
 df       = load_data()
 artifact = load_model()
 
-# ═════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════
 # PAGE 1 — OPERATIONS OVERVIEW
-# ═════════════════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════
 if page == "Operations Overview":
 
     st.markdown(f"""
@@ -217,7 +222,7 @@ if page == "Operations Overview":
     </div>
     """, unsafe_allow_html=True)
 
-    # ── KPI Cards ────────────────────────────────────────────────────────────
+    # ── KPI Cards ──
     total       = len(df)
     fail_rate   = df['delivery_failed'].mean() * 100
     n_failed    = df['delivery_failed'].sum()
@@ -255,7 +260,7 @@ if page == "Operations Overview":
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # ── Row 1: Carrier + Shift charts ─────────────────────────────────────────
+    # ── Row 1: Carrier + Shift charts 
     col1, col2 = st.columns(2)
 
     with col1:
@@ -289,7 +294,7 @@ if page == "Operations Overview":
         st.pyplot(fig2, use_container_width=True)
         plt.close()
 
-    # ── Row 2: Heatmap + Package Type ─────────────────────────────────────────
+    # ── Row 2: Heatmap + Package Type ──
     col3, col4 = st.columns(2)
 
     with col3:
@@ -327,7 +332,7 @@ if page == "Operations Overview":
         st.pyplot(fig4, use_container_width=True)
         plt.close()
 
-    # ── Summary table ─────────────────────────────────────────────────────────
+    # ── Summary table ──
     st.markdown("---")
     st.markdown("<div class='section-title'>Operations Summary Table</div>",
                 unsafe_allow_html=True)
@@ -344,7 +349,7 @@ if page == "Operations Overview":
     st.dataframe(summary, use_container_width=True)
 
 
-# ═════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════════════
 # PAGE 2 — PACKAGE RISK SCORING
 # ═════════════════════════════════════════════════════════════════════════════
 elif page == "Package Risk Scoring":
@@ -387,11 +392,6 @@ elif page == "Package Risk Scoring":
                 }[x],
                 help="carrier_D has highest failure rates on long routes",
             )
-            weather_risk = st.selectbox(
-                "Weather Risk",
-                ['low', 'medium', 'high'],
-                help="Environmental risk level at delivery time",
-            )
 
         with c2:
             route_distance_km = st.slider(
@@ -402,19 +402,14 @@ elif page == "Package Risk Scoring":
                 "Packages in Route", 15, 120, 60,
                 help="Total packages the driver must deliver",
             )
-            days_in_fc = st.slider(
-                "Days in Fulfillment Center", 0, 12, 3,
-                help="Long dwell times may indicate processing issues",
-            )
 
         st.markdown("#### Operational Flags")
         f1, f2 = st.columns(2)
         with f1:
-            double_scan        = st.checkbox("Double Scan Detected", help="Scan error flag — package scanned twice")
-            locker_issue       = st.checkbox("Locker Issue", help="Locker unavailable or full")
+            double_scan       = st.checkbox("Double Scan Detected", help="Scan error flag — package scanned twice")
+            locker_issue      = st.checkbox("Locker Issue", help="Locker unavailable or full")
         with f2:
-            damaged_on_arrival = st.checkbox("Damaged on Arrival", help="⚠️ Strongest failure predictor — near 60% failure rate")
-            cr_number_missing  = st.checkbox("CR Number Missing", help="Missing customer reference — address ambiguity")
+            cr_number_missing = st.checkbox("CR Number Missing", help="Missing customer reference — address ambiguity")
 
         predict_btn = st.button("🔮 Predict Delivery Risk", type="primary", use_container_width=True)
 
@@ -423,17 +418,14 @@ elif page == "Package Risk Scoring":
 
         if predict_btn:
             input_dict = {
-                'package_type':       package_type,
-                'shift':              shift,
-                'carrier':            carrier,
-                'route_distance_km':  route_distance_km,
-                'packages_in_route':  packages_in_route,
-                'double_scan':        int(double_scan),
-                'locker_issue':       int(locker_issue),
-                'damaged_on_arrival': int(damaged_on_arrival),
-                'weather_risk':       weather_risk,
-                'cr_number_missing':  int(cr_number_missing),
-                'days_in_fc':         days_in_fc,
+                'package_type':      package_type,
+                'shift':             shift,
+                'carrier':           carrier,
+                'route_distance_km': route_distance_km,
+                'packages_in_route': packages_in_route,
+                'double_scan':       int(double_scan),
+                'locker_issue':      int(locker_issue),
+                'cr_number_missing': int(cr_number_missing),
             }
 
             prob, risk = predict_failure(artifact, input_dict)
@@ -478,8 +470,6 @@ elif page == "Package Risk Scoring":
 
             # Risk factor summary
             risk_factors = []
-            if damaged_on_arrival:
-                risk_factors.append("🔴 Damaged on arrival — strongest failure predictor")
             if carrier == 'carrier_D' and route_distance_km > 50:
                 risk_factors.append("🔴 Correos + long route (>50km) — high-risk combination")
             if shift == 'night':
@@ -490,8 +480,8 @@ elif page == "Package Risk Scoring":
                 risk_factors.append("🟠 Locker issue — infrastructure failure")
             if cr_number_missing:
                 risk_factors.append("🟡 CR number missing — address ambiguity")
-            if weather_risk == 'high':
-                risk_factors.append("🟡 High weather risk — environmental impact")
+            if route_distance_km > 70:
+                risk_factors.append("🟡 Long route (>70km) — elevated distance bucket")
 
             if risk_factors:
                 st.markdown("**Risk Factors Detected:**")
@@ -519,7 +509,7 @@ elif page == "Package Risk Scoring":
 
 # ═════════════════════════════════════════════════════════════════════════════
 # PAGE 3 — ROUTE ANALYSIS
-# ═════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════════════════
 elif page == "Route Analysis":
 
     st.markdown(f"""
@@ -529,7 +519,7 @@ elif page == "Route Analysis":
     </div>
     """, unsafe_allow_html=True)
 
-    # ── Filters ────────────────────────────────────────────────────────────────
+    # ── Filters ────────────────────────────────────────────────────────────
     col_f1, col_f2, col_f3 = st.columns(3)
     with col_f1:
         carrier_filter = st.multiselect(
