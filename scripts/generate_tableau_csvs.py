@@ -39,7 +39,7 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 # ── Load data + model ──────────────────────────────────────────────────────────
 print("Loading data and model…")
 df = pd.read_csv(CSV_PATH)
-df["delivery_failure"] = df["damaged_on_arrival"]   # canonical target
+df["delivery_failure"] = df["delivery_failed"]   # canonical target
 
 with open(MODEL_PATH, "rb") as f:
     artifact = pickle.load(f)
@@ -88,7 +88,7 @@ SELECT
     ROUND(AVG(delivery_failure) * 100.0, 2)          AS failure_rate_pct,
     ROUND(AVG(cr_number_missing) * 100.0, 2)         AS cr_missing_pct,
     ROUND(AVG(double_scan)       * 100.0, 2)         AS double_scan_pct,
-    ROUND(AVG(locker_issue)      * 100.0, 2)         AS locker_issue_pct,
+    ROUND(AVG(short_service_time) * 100.0, 2)        AS short_service_time_pct,
     COUNT(DISTINCT carrier)                          AS n_carriers,
     COUNT(DISTINCT shift)                            AS n_shifts,
     ROUND(AVG(route_distance_km), 2)                 AS avg_route_distance_km,
@@ -181,7 +181,7 @@ SELECT
     SUM(delivery_failure)                            AS failures,
     ROUND(AVG(delivery_failure) * 100.0, 2)          AS failure_rate_pct,
     SUM(double_scan)                                 AS double_scan_count,
-    SUM(locker_issue)                                AS locker_issue_count,
+    SUM(short_service_time)                          AS short_service_time_count,
     SUM(cr_number_missing)                           AS cr_missing_count,
     ROUND(AVG(route_distance_km), 2)                 AS avg_route_distance_km
 FROM packages
@@ -239,23 +239,23 @@ print(f"  ✓  {out.name}")
 # CSV 06 — Operational Flags
 # ══════════════════════════════════════════════════════════════════════════════
 flags_df = pd.read_sql("""
-SELECT 'double_scan'        AS flag, SUM(double_scan)        AS flagged_count,
-       COUNT(*) AS total,  ROUND(AVG(double_scan)        * 100.0, 2) AS flag_rate_pct FROM packages
+SELECT 'double_scan'         AS flag, SUM(double_scan)         AS flagged_count,
+       COUNT(*) AS total,   ROUND(AVG(double_scan)         * 100.0, 2) AS flag_rate_pct FROM packages
 UNION ALL
-SELECT 'locker_issue',       SUM(locker_issue),
-       COUNT(*),             ROUND(AVG(locker_issue)       * 100.0, 2) FROM packages
+SELECT 'short_service_time',  SUM(short_service_time),
+       COUNT(*),              ROUND(AVG(short_service_time)  * 100.0, 2) FROM packages
 UNION ALL
-SELECT 'cr_number_missing',  SUM(cr_number_missing),
-       COUNT(*),             ROUND(AVG(cr_number_missing)  * 100.0, 2) FROM packages
+SELECT 'cr_number_missing',   SUM(cr_number_missing),
+       COUNT(*),              ROUND(AVG(cr_number_missing)   * 100.0, 2) FROM packages
 UNION ALL
-SELECT 'damaged_on_arrival', SUM(damaged_on_arrival),
-       COUNT(*),             ROUND(AVG(damaged_on_arrival) * 100.0, 2) FROM packages
+SELECT 'delivery_failed',     SUM(delivery_failed),
+       COUNT(*),              ROUND(AVG(delivery_failed)     * 100.0, 2) FROM packages
 ORDER BY flagged_count DESC
 """, conn)
 
 # Add conditional failure rate when flag = 1
 cond_rates = {}
-for flag in ["double_scan", "locker_issue", "cr_number_missing", "damaged_on_arrival"]:
+for flag in ["double_scan", "short_service_time", "cr_number_missing", "delivery_failed"]:
     active = df[df[flag] == 1]
     if len(active) > 0:
         cond_rates[flag] = round(active["delivery_failure"].mean() * 100, 2)
@@ -269,8 +269,8 @@ flags_df["risk_multiplier"] = (
 ).round(2)
 
 flags_df["operational_action"] = flags_df["flag"].map({
-    "damaged_on_arrival": "QA hold before dispatch — do not send damaged packages",
-    "locker_issue":       "Reassign to home delivery or alternative locker",
+    "delivery_failed":    "QA review — delivery attempt failed, investigate root cause",
+    "short_service_time": "Verify locker/access availability before dispatch",
     "double_scan":        "Rescan / escalate to warehouse team",
     "cr_number_missing":  "Trigger customer contact before dispatch",
 })
@@ -286,7 +286,7 @@ print(f"  ✓  {out.name}")
 pred_df = df[[
     "package_id", "package_type", "shift", "carrier",
     "route_distance_km", "packages_in_route",
-    "double_scan", "locker_issue", "cr_number_missing",
+    "double_scan", "short_service_time", "cr_number_missing",
     "delivery_failure",
 ]].copy()
 

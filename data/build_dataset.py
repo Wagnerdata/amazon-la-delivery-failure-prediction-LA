@@ -328,10 +328,10 @@ def main() -> None:
                 scan = (pkg_info.get("scan_status") or "DELIVERED").strip()
                 failed = scan == "DELIVERY_ATTEMPTED"
 
-                damaged_on_arrival = 1 if failed else 0
+                delivery_failed = 1 if failed else 0
                 double_scan = 1 if pkg_stop_count.get(pkg_id, 1) > 1 else 0
                 svc_sec      = float(pkg_info.get("planned_service_time_seconds") or 60)
-                locker_issue = 1 if (svc_sec < 25 and failed) else 0
+                short_service_time = 1 if svc_sec < 25 else 0
                 cr_number_missing = 1 if (
                     not tw_start or str(tw_start) in ("None", "nan", "")
                 ) else 0
@@ -346,8 +346,8 @@ def main() -> None:
                     "weather_risk":      weather_risk,
                     "days_in_fc":        days_in_fc,
                     "double_scan":       double_scan,
-                    "locker_issue":      locker_issue,
-                    "damaged_on_arrival": damaged_on_arrival,
+                    "short_service_time": short_service_time,
+                    "delivery_failed":   delivery_failed,
                     "cr_number_missing": cr_number_missing,
                 })
 
@@ -364,22 +364,22 @@ def main() -> None:
     # Stratified split to ensure failure rate is preserved
     from sklearn.model_selection import train_test_split
     train_df, val_df = train_test_split(
-        df_full, test_size=0.33, random_state=42, 
-        stratify=df_full["damaged_on_arrival"]
+        df_full, test_size=0.33, random_state=42,
+        stratify=df_full["delivery_failed"]
     )
 
     COLS = [
         "package_id", "package_type", "shift", "carrier",
         "route_distance_km", "packages_in_route", "weather_risk",
-        "days_in_fc", "double_scan", "locker_issue",
-        "damaged_on_arrival", "cr_number_missing",
+        "days_in_fc", "double_scan", "short_service_time",
+        "delivery_failed", "cr_number_missing",
     ]
 
     for df, filename in [(train_df, "packages_train.csv"),
                          (val_df, "packages_validation.csv")]:
         out_path = DATA_DIR / filename
         df[COLS].to_csv(out_path, index=False)
-        rate = df["damaged_on_arrival"].mean()
+        rate = df["delivery_failed"].mean()
         print(f"  Saved {len(df):,} rows to {filename} | Failure rate: {rate:.2%}")
 
 

@@ -29,14 +29,14 @@ def tool_operational_analysis(row: dict[str, Any]) -> dict[str, Any]:
     positives: list[str] = []
 
     # ── Operational error flags ──────────────────────────────────────────────
-    if row.get("damaged_on_arrival") == 1:
-        flags.append("CRITICAL: Delivery Failure Recorded (Damaged/Attempted)")
+    if row.get("delivery_failed") == 1:
+        flags.append("CRITICAL: Delivery Failure Recorded (Delivery Attempted/Failed)")
 
     if row.get("double_scan") == 1:
         flags.append("WARNING: Double scan detected — possible routing error")
 
-    if row.get("locker_issue") == 1:
-        flags.append("WARNING: Locker access issue reported")
+    if row.get("short_service_time") == 1:
+        flags.append("WARNING: Short service time (<25s) — locker/dense-urban stop")
 
     if row.get("cr_number_missing") == 1:
         flags.append("WARNING: Customer reference number missing — address ambiguity risk")
@@ -55,7 +55,7 @@ def tool_operational_analysis(row: dict[str, Any]) -> dict[str, Any]:
     if row.get("carrier") in ("carrier_A", "carrier_B"):
         positives.append("✅ Reliable carrier (A or B)")
 
-    if row.get("damaged_on_arrival") == 0 and row.get("double_scan") == 0 and row.get("locker_issue") == 0:
+    if row.get("delivery_failed") == 0 and row.get("double_scan") == 0 and row.get("short_service_time") == 0:
         positives.append("✅ No operational errors detected")
 
     # ── Summary ──────────────────────────────────────────────────────────────

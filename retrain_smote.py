@@ -23,7 +23,7 @@ TRAIN_CSV = PROJECT / 'data' / 'packages_train.csv'
 VAL_CSV   = PROJECT / 'data' / 'packages_validation.csv'
 MODEL     = PROJECT / 'artifacts' / 'delivery_model.pkl'
 
-TARGET = 'damaged_on_arrival'
+TARGET = 'delivery_failed'
 
 # ── Bins MUST match train_model.py and dashboard/_dist_bucket() ──────────────
 DIST_BINS   = [0, 15, 30, 50, 70, 85]
@@ -31,7 +31,7 @@ DIST_LABELS = [0, 1, 2, 3, 4]
 
 FEATURES = [
     'carrier_enc', 'shift_enc', 'package_type_enc', 'dist_bucket',
-    'packages_in_route', 'double_scan', 'locker_issue', 'cr_number_missing',
+    'packages_in_route', 'double_scan', 'short_service_time', 'cr_number_missing',
 ]
 
 # ── Load data ─────────────────────────────────────────────────────────────────

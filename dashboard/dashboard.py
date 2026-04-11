@@ -127,7 +127,7 @@ def predict_failure(artifact: dict, input_dict: dict) -> tuple[float, str]:
 
     Features (order must match ENCODED_FEATURES in train_model.py):
         carrier_enc, shift_enc, package_type_enc, dist_bucket,
-        packages_in_route, double_scan, locker_issue, cr_number_missing
+        packages_in_route, double_scan, short_service_time, cr_number_missing
     """
     model    = artifact['model']
     encoders = artifact['encoders']
@@ -139,7 +139,7 @@ def predict_failure(artifact: dict, input_dict: dict) -> tuple[float, str]:
         _dist_bucket(input_dict['route_distance_km']),
         input_dict['packages_in_route'],
         input_dict['double_scan'],
-        input_dict['locker_issue'],
+        input_dict['short_service_time'],
         input_dict['cr_number_missing'],
     ]
 
@@ -224,11 +224,11 @@ if page == "Operations Overview":
 
     # ── KPI Cards ──
     total          = len(df)
-    fail_rate      = df['damaged_on_arrival'].mean() * 100
-    n_failed       = df['damaged_on_arrival'].sum()
-    top_carrier    = (df.groupby('carrier')['damaged_on_arrival'].mean()
+    fail_rate      = df['delivery_failed'].mean() * 100
+    n_failed       = df['delivery_failed'].sum()
+    top_carrier    = (df.groupby('carrier')['delivery_failed'].mean()
                        .idxmax().replace('carrier_D', 'carrier_D (Correos)'))
-    top_fail       = df.groupby('carrier')['damaged_on_arrival'].mean().max() * 100
+    top_fail       = df.groupby('carrier')['delivery_failed'].mean().max() * 100
     cr_miss_rate   = df['cr_number_missing'].mean() * 100
 
     c1, c2, c3, c4 = st.columns(4)
@@ -242,7 +242,7 @@ if page == "Operations Overview":
         st.markdown(f"""
         <div class='kpi-card'>
             <div class='kpi-value' style='color:{AMAZON_RED};'>{fail_rate:.1f}%</div>
-            <div class='kpi-label'>Damaged on Arrival Rate</div>
+            <div class='kpi-label'>Delivery Failed Rate</div>
         </div>""", unsafe_allow_html=True)
     with c3:
         st.markdown(f"""
@@ -265,7 +265,7 @@ if page == "Operations Overview":
     with col1:
         st.markdown("<div class='section-title'>Failure Rate by Carrier</div>",
                     unsafe_allow_html=True)
-        carrier_stats = (df.groupby('carrier')['damaged_on_arrival'].mean() * 100).sort_values()
+        carrier_stats = (df.groupby('carrier')['delivery_failed'].mean() * 100).sort_values()
         carrier_names = {'carrier_A': 'Amazon Lgx', 'carrier_B': 'SEUR',
                           'carrier_C': 'DHL', 'carrier_D': 'Correos'}
         labels  = [carrier_names[c] for c in carrier_stats.index]
@@ -281,7 +281,7 @@ if page == "Operations Overview":
         st.markdown("<div class='section-title'>Failure Rate by Delivery Shift</div>",
                     unsafe_allow_html=True)
         shift_order = ['morning', 'afternoon']
-        shift_stats = (df.groupby('shift')['damaged_on_arrival'].mean() * 100
+        shift_stats = (df.groupby('shift')['delivery_failed'].mean() * 100
                         ).reindex(shift_order)
         s_colors = [AMAZON_GREEN, AMAZON_ORANGE]
         fig2 = make_bar_chart(
@@ -299,7 +299,7 @@ if page == "Operations Overview":
     with col3:
         st.markdown("<div class='section-title'>Carrier × Weather Risk Heatmap</div>",
                     unsafe_allow_html=True)
-        pivot = (df.groupby(['carrier', 'weather_risk'])['damaged_on_arrival']
+        pivot = (df.groupby(['carrier', 'weather_risk'])['delivery_failed']
                   .mean().unstack() * 100)[['low', 'medium', 'high']]
         pivot.index = ['Amazon Lgx', 'SEUR', 'DHL', 'Correos']
         pivot.columns = ['Low', 'Medium', 'High']
@@ -321,7 +321,7 @@ if page == "Operations Overview":
     with col4:
         st.markdown("<div class='section-title'>Failure Rate by Package Type</div>",
                     unsafe_allow_html=True)
-        pkg_stats = (df.groupby('package_type')['damaged_on_arrival'].mean() * 100
+        pkg_stats = (df.groupby('package_type')['delivery_failed'].mean() * 100
                       ).sort_values(ascending=False)
         pkg_labels = [p.replace('_', ' ').title() for p in pkg_stats.index]
         cmap = plt.cm.YlOrRd(np.linspace(0.3, 0.85, len(pkg_stats)))
@@ -336,9 +336,9 @@ if page == "Operations Overview":
     st.markdown("<div class='section-title'>Operations Summary Table</div>",
                 unsafe_allow_html=True)
     summary = df.groupby('carrier').agg(
-        Packages=('damaged_on_arrival', 'count'),
-        Failures=('damaged_on_arrival', 'sum'),
-        Failure_Rate=('damaged_on_arrival', 'mean'),
+        Packages=('delivery_failed', 'count'),
+        Failures=('delivery_failed', 'sum'),
+        Failure_Rate=('delivery_failed', 'mean'),
         Avg_Distance=('route_distance_km', 'mean'),
     ).round(3)
     summary['Failure_Rate'] = (summary['Failure_Rate'] * 100).map('{:.1f}%'.format)
@@ -405,8 +405,8 @@ elif page == "Package Risk Scoring":
         st.markdown("#### Operational Flags")
         f1, f2 = st.columns(2)
         with f1:
-            double_scan       = st.checkbox("Double Scan Detected", help="Scan error flag — package scanned twice")
-            locker_issue      = st.checkbox("Locker Issue", help="Locker unavailable or full")
+            double_scan         = st.checkbox("Double Scan Detected", help="Scan error flag — package scanned twice")
+            short_service_time  = st.checkbox("Short Service Time (<25s)", help="Planned service time under 25s — typical of locker/dense-urban stops")
         with f2:
             cr_number_missing = st.checkbox("CR Number Missing", help="Missing customer reference — address ambiguity")
 
@@ -422,8 +422,8 @@ elif page == "Package Risk Scoring":
                 'carrier':           carrier,
                 'route_distance_km': route_distance_km,
                 'packages_in_route': packages_in_route,
-                'double_scan':       int(double_scan),
-                'locker_issue':      int(locker_issue),
+                'double_scan':          int(double_scan),
+                'short_service_time':   int(short_service_time),
                 'cr_number_missing': int(cr_number_missing),
             }
 
@@ -475,8 +475,8 @@ elif page == "Package Risk Scoring":
                 risk_factors.append("🟠 Night shift — elevated failure baseline")
             if double_scan:
                 risk_factors.append("🟠 Double scan detected — operational error flag")
-            if locker_issue:
-                risk_factors.append("🟠 Locker issue — infrastructure failure")
+            if short_service_time:
+                risk_factors.append("🟠 Short service time (<25s) — locker/dense-urban stop")
             if cr_number_missing:
                 risk_factors.append("🟡 CR number missing — address ambiguity")
             if route_distance_km > 70:
@@ -535,12 +535,12 @@ elif page == "Route Analysis":
             default=['morning', 'afternoon'],
         )
     with col_f3:
-        show_failed_only = st.checkbox("Show damaged-on-arrival only", value=False)
+        show_failed_only = st.checkbox("Show delivery failures only", value=False)
 
     # Apply filters
     filtered = df[df['carrier'].isin(carrier_filter) & df['shift'].isin(shift_filter)]
     if show_failed_only:
-        filtered = filtered[filtered['damaged_on_arrival'] == 1]
+        filtered = filtered[filtered['delivery_failed'] == 1]
 
     st.markdown(f"**Showing {len(filtered):,} packages** after filters applied.")
     st.markdown("---")
@@ -555,8 +555,8 @@ elif page == "Route Analysis":
         fig.patch.set_facecolor('white')
         ax.set_facecolor('white')
         for outcome, color, label, alpha in [(0, AMAZON_BLUE, 'Delivered', 0.35),
-                                               (1, AMAZON_ORANGE, 'Damaged on Arrival', 0.7)]:
-            subset = filtered[filtered['damaged_on_arrival'] == outcome]
+                                               (1, AMAZON_ORANGE, 'Delivery Failed', 0.7)]:
+            subset = filtered[filtered['delivery_failed'] == outcome]
             ax.scatter(subset['route_distance_km'], subset['packages_in_route'],
                         c=color, label=label, alpha=alpha, s=15, edgecolors='none')
         ax.set_xlabel('Route Distance (km)', fontweight='bold')
@@ -577,7 +577,7 @@ elif page == "Route Analysis":
         labels_bins = ['0–15km', '16–30km', '31–50km', '51–70km', '71–85km']
         filtered_copy['dist_bucket'] = pd.cut(filtered_copy['route_distance_km'],
                                                bins=bins, labels=labels_bins)
-        bucket_fail = (filtered_copy.groupby('dist_bucket', observed=True)['damaged_on_arrival']
+        bucket_fail = (filtered_copy.groupby('dist_bucket', observed=True)['delivery_failed']
                         .agg(['mean', 'count']).reset_index())
 
         fig2, ax2 = plt.subplots(figsize=(7, 5))
@@ -606,9 +606,9 @@ elif page == "Route Analysis":
                 unsafe_allow_html=True)
 
     carrier_perf = filtered.groupby('carrier').agg(
-        Packages=('damaged_on_arrival', 'count'),
-        Failures=('damaged_on_arrival', 'sum'),
-        Failure_Rate=('damaged_on_arrival', 'mean'),
+        Packages=('delivery_failed', 'count'),
+        Failures=('delivery_failed', 'sum'),
+        Failure_Rate=('delivery_failed', 'mean'),
         Avg_Distance_km=('route_distance_km', 'mean'),
         Avg_Route_Load=('packages_in_route', 'mean'),
     ).reset_index()

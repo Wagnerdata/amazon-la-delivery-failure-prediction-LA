@@ -54,8 +54,8 @@ plt.rcParams.update({
 # ── Feature definitions ───────────────────────────────────────────────────────
 CATEGORICAL_FEATURES = ['package_type', 'shift', 'carrier']
 NUMERIC_FEATURES     = ['dist_bucket', 'packages_in_route']
-BINARY_FEATURES      = ['double_scan', 'locker_issue', 'cr_number_missing']
-TARGET               = 'damaged_on_arrival'  # Delivery Failure Proxy — NOT a feature
+BINARY_FEATURES      = ['double_scan', 'short_service_time', 'cr_number_missing']
+TARGET               = 'delivery_failed'  # Delivery Failure — NOT a feature
 
 # route_distance_km is binned into an ordinal dist_bucket before modelling
 DIST_BINS   = [0, 15, 30, 50, 70, 85]
@@ -68,7 +68,7 @@ ENCODED_FEATURES = [
     'dist_bucket',
     'packages_in_route',
     'double_scan',
-    'locker_issue',
+    'short_service_time',
     'cr_number_missing',
 ]
 

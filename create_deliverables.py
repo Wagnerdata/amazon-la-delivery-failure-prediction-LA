@@ -161,9 +161,8 @@ def create_01():
         ("carrier",           "categ.",  "carrier_A=Amazon, B=SEUR, C=DHL, D=Correos", "Feature"),
         ("route_distance_km", "float64", "Route distance (2–85 km)",                    "Feature"),
         ("packages_in_route", "int64",   "Total packages in driver route (15–120)",     "Feature"),
-        ("double_scan",       "binary",  "Scan error flag",                             "Feature"),
-        ("locker_issue",      "binary",  "Locker unavailable at dispatch",              "Feature"),
-        ("damaged_on_arrival","binary",  "Package damaged when received at FC",         "Feature"),
+        ("double_scan",        "binary",  "Scan error flag",                             "Feature"),
+        ("short_service_time", "binary",  "Planned service time < 25s (locker/dense-urban)", "Feature"),
         ("weather_risk",      "categ.",  "low / medium / high",                         "Feature"),
         ("cr_number_missing", "binary",  "Missing customer reference number",           "Feature"),
         ("days_in_fc",        "int64",   "Days in fulfillment center (0–12)",           "Feature"),
@@ -257,9 +256,8 @@ def create_02():
         ("carrier",           "Carrier assignment",          "Categorical"),
         ("route_distance_km", "Route optimizer",            "Numeric"),
         ("packages_in_route", "Route plan",                 "Numeric"),
-        ("double_scan",       "WMS scan log",               "Binary"),
-        ("locker_issue",      "Locker management system",   "Binary"),
-        ("damaged_on_arrival","FC receiving scan",          "Binary"),
+        ("double_scan",        "WMS scan log",               "Binary"),
+        ("short_service_time", "Route plan / dispatch data", "Binary"),
         ("weather_risk",      "Weather API",                "Categorical"),
         ("cr_number_missing", "Order management system",    "Binary"),
         ("days_in_fc",        "FC WMS",                     "Numeric"),
@@ -341,9 +339,8 @@ def create_03():
         ("carrier",           "object",  "0", "4",    "carrier_A",       "carrier_D",      "carrier_A"),
         ("route_distance_km", "float64", "0", "—",    "2.00",            "85.00",          "43.50"),
         ("packages_in_route", "int64",   "0", "—",    "15",              "120",            "67"),
-        ("double_scan",       "int64",   "0", "2",    "0",               "1",              "0.05"),
-        ("locker_issue",      "int64",   "0", "2",    "0",               "1",              "0.08"),
-        ("damaged_on_arrival","int64",   "0", "2",    "0",               "1",              "0.04"),
+        ("double_scan",        "int64",   "0", "2",    "0",               "1",              "0.05"),
+        ("short_service_time","int64",   "0", "2",    "0",               "1",              "0.11"),
         ("weather_risk",      "object",  "0", "3",    "high",            "medium",         "low"),
         ("cr_number_missing", "int64",   "0", "2",    "0",               "1",              "0.07"),
         ("days_in_fc",        "int64",   "0", "—",    "0",               "12",             "3.2"),
@@ -371,8 +368,7 @@ def create_03():
     body(doc, "Binary feature positive rates:")
     for item in [
         "double_scan: ~5% (scan error)",
-        "locker_issue: ~8% (infrastructure failure)",
-        "damaged_on_arrival: ~4%",
+        "short_service_time: ~10.6% (planned svc < 25s — locker/dense-urban indicator)",
         "cr_number_missing: ~7%",
         "delivery_failed (TARGET): 19.4% — baseline failure rate",
     ]:
@@ -389,7 +385,7 @@ def create_03():
     body(doc,
         "After label-encoding categoricals, Pearson correlations with the target (delivery_failed) "
         "were computed. Top correlating features (absolute correlation > 0.10): carrier, "
-        "locker_issue, damaged_on_arrival. All other features show weaker linear relationships "
+        "short_service_time. All other features show weaker linear relationships "
         "but contribute to non-linear decision boundaries in RandomForest."
     )
 
@@ -412,7 +408,7 @@ def create_03():
     features = [
         "package_type_enc", "shift_enc", "carrier_enc",
         "route_distance_km", "packages_in_route",
-        "double_scan", "locker_issue", "damaged_on_arrival",
+        "double_scan", "short_service_time",
         "weather_enc", "cr_number_missing", "days_in_fc",
     ]
     code_block(doc,
@@ -430,9 +426,8 @@ def create_03():
         ("carrier",           "string",  "carrier_enc",      "Feature","Carrier (A=Amazon, B=SEUR, C=DHL, D=Correos)"),
         ("route_distance_km", "float64", "as-is",            "Feature","Route length in km (2–85)"),
         ("packages_in_route", "int64",   "as-is",            "Feature","Number of packages in driver route (15–120)"),
-        ("double_scan",       "int64",   "as-is (binary)",   "Feature","Scan error flag (1=error detected)"),
-        ("locker_issue",      "int64",   "as-is (binary)",   "Feature","Locker unavailable at dispatch"),
-        ("damaged_on_arrival","int64",   "as-is (binary)",   "Feature","Package damaged at FC receiving"),
+        ("double_scan",        "int64",   "as-is (binary)",   "Feature","Scan error flag (1=error detected)"),
+        ("short_service_time","int64",   "as-is (binary)",   "Feature","Planned svc < 25s — locker/dense-urban stop"),
         ("weather_risk",      "string",  "weather_enc",      "Feature","Environmental risk level (low/medium/high)"),
         ("cr_number_missing", "int64",   "as-is (binary)",   "Feature","Customer reference absent from record"),
         ("days_in_fc",        "int64",   "as-is",            "Feature","Days in fulfillment center (0–12)"),
@@ -627,7 +622,7 @@ def create_04():
         "morning shift: highest shift-level failure rate (~1.37%)",
         "route < 40 km: highest distance bucket failure rate (~1.89%)",
         "high_value package type: elevated failure rate due to access requirements",
-        "locker_issue flag: when triggered, strong individual signal",
+        "short_service_time flag: when triggered, elevated failure signal (locker/dense-urban stops)",
         "double_scan flag: scan errors correlate with downstream delivery failures",
     ]:
         p = doc.add_paragraph(item, style='List Bullet')
@@ -644,7 +639,7 @@ def create_04():
         ("Nulls",                "0 missing values"),
         ("Duplicates",           "0 duplicate package_id rows"),
         ("Zero-variance cols",   "weather_risk (constant='low'), days_in_fc (constant=0) — excluded"),
-        ("Target proxy note",    "damaged_on_arrival = delivery_failure in this extract (leakage risk)"),
+        ("Target column",        "delivery_failed — renamed from damaged_on_arrival; leakage fixed"),
     ]
     code_block(doc, "\n".join(f"{k:<22} {v}" for k, v in overview))
 
@@ -663,9 +658,9 @@ def create_04():
     h2(doc, "Modeling Implications")
     for item in [
         "Extreme class imbalance (~140:1) requires SMOTE oversampling, class weighting, or threshold tuning",
-        "Drop before encoding: weather_risk, days_in_fc (zero variance), damaged_on_arrival (target proxy = leakage)",
+        "Drop before encoding: weather_risk, days_in_fc (zero variance), delivery_failed (is the target)",
         "Top structural predictors: carrier, shift, and route_distance_km (bucketed)",
-        "Binary flags (locker_issue, double_scan) are rare but high-signal events when triggered",
+        "Binary flags (short_service_time, double_scan) are rare but high-signal events when triggered",
         "Low inter-feature correlation — no multicollinearity concerns",
     ]:
         p = doc.add_paragraph(item, style='List Bullet')

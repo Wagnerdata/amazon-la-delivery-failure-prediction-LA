@@ -218,11 +218,11 @@ Package type (standard / high_value)
 Route distance (km) — bucketed
 Packages in route (count)
 Double scan flag (binary)
-Locker issue flag (binary)
+Short service time flag (svc < 25s, binary)
 CR number missing flag (binary)
 
 Excluded Features
-damaged_on_arrival → IS the target (data leakage)
+delivery_failed → IS the target (not a feature)
 weather_risk → zero variance (excluded)
 days_in_fc → zero variance (excluded)"""
 
@@ -312,9 +312,10 @@ Zero-variance exclusions: weather_risk and days_in_fc \
 removed before modeling — both have identical values \
 across all 3,559 rows (dataset limitation for July 2018 LA).
 
-Data leakage prevention: damaged_on_arrival IS the target \
-variable (DELIVERY_ATTEMPTED flag from scan_status). \
-Using it as a feature would be circular — excluded entirely.
+Data leakage fix: locker_issue and damaged_on_arrival were \
+conditioned on the outcome — both removed. Replaced with \
+short_service_time (clean dispatch signal) and delivery_failed \
+(renamed target). All artifacts retrained on clean data.
 
 Feature encoding: carrier, shift, package_type label-encoded. \
 Distance bucketed into operationally meaningful ranges \
@@ -384,8 +385,9 @@ add_image(slide, FIGURES_DIR / "feature_importance_preview.png",
           cx + 0.10, cy + 21.95, COL_W - 0.2, 5.5)
 add_text(slide,
          "Model-free conditional failure-rate ranking. carrier_D and morning shift "
-         "emerge as the top predictors. locker_issue shows an elevated signal despite "
-         "low frequency. No single feature dominates — the Random Forest will exploit "
+         "emerge as the top predictors. short_service_time shows an elevated signal — "
+         "locker/dense-urban stops with planned service times under 25 seconds. "
+         "No single feature dominates — the Random Forest exploits "
          "interactions between carrier, shift, and distance simultaneously.",
          cx + 0.15, cy + 27.55, COL_W - 0.3, 1.8,
          font_size=9, color=C_NAVY)

@@ -110,16 +110,16 @@ cells.append(code_cell(
 # ─── SECTION 1: LOAD ─────────────────────────────────────────────────────────
 cells.append(md_cell(
     "---\n## 1. Load Data & Create Target\n\n"
-    "`delivery_failure` = `damaged_on_arrival` — the `DELIVERY_ATTEMPTED` "
-    "scan status from the LMRC dataset. Excluding `damaged_on_arrival` as a "
-    "feature prevents data leakage.",
+    "`delivery_failure` = `delivery_failed` — the `DELIVERY_ATTEMPTED` "
+    "scan status from the LMRC dataset. The column serves only as the target; "
+    "it is excluded from the feature set to prevent data leakage.",
     "cell-s1-md"
 ))
 
 cells.append(code_cell(
     "df = pd.read_csv(BASE / 'data' / 'packages_validation.csv')\n\n"
-    "# ── Target: delivery_failure = damaged_on_arrival ──────────────────────\n"
-    "df['delivery_failure'] = df['damaged_on_arrival']\n\n"
+    "# ── Target: delivery_failure = delivery_failed ──────────────────────\n"
+    "df['delivery_failure'] = df['delivery_failed']\n\n"
     "print(f'Dataset shape   : {df.shape[0]:,} rows × {df.shape[1]} columns')\n"
     "print(f'Failure count   : {df[\"delivery_failure\"].sum()} ({df[\"delivery_failure\"].mean():.2%})')\n"
     "print(f'Class ratio     : ~{int(df[\"delivery_failure\"].value_counts()[0] / df[\"delivery_failure\"].sum())}:1')\n"
@@ -135,7 +135,7 @@ cells.append(md_cell(
     "---\n## 2. Feature Engineering\n\n"
     "Steps:\n"
     "- **Drop zero-variance columns**: `days_in_fc`, `weather_risk` (identical value for all rows)\n"
-    "- **Drop data leakage column**: `damaged_on_arrival` (IS the target)\n"
+    "- **Drop target column**: `delivery_failed` (IS the target, not a feature)\n"
     "- **Encode categoricals**: carrier, shift, package_type → label-encoded integers\n"
     "- **Bucket route distance**: < 40 km / 40–60 km / > 60 km",
     "cell-s2-md"
@@ -147,7 +147,7 @@ cells.append(code_cell(
     "for col in ['days_in_fc', 'weather_risk']:\n"
     "    print(f'  {col}: {df[col].nunique()} unique value(s) → {df[col].unique()}')\n\n"
     "# ── Drop zero-variance + leakage columns ─────────────────────────────────\n"
-    "EXCLUDE = ['package_id', 'days_in_fc', 'weather_risk', 'damaged_on_arrival',\n"
+    "EXCLUDE = ['package_id', 'days_in_fc', 'weather_risk', 'delivery_failed',\n"
     "           'delivery_failure']\n\n"
     "# ── Encode categoricals ───────────────────────────────────────────────────\n"
     "encoders = {}\n"
@@ -166,7 +166,7 @@ cells.append(code_cell(
     "FEATURES = [\n"
     "    'carrier_enc', 'shift_enc', 'package_type_enc',\n"
     "    'dist_bucket', 'packages_in_route',\n"
-    "    'double_scan', 'locker_issue', 'cr_number_missing'\n"
+    "    'double_scan', 'short_service_time', 'cr_number_missing'\n"
     "]\n\n"
     "X = df_enc[FEATURES].values\n"
     "y = df_enc['delivery_failure'].values\n\n"
@@ -510,7 +510,7 @@ cells.append(md_cell(
     "| Routes < 40 km | 1.89% (urban density paradox) |\n"
     "| Routes > 60 km | 0.00% |\n"
     "| Zero-variance cols | days_in_fc, weather_risk |\n"
-    "| Data leakage col | damaged_on_arrival (=target) |\n\n"
+    "| Target column (renamed) | delivery_failed (was damaged_on_arrival) |\n\n"
     "### Modeling Decisions\n"
     "- `class_weight='balanced'` corrects 140:1 imbalance\n"
     "- SMOTE provides an additional comparison point\n"

@@ -49,7 +49,7 @@ matplotlib.rcParams.update({
 # ── Load data ──────────────────────────────────────────────────────────────────
 print("Loading packages_validation.csv …")
 df = pd.read_csv(DATA_PATH)
-df["delivery_failure"] = df["damaged_on_arrival"]   # canonical target
+df["delivery_failure"] = df["delivery_failed"]   # canonical target
 overall_avg = df["delivery_failure"].mean() * 100
 
 # SQLite for SQL-based queries
@@ -292,8 +292,8 @@ def chart_class_imbalance():
 # 5. correlation_heatmap.png
 # ──────────────────────────────────────────────────────────────────────────────
 def chart_heatmap():
-    # Drop: identifier, zero-variance cols, and the target proxy (data leakage)
-    drop_cols = ["package_id", "weather_risk", "days_in_fc", "damaged_on_arrival"]
+    # Drop: identifier, zero-variance cols, and the target (avoid leakage)
+    drop_cols = ["package_id", "weather_risk", "days_in_fc", "delivery_failed"]
     df_corr   = df.drop(columns=drop_cols).copy()
 
     le = LabelEncoder()
@@ -313,7 +313,7 @@ def chart_heatmap():
     )
     ax.set_title(
         "Pearson Correlation Heatmap — Encoded Features vs Target\n"
-        "Note: damaged_on_arrival excluded (data leakage); "
+        "Note: delivery_failed excluded (is the target); "
         "weather_risk & days_in_fc excluded (zero variance)",
         fontsize=11, fontweight="bold", color=NAVY, pad=12,
     )
@@ -337,7 +337,7 @@ def chart_feature_importance():
             label = f"{col} = {val}"
             feature_rates[label] = rate
 
-    for flag in ["double_scan", "locker_issue", "cr_number_missing"]:
+    for flag in ["double_scan", "short_service_time", "cr_number_missing"]:
         active = df[df[flag] == 1]
         if len(active) > 0:
             rate  = active["delivery_failure"].mean() * 100

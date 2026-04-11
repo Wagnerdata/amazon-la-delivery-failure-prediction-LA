@@ -43,7 +43,7 @@ ML_DIR.mkdir(exist_ok=True)
 # ── Load ──────────────────────────────────────────────────────────────────────
 print("Loading data...")
 df = pd.read_csv(BASE / "data" / "packages_validation.csv")
-df["delivery_failure"] = df["damaged_on_arrival"]
+df["delivery_failure"] = df["delivery_failed"]
 print(f"  Rows: {len(df):,} | Failures: {df['delivery_failure'].sum()} ({df['delivery_failure'].mean():.2%})")
 
 # ── Feature engineering ───────────────────────────────────────────────────────
@@ -61,7 +61,7 @@ df_enc["dist_bucket"] = pd.cut(
 FEATURES = [
     "carrier_enc", "shift_enc", "package_type_enc",
     "dist_bucket", "packages_in_route",
-    "double_scan", "locker_issue", "cr_number_missing",
+    "double_scan", "short_service_time", "cr_number_missing",
 ]
 
 X = df_enc[FEATURES].values

@@ -232,8 +232,8 @@ for feat, desc in [
     ("weather_risk", "Month-derived risk: July = low (zero variance — all 'low')"),
     ("days_in_fc", "Days since time-window start — all zero (zero variance)"),
     ("double_scan", "Package recorded at more than one stop in the route"),
-    ("locker_issue", "Short planned service time + failed delivery signal"),
-    ("damaged_on_arrival", "IS the target variable — excluded as a feature (data leakage)"),
+    ("short_service_time", "Planned service time < 25s — locker/dense-urban indicator (dispatch-time signal)"),
+    ("delivery_failed", "IS the target variable — excluded as a feature"),
     ("cr_number_missing", "No time window on file — 91% positive in this dataset"),
 ]:
     add_bullet(doc, f"{feat}: {desc}")
@@ -246,13 +246,12 @@ add_body(doc,
 )
 
 add_body(doc,
-    "The first decision was excluding damaged_on_arrival as a feature. This column is not "
-    "a predictor of delivery failure — it is the delivery failure. In the LMRC source data, "
-    "build_dataset.py sets damaged_on_arrival = 1 when the package's scan_status is "
-    "'DELIVERY_ATTEMPTED' (i.e., the delivery was attempted but not completed). Using this "
-    "as an input feature would make the model appear accurate while predicting the exact "
-    "thing it was already given. It is excluded entirely, and delivery_failure is promoted "
-    "to the target column."
+    "The first decision was renaming the target column from damaged_on_arrival to delivery_failed "
+    "for semantic clarity, and excluding it as a feature. This column is the delivery failure — "
+    "not a predictor of it. In the LMRC source data, build_dataset.py sets delivery_failed = 1 "
+    "when the package's scan_status is 'DELIVERY_ATTEMPTED'. Using this as an input feature would "
+    "make the model appear accurate while predicting the exact thing it was already given. It is "
+    "excluded entirely and serves only as the target."
 )
 
 add_body(doc,
@@ -484,20 +483,20 @@ add_body(doc,
     "imbalance-driven default of 0.5."
 )
 
-add_heading(doc, "4.3 Data Leakage — damaged_on_arrival", level=2)
+add_heading(doc, "4.3 Data Leakage — Removed in This Version", level=2)
 add_body(doc,
-    "The damaged_on_arrival column appears in the feature list at first inspection and "
-    "would produce perfect classification if included as a predictor — because it is "
-    "the target variable. In build_dataset.py, damaged_on_arrival is set to 1 when "
-    "scan_status == 'DELIVERY_ATTEMPTED', which is precisely the event we are trying "
-    "to predict. Using it as a feature is circular: the model would be learning to "
-    "predict failure from the failure flag itself."
+    "Two features in earlier versions of the dataset were conditioned on the outcome "
+    "(failed delivery) and therefore constituted data leakage. The first, locker_issue, "
+    "was defined as svc_sec < 25 AND failed — meaning it could only ever equal 1 when "
+    "a failure occurred, so the model was learning from the failure itself. The second, "
+    "damaged_on_arrival, was a direct alias of the target variable."
 )
 add_body(doc,
-    "This was caught during the EDA profiling step when the column's correlation with "
-    "delivery_failure was found to be 1.0. The column was then promoted to the target "
-    "variable role (as delivery_failure) and excluded from the feature set in all "
-    "subsequent modeling."
+    "Both were removed in the current version. locker_issue was replaced by "
+    "short_service_time (= 1 if planned service time < 25 seconds, regardless of outcome) "
+    "— a clean dispatch-time signal for locker/dense-urban stops. damaged_on_arrival was "
+    "renamed delivery_failed to clarify its role as the target variable and prevent "
+    "accidental inclusion as a feature. All model artifacts were retrained on the clean dataset."
 )
 
 add_heading(doc, "4.4 Small Sample Size for 0.7% Event", level=2)
