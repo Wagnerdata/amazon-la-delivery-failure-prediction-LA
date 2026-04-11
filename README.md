@@ -1,152 +1,90 @@
-# 💳 Credit Risk AI System — SME Default Prediction
+# 📦 Amazon LA Last-Mile Delivery Failure Prediction
 
-> End-to-end credit risk platform: ML model predicts default probability for SMEs + autonomous AI agents analyze financial ratios and generate executive risk reports.
+> Academic Project (Correlation One DANA) — Predicting delivery failures using the real-world Amazon Last Mile Routing Research Challenge (LMRC) dataset from Los Angeles (2018).
 
 ## Overview
-
-This system predicts the **12-month default probability** for Small and Medium Enterprises (SMEs) using a Machine Learning model, then deploys **3 autonomous AI agents** (CrewAI) to analyze financial statements, interpret risk signals, and produce executive-ready credit reports.
+This project focuses on predicting the probability that an Amazon package delivery will fail (delivery attempted but not completed) based on historical route data. The system uses a Machine Learning model (Random Forest) trained on real operational data to identify high-risk packages before dispatch.
 
 ---
 
-## Architecture
+## 📊 Dataset: Amazon LMRC 2018
+The data is sourced from the **2021 Amazon Last Mile Routing Research Challenge**, containing real-world deliveries performed by Amazon drivers in **Los Angeles, CA** during **July 2018**.
 
+- **Scope:** 15 Routes, 3,559 Packages.
+- **Features:** 
+  - Package type (Standard/High Value).
+  - Delivery Shift (Morning/Afternoon/Night).
+  - Carrier performance metrics.
+  - Route distance (km).
+  - Route density (packages per route).
+  - Operational flags (Double scans, Locker issues, Missing references).
+- **Target:** Delivery Failure (Proxy: `damaged_on_arrival` flag in raw data).
+
+---
+
+## ⚙️ Model Architecture
+- **Classifier:** Random Forest (n_estimators=300, max_depth=8).
+- **Handling Imbalance:** `class_weight='balanced'` to manage the 140:1 failure ratio.
+- **Optimization:** Decision threshold tuned for maximum **Recall**, prioritizing the detection of potential failures.
+- **Performance:** AUC-ROC ≈ 0.70.
+
+---
+
+## 📁 Project Structure
 ```
-Company ID
-     │
-     ▼
-┌─────────────────┐      ┌──────────────────────────┐
-│  FastAPI        │◄─────│  ML Model (Random Forest) │
-│  /calcular_pd   │      │  Outputs: PD% + Risk Band  │
-└────────┬────────┘      └──────────────────────────┘
-         │
-         ▼
-┌─────────────────────────────────────────┐
-│           CrewAI Agent Crew             │
-│  Agent 1: PD Model Specialist           │
-│  Agent 2: Financial Ratio Analyst       │
-│  Agent 3: Risk Orchestrator             │
-└─────────────────┬───────────────────────┘
-                  │
-                  ▼
-    Executive Credit Risk Report
-                  │
-                  ▼
-       Streamlit Dashboard
-```
-
----
-
-## Features
-
-- **ML Default Prediction**: 12-month probability of default (PD) with risk bands A / BBB / BB / B / CCC
-- **Financial Ratio Analysis**: Liquidity, leverage, EBITDA margin, interest coverage, revenue growth
-- **AI Agent Crew**: 3 specialized agents produce actionable executive credit reports
-- **REST API**: FastAPI with `/calcular_pd` endpoint
-- **Interactive Dashboard**: Streamlit with risk gauge, metrics and report visualization
-
----
-
-## Risk Band Scale
-
-| Band | PD Range | Risk Level |
-|------|----------|-----------|
-| A | ≤ 0.5% | Very Low |
-| BBB | 0.5% – 1.5% | Low |
-| BB | 1.5% – 3% | Medium |
-| B | 3% – 7% | High |
-| CCC | > 7% | Very High |
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| ML Model | scikit-learn (Random Forest) |
-| API | FastAPI + Pydantic |
-| AI Agents | CrewAI |
-| Dashboard | Streamlit + Plotly |
-| Data | pandas + numpy |
-
----
-
-## Project Structure
-
-```
-credit-risk-ai-agents/
+delivery-failure-prediction/
 │
-├── api_pd.py                    # FastAPI — default probability endpoint
-├── agentes.py                   # CrewAI autonomous agents
-├── app_streamlit.py             # Streamlit dashboard
+├── data/
+│   ├── build_dataset.py       # Data extraction from Amazon S3 (Real 2018 data)
+│   ├── packages_train.csv     # Training set (10 routes)
+│   └── packages_validation.csv # Validation set (5 routes)
 │
-├── datos/
-│   ├── pd_validacion.csv        # Validation dataset
-│   └── estados_financieros_validacion.csv
+├── notebooks/
+│   └── 05_final_analysis.ipynb # Core research and model experimentation
 │
-├── artefactos/
-│   └── modelo_pd.pkl            # Trained ML model + scaler
+├── train_model.py             # Operational script for model training
+├── agents_crew.py              # AI Agent tools for risk assessment
+├── dashboard/
+│   └── dashboard.py           # Streamlit operacional dashboard
 │
-├── requirements.txt
-└── README.md
+├── artifacts/
+│   └── delivery_model.pkl      # Trained model object
+│
+└── requirements.txt
 ```
 
 ---
 
-## Quickstart
+## 🚀 Quickstart
 
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
+1. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-# 2. Add API key to .env
-echo "OPENAI_API_KEY=sk-..." > .env
+2. **Rebuild the dataset (requires AWS S3 access):**
+   ```bash
+   python data/build_dataset.py
+   ```
 
-# 3. Start API
-uvicorn api_pd:app --reload
+3. **Train the model:**
+   ```bash
+   python train_model.py
+   ```
 
-# 4. Run dashboard
-streamlit run app_streamlit.py
-```
-
----
-
-## API Endpoint
-
-```
-POST /calcular_pd
-{"id_empresa": 42}
-
-→ {
-    "id_empresa": 42,
-    "pd_12m": 0.0312,
-    "banda_score": "B"
-  }
-```
+4. **Launch the dashboard:**
+   ```bash
+   streamlit run dashboard/dashboard.py
+   ```
 
 ---
 
-## Key Financial Ratios Analyzed
-
-| Ratio | Formula | Interpretation |
-|-------|---------|----------------|
-| Liquidity | Current Assets / Current Liabilities | ≥ 1.2 = healthy |
-| Leverage | Total Liabilities / Equity | ≤ 3 = reasonable |
-| EBITDA Margin | EBITDA / Revenue | > 10% = healthy |
-| Interest Coverage | EBITDA / Interest Expense | > 3x = safe |
-| Revenue Growth | YoY Revenue Change | > 0 = growing |
+## 👨‍💻 Author
+**Wagner Alexandre Campos**  
+Data Analyst | Correlation One DANA Final Portfolio  
+April 2026
 
 ---
 
-## Author
-
-**Wagner Alexandre Campos**
-Data Analyst | Credit Risk & Financial Intelligence
-- 1.5 years Data Science & ML training (Google/Coursera, Correlation One)
-- Stack: Python · FastAPI · CrewAI · scikit-learn · Streamlit · Plotly
-- Projects: Logistics failure prediction + Credit risk AI system
-
----
-
-## License
-
+## ⚖️ License
 MIT License

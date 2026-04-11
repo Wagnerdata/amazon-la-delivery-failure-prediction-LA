@@ -274,31 +274,27 @@ def main() -> None:
     # ── Step 4: Build the output DataFrame ────────────────────────────────────
     print("\n[4/4] Transforming to target schema…")
 
-    records = []
+    # Group records by route for splitting
+    route_records = {}
 
     for route_id, stop_pkgs in pkg_data.items():
-
-        # Skip routes missing from route metadata (shouldn't happen, guard anyway)
         if route_id not in route_data:
             continue
-
+        
+        route_records[route_id] = []
         info      = route_data[route_id]
         station   = info.get("station_code", "DLA0")
         date_str  = info.get("date_YYYY_MM_DD", "2018-07-01")
         dep_time  = info.get("departure_time_utc", "08:00:00")
         stops_geo = info.get("stops", {})
 
-        # ── Route-level features (constant for every package in this route) ──
         shift             = departure_to_shift(dep_time)
         carrier           = station_to_carrier(station)
         weather_risk      = date_to_weather(date_str)
         route_seq         = sequences.get(route_id, {}).get("actual", {})
         route_distance_km = compute_route_distance(stops_geo, route_seq)
-
-        # Total packages on this route (across all stops)
         packages_in_route = sum(len(pkgs) for pkgs in stop_pkgs.values())
 
-        # Map PackageID → number of stops it appears at (double-scan detector)
         pkg_stop_count: dict[str, int] = {}
         for pkgs in stop_pkgs.values():
             for pkg_id in pkgs:
@@ -306,16 +302,11 @@ def main() -> None:
 
         dep_date = datetime.strptime(date_str, "%Y-%m-%d")
 
-        # ── Package-level features ────────────────────────────────────────────
         for stop_id, pkgs in stop_pkgs.items():
             for pkg_id, pkg_info in pkgs.items():
-
                 if not isinstance(pkg_info, dict):
-                    continue   # malformed row — skip
+                    continue
 
-                # package_type: derive from dimensions
-                #   volume > 8 000 cm³ or any side > 60 cm  → high_value
-                #   otherwise                                 → standard
                 dims   = pkg_info.get("dimensions") or {}
                 d      = float(dims.get("depth_cm",  0) or 0)
                 h      = float(dims.get("height_cm", 0) or 0)
@@ -324,8 +315,6 @@ def main() -> None:
                 max_dim = max(d, h, w)
                 pkg_type = "high_value" if (volume > 8_000 or max_dim > 60) else "standard"
 
-                # days_in_fc: departure date − time-window start date
-                #   (approximates time the package waited in the FC before dispatch)
                 tw       = pkg_info.get("time_window") or {}
                 tw_start = tw.get("start_time_utc")
                 days_in_fc = 0
@@ -336,27 +325,18 @@ def main() -> None:
                     except ValueError:
                         days_in_fc = 0
 
-                # scan_status: DELIVERED (success) or DELIVERY_ATTEMPTED (failure)
                 scan = (pkg_info.get("scan_status") or "DELIVERED").strip()
                 failed = scan == "DELIVERY_ATTEMPTED"
 
-                # damaged_on_arrival: proxy for failed delivery (attempted but not completed)
                 damaged_on_arrival = 1 if failed else 0
-
-                # double_scan: package recorded at more than one stop in the route
                 double_scan = 1 if pkg_stop_count.get(pkg_id, 1) > 1 else 0
-
-                # locker_issue: very short planned service time + failed delivery
-                #   (lockers should be quick; failure with short time → locker problem)
                 svc_sec      = float(pkg_info.get("planned_service_time_seconds") or 60)
                 locker_issue = 1 if (svc_sec < 25 and failed) else 0
-
-                # cr_number_missing: no time window → no customer reference on file
                 cr_number_missing = 1 if (
                     not tw_start or str(tw_start) in ("None", "nan", "")
                 ) else 0
 
-                records.append({
+                route_records[route_id].append({
                     "package_id":        pkg_id,
                     "package_type":      pkg_type,
                     "shift":             shift,
@@ -371,50 +351,36 @@ def main() -> None:
                     "cr_number_missing": cr_number_missing,
                 })
 
-    if not records:
-        raise RuntimeError("No records built — check S3 connectivity and route extraction.")
+    # Combine all records into one list for stratified split
+    all_records = []
+    for rid in route_records:
+        all_records.extend(route_records[rid])
+    
+    if not all_records:
+        raise RuntimeError("No records built.")
 
-    df = pd.DataFrame(records)
+    df_full = pd.DataFrame(all_records)
+    
+    # Stratified split to ensure failure rate is preserved
+    from sklearn.model_selection import train_test_split
+    train_df, val_df = train_test_split(
+        df_full, test_size=0.33, random_state=42, 
+        stratify=df_full["damaged_on_arrival"]
+    )
 
-    if len(df) < 500:
-        raise ValueError(
-            f"Only {len(df)} rows produced — need ≥500. "
-            "Increase N_ROUTES at the top of this script."
-        )
-
-    # Enforce exact column order expected by agents.py
     COLS = [
         "package_id", "package_type", "shift", "carrier",
         "route_distance_km", "packages_in_route", "weather_risk",
         "days_in_fc", "double_scan", "locker_issue",
         "damaged_on_arrival", "cr_number_missing",
     ]
-    df = df[COLS]
 
-    df.to_csv(OUTPUT, index=False)
-
-    # ── Summary ───────────────────────────────────────────────────────────────
-    print(f"\n{'='*60}")
-    print(f"  Total rows        : {len(df):,}")
-    print(f"  Columns           : {list(df.columns)}")
-    print()
-    print("  Categorical distributions:")
-    for col in ["package_type", "shift", "carrier", "weather_risk"]:
-        print(f"    {col:<20}: {df[col].value_counts().to_dict()}")
-    print()
-    print("  Binary flag rates:")
-    for col in ["double_scan", "locker_issue", "damaged_on_arrival", "cr_number_missing"]:
-        rate = df[col].mean()
-        print(f"    {col:<22}: {rate:.1%}  ({df[col].sum()} packages)")
-    print()
-    print("  Numeric summary:")
-    print(df[["route_distance_km", "packages_in_route", "days_in_fc"]]
-          .describe().to_string(float_format="{:.2f}".format))
-    print()
-    print("  First 5 rows:")
-    print(df.head().to_string(index=False))
-    print(f"\n  Saved → {OUTPUT}")
-    print("=" * 60)
+    for df, filename in [(train_df, "packages_train.csv"),
+                         (val_df, "packages_validation.csv")]:
+        out_path = DATA_DIR / filename
+        df[COLS].to_csv(out_path, index=False)
+        rate = df["damaged_on_arrival"].mean()
+        print(f"  Saved {len(df):,} rows to {filename} | Failure rate: {rate:.2%}")
 
 
 if __name__ == "__main__":
