@@ -1,0 +1,1001 @@
+package_id,package_type,shift,carrier,route_distance_km,packages_in_route,double_scan,locker_issue,damaged_on_arrival,weather_risk,cr_number_missing,days_in_fc,neighbourhood,accident_risk,traffic_congestion,delivery_failed
+PKG-ES-0000001,locker,night,carrier_B,13.87,61,0,0,0,low,0,4,la Bordeta,medium,low,0
+PKG-ES-0000002,standard,morning,carrier_C,27.86,91,0,0,1,low,1,8,Canyelles,low,medium,1
+PKG-ES-0000003,fragile,night,carrier_C,42.11,45,0,0,0,low,0,6,Provençals del Poblenou,high,low,0
+PKG-ES-0000004,locker,afternoon,carrier_C,70.94,16,0,0,0,low,0,4,Sants,medium,high,0
+PKG-ES-0000005,standard,night,carrier_B,20.35,108,0,0,0,medium,0,7,Can Baró,low,low,0
+PKG-ES-0000006,large,night,carrier_D,39.5,74,0,0,0,low,0,1,les Corts,high,low,1
+PKG-ES-0000007,standard,afternoon,carrier_A,69.69,79,0,0,0,low,0,6,Can Peguera,low,high,0
+PKG-ES-0000008,fragile,afternoon,carrier_C,40.66,85,0,1,0,low,0,5,el Coll,low,high,0
+PKG-ES-0000009,large,afternoon,carrier_B,52.97,37,0,0,0,low,0,8,Vallbona,low,high,1
+PKG-ES-0000010,standard,morning,carrier_A,84.82,40,0,0,0,medium,0,10,Sant Gervasi - la Bonanova,high,medium,0
+PKG-ES-0000011,high_value,night,carrier_A,39.26,92,0,0,1,low,0,9,Sants - Badal,low,low,1
+PKG-ES-0000012,fragile,afternoon,carrier_A,9.04,91,0,0,0,medium,0,1,la Sagrada Família,high,high,0
+PKG-ES-0000013,high_value,afternoon,carrier_A,40.67,114,0,0,0,low,0,10,el Baix Guinardó,medium,high,0
+PKG-ES-0000014,fragile,afternoon,carrier_A,81.68,103,0,0,0,medium,0,0,el Clot,high,high,0
+PKG-ES-0000015,high_value,afternoon,carrier_A,61.13,113,0,0,0,low,0,9,la Marina del Prat Vermell,high,high,0
+PKG-ES-0000016,standard,afternoon,carrier_C,46.75,101,0,0,0,low,0,9,Baró de Viver,low,high,1
+PKG-ES-0000017,standard,morning,carrier_B,19.57,21,0,0,0,medium,0,5,el Besòs i el Maresme,low,medium,0
+PKG-ES-0000018,standard,afternoon,carrier_D,47.32,21,0,0,0,low,0,4,el Camp de l'Arpa del Clot,high,high,0
+PKG-ES-0000019,standard,night,carrier_A,76.46,19,0,0,0,low,0,10,Porta,medium,low,0
+PKG-ES-0000020,fragile,morning,carrier_A,3.97,55,0,0,0,low,0,4,la Maternitat i Sant Ramon,high,medium,0
+PKG-ES-0000021,high_value,afternoon,carrier_A,27.96,113,0,0,0,medium,0,7,Sants - Badal,low,high,0
+PKG-ES-0000022,standard,morning,carrier_A,16.33,103,0,1,1,medium,0,6,la Font d'en Fargues,low,medium,1
+PKG-ES-0000023,standard,afternoon,carrier_D,3.01,35,0,0,0,high,0,10,Sant Andreu,high,high,1
+PKG-ES-0000024,standard,morning,carrier_D,18.51,114,0,0,0,low,0,0,la Prosperitat,medium,medium,0
+PKG-ES-0000025,standard,afternoon,carrier_A,12.59,25,0,0,0,low,0,12,"Vallvidrera, el Tibidabo i les Planes",low,high,0
+PKG-ES-0000026,fragile,morning,carrier_B,25.3,36,0,0,0,low,0,8,la Marina del Prat Vermell,high,medium,1
+PKG-ES-0000027,standard,morning,carrier_C,10.09,91,0,0,0,low,1,10,la Marina de Port,high,medium,0
+PKG-ES-0000028,standard,afternoon,carrier_A,10.07,43,0,0,0,low,0,10,Porta,medium,high,0
+PKG-ES-0000029,high_value,afternoon,carrier_A,53.99,84,0,0,1,low,0,6,Sarrià,high,high,1
+PKG-ES-0000030,standard,afternoon,carrier_D,9.14,58,0,0,0,high,0,4,la Guineueta,low,high,0
+PKG-ES-0000031,standard,afternoon,carrier_A,26.24,46,0,0,0,medium,0,9,Sant Genís dels Agudells,low,high,0
+PKG-ES-0000032,locker,night,carrier_B,28.29,44,0,1,0,low,0,4,Sant Martí de Provençals,medium,low,0
+PKG-ES-0000033,large,afternoon,carrier_D,57.9,90,0,0,1,low,1,10,el Raval,high,high,1
+PKG-ES-0000034,standard,morning,carrier_A,16.98,26,0,0,0,medium,1,2,Vallbona,low,medium,0
+PKG-ES-0000035,high_value,morning,carrier_C,55.44,117,0,0,0,low,0,10,Desconegut,medium,medium,1
+PKG-ES-0000036,fragile,afternoon,carrier_C,16.51,78,0,0,0,low,0,12,la Nova Esquerra de l'Eixample,high,high,1
+PKG-ES-0000037,fragile,afternoon,carrier_B,12.86,82,0,0,0,low,1,3,la Vila Olímpica del Poblenou,medium,high,1
+PKG-ES-0000038,large,morning,carrier_A,16.13,102,1,0,0,high,0,3,el Barri Gòtic,medium,medium,1
+PKG-ES-0000039,standard,night,carrier_A,83.4,72,0,0,1,medium,0,10,la Trinitat Vella,medium,low,0
+PKG-ES-0000040,standard,afternoon,carrier_C,81.29,31,0,1,0,low,0,6,Hostafrancs,medium,high,0
+PKG-ES-0000041,fragile,afternoon,carrier_A,14.52,97,0,0,0,low,0,10,la Vila Olímpica del Poblenou,medium,high,1
+PKG-ES-0000042,locker,afternoon,carrier_A,31.09,70,0,0,0,medium,0,6,la Font d'en Fargues,low,high,0
+PKG-ES-0000043,large,afternoon,carrier_D,76.45,85,0,0,0,high,0,0,les Tres Torres,medium,high,0
+PKG-ES-0000044,high_value,morning,carrier_B,21.25,32,0,0,1,low,0,11,la Barceloneta,medium,medium,1
+PKG-ES-0000045,standard,morning,carrier_A,75.2,92,0,0,0,low,0,5,Can Peguera,low,medium,0
+PKG-ES-0000046,large,night,carrier_B,66.12,103,0,0,0,low,0,4,la Trinitat Nova,medium,low,1
+PKG-ES-0000047,locker,morning,carrier_A,45.97,31,0,0,0,low,0,6,la Trinitat Vella,medium,medium,0
+PKG-ES-0000048,high_value,afternoon,carrier_A,69.73,66,0,0,1,medium,0,10,la Sagrada Família,high,high,1
+PKG-ES-0000049,standard,morning,carrier_C,7.81,83,0,0,0,high,0,12,la Nova Esquerra de l'Eixample,high,medium,1
+PKG-ES-0000050,locker,morning,carrier_B,53.66,83,0,0,0,medium,0,6,el Turó de la Peira,low,medium,0
+PKG-ES-0000051,standard,night,carrier_B,59.48,96,0,0,0,low,0,10,el Carmel,low,low,0
+PKG-ES-0000052,fragile,afternoon,carrier_A,47.92,94,0,0,0,high,0,4,el Congrés i els Indians,low,high,0
+PKG-ES-0000053,fragile,afternoon,carrier_A,69.33,80,0,0,0,high,0,1,Pedralbes,high,high,1
+PKG-ES-0000054,locker,afternoon,carrier_A,24.19,16,0,0,0,low,1,5,la Sagrada Família,high,high,0
+PKG-ES-0000055,standard,morning,carrier_A,9.4,31,0,0,0,medium,1,7,les Roquetes,low,medium,0
+PKG-ES-0000056,high_value,afternoon,carrier_B,55.78,118,0,0,0,low,0,10,Sarrià,high,high,1
+PKG-ES-0000057,fragile,afternoon,carrier_C,32.79,43,0,0,0,low,0,11,el Barri Gòtic,medium,high,0
+PKG-ES-0000058,large,morning,carrier_D,78.24,16,0,0,0,low,0,7,la Font d'en Fargues,low,medium,1
+PKG-ES-0000059,locker,morning,carrier_D,53.11,91,0,0,0,medium,0,0,Sant Martí de Provençals,medium,medium,0
+PKG-ES-0000060,standard,morning,carrier_C,59.05,109,0,0,0,low,0,1,Sants - Badal,low,medium,0
+PKG-ES-0000061,fragile,night,carrier_A,70.5,60,0,0,0,medium,1,5,la Vila de Gràcia,high,low,1
+PKG-ES-0000062,standard,afternoon,carrier_C,83.41,52,0,0,0,low,0,5,la Marina del Prat Vermell,high,high,0
+PKG-ES-0000063,locker,morning,carrier_A,66.8,69,0,0,0,low,0,8,la Vall d'Hebron,medium,medium,0
+PKG-ES-0000064,large,night,carrier_C,67.59,92,0,0,0,high,0,1,les Tres Torres,medium,low,0
+PKG-ES-0000065,standard,afternoon,carrier_C,68.84,96,0,0,0,low,0,1,el Besòs i el Maresme,low,high,0
+PKG-ES-0000066,standard,morning,carrier_B,10.86,96,0,0,0,medium,0,2,el Coll,low,medium,0
+PKG-ES-0000067,standard,morning,carrier_B,82.91,53,0,0,0,low,0,9,la Clota,low,medium,0
+PKG-ES-0000068,large,night,carrier_B,58.77,76,0,0,0,medium,0,0,Diagonal Mar i el Front Marítim del Poblenou,medium,low,0
+PKG-ES-0000069,standard,afternoon,carrier_B,81.38,19,0,0,0,low,0,2,les Roquetes,low,high,1
+PKG-ES-0000070,standard,afternoon,carrier_A,3.78,62,0,0,0,high,0,11,Vilapicina i la Torre Llobeta,medium,high,0
+PKG-ES-0000071,fragile,morning,carrier_A,48.88,111,0,0,0,high,0,5,el Putxet i el Farró,medium,medium,0
+PKG-ES-0000072,standard,night,carrier_D,74.54,32,0,0,1,low,0,2,la Marina de Port,high,low,1
+PKG-ES-0000073,standard,afternoon,carrier_D,69.49,86,0,0,0,low,0,7,Horta,high,high,1
+PKG-ES-0000074,standard,morning,carrier_D,44.41,45,1,0,0,low,0,1,el Clot,high,medium,0
+PKG-ES-0000075,standard,morning,carrier_D,9.97,70,0,0,0,low,0,9,Sant Genís dels Agudells,low,medium,0
+PKG-ES-0000076,high_value,morning,carrier_A,25.08,56,0,0,0,low,0,3,la Teixonera,low,medium,1
+PKG-ES-0000077,standard,morning,carrier_B,24.28,59,0,0,0,low,0,0,Torre Baró,low,medium,0
+PKG-ES-0000078,large,morning,carrier_C,37.02,37,0,0,0,low,0,2,la Barceloneta,medium,medium,0
+PKG-ES-0000079,standard,afternoon,carrier_D,58.24,41,0,0,0,high,0,7,Sant Gervasi - Galvany,high,high,1
+PKG-ES-0000080,standard,afternoon,carrier_A,64.68,112,0,0,0,low,0,0,el Guinardó,medium,high,1
+PKG-ES-0000081,standard,afternoon,carrier_A,23.88,87,0,0,0,low,1,6,Desconegut,medium,high,0
+PKG-ES-0000082,large,morning,carrier_C,29.68,117,0,0,0,high,0,6,la Bordeta,medium,medium,1
+PKG-ES-0000083,standard,afternoon,carrier_B,81.79,55,0,0,0,medium,0,12,"Sant Pere, Santa Caterina i la Ribera",high,high,0
+PKG-ES-0000084,fragile,night,carrier_A,69.04,59,1,0,0,high,0,1,Can Peguera,low,low,0
+PKG-ES-0000085,standard,morning,carrier_C,36.17,91,0,0,0,low,0,7,Can Peguera,low,medium,0
+PKG-ES-0000086,fragile,morning,carrier_A,45.38,52,1,0,0,medium,0,1,Sants - Badal,low,medium,1
+PKG-ES-0000087,high_value,afternoon,carrier_B,65.16,56,0,0,0,low,0,9,les Corts,high,high,1
+PKG-ES-0000088,locker,morning,carrier_A,16.12,77,0,0,0,medium,1,3,la Vila de Gràcia,high,medium,0
+PKG-ES-0000089,standard,morning,carrier_A,32.87,106,0,0,0,low,0,9,el Besòs i el Maresme,low,medium,0
+PKG-ES-0000090,standard,night,carrier_A,43.65,55,0,0,0,medium,0,7,Vallcarca i els Penitents,medium,low,0
+PKG-ES-0000091,fragile,afternoon,carrier_C,11.17,109,1,0,0,low,0,1,el Baix Guinardó,medium,high,0
+PKG-ES-0000092,standard,afternoon,carrier_B,47.38,99,0,0,0,high,0,2,les Roquetes,low,high,0
+PKG-ES-0000093,locker,night,carrier_C,80.5,38,0,0,0,high,0,1,la Verneda i la Pau,low,low,1
+PKG-ES-0000094,high_value,afternoon,carrier_B,78.18,77,0,0,0,medium,0,8,Porta,medium,high,0
+PKG-ES-0000095,large,morning,carrier_A,33.55,70,0,0,0,medium,0,9,Montbau,low,medium,1
+PKG-ES-0000096,standard,morning,carrier_D,59.79,56,0,0,0,medium,1,8,el Poblenou,high,medium,1
+PKG-ES-0000097,standard,afternoon,carrier_B,28.51,21,0,0,0,medium,0,3,el Putxet i el Farró,medium,high,0
+PKG-ES-0000098,locker,afternoon,carrier_A,37.22,79,0,0,0,medium,0,2,Navas,medium,high,0
+PKG-ES-0000099,standard,morning,carrier_B,66.71,120,0,1,0,low,0,9,el Carmel,low,medium,1
+PKG-ES-0000100,high_value,afternoon,carrier_C,46.6,89,0,0,0,high,0,12,la Maternitat i Sant Ramon,high,high,1
+PKG-ES-0000101,standard,night,carrier_B,21.95,56,0,0,0,low,0,2,la Marina de Port,high,low,0
+PKG-ES-0000102,fragile,morning,carrier_B,59.88,54,0,0,0,low,1,10,la Vila Olímpica del Poblenou,medium,medium,0
+PKG-ES-0000103,standard,morning,carrier_B,11.64,45,0,0,0,low,0,5,la Dreta de l'Eixample,high,medium,0
+PKG-ES-0000104,locker,afternoon,carrier_A,44.55,103,0,0,0,low,0,7,Desconegut,medium,high,0
+PKG-ES-0000105,standard,afternoon,carrier_A,80.48,109,1,0,0,low,0,12,Sants,medium,high,0
+PKG-ES-0000106,standard,morning,carrier_A,9.62,71,1,0,1,low,0,9,Ciutat Meridiana,low,medium,1
+PKG-ES-0000107,high_value,morning,carrier_C,44.76,27,0,0,0,low,0,11,Can Baró,low,medium,0
+PKG-ES-0000108,standard,morning,carrier_C,70.81,32,0,1,0,low,0,11,Sant Genís dels Agudells,low,medium,1
+PKG-ES-0000109,locker,morning,carrier_B,76.15,40,0,0,0,low,0,6,la Trinitat Vella,medium,medium,0
+PKG-ES-0000110,locker,morning,carrier_D,84.16,56,0,0,0,medium,0,0,la Salut,low,medium,1
+PKG-ES-0000111,fragile,afternoon,carrier_C,13.53,80,0,0,0,high,1,4,Canyelles,low,high,1
+PKG-ES-0000112,fragile,morning,carrier_C,33.46,108,0,0,0,low,0,12,el Baix Guinardó,medium,medium,0
+PKG-ES-0000113,fragile,night,carrier_C,67.15,94,0,1,0,medium,0,7,Montbau,low,low,1
+PKG-ES-0000114,high_value,morning,carrier_C,81.88,16,0,0,0,low,0,12,la Salut,low,medium,0
+PKG-ES-0000115,fragile,afternoon,carrier_B,77.52,31,0,0,0,low,0,10,Desconegut,medium,high,0
+PKG-ES-0000116,standard,morning,carrier_B,25.55,57,0,0,0,low,0,1,Montbau,low,medium,0
+PKG-ES-0000117,high_value,afternoon,carrier_A,47.25,113,0,0,0,high,0,7,el Turó de la Peira,low,high,1
+PKG-ES-0000118,large,afternoon,carrier_C,80.66,107,0,0,0,medium,0,2,la Marina de Port,high,high,0
+PKG-ES-0000119,standard,morning,carrier_D,82.44,71,0,0,0,high,0,6,la Bordeta,medium,medium,1
+PKG-ES-0000120,standard,afternoon,carrier_A,30.87,63,1,0,0,medium,0,8,la Trinitat Vella,medium,high,0
+PKG-ES-0000121,fragile,afternoon,carrier_C,62.85,24,0,0,0,low,1,10,el Besòs i el Maresme,low,high,0
+PKG-ES-0000122,large,afternoon,carrier_A,72.61,91,0,0,0,low,0,8,el Clot,high,high,1
+PKG-ES-0000123,standard,afternoon,carrier_D,38.8,36,0,0,0,low,0,10,Sant Antoni,high,high,0
+PKG-ES-0000124,standard,morning,carrier_B,26.55,40,0,0,0,medium,0,3,el Parc i la Llacuna del Poblenou,medium,medium,0
+PKG-ES-0000125,fragile,afternoon,carrier_C,60.25,77,1,0,0,low,0,0,la Prosperitat,medium,high,1
+PKG-ES-0000126,high_value,night,carrier_A,22.73,63,0,0,0,low,0,0,Hostafrancs,medium,low,1
+PKG-ES-0000127,standard,morning,carrier_B,83.68,111,0,0,0,low,0,12,el Congrés i els Indians,low,medium,0
+PKG-ES-0000128,standard,afternoon,carrier_C,50.03,58,0,0,1,high,0,3,Ciutat Meridiana,low,high,1
+PKG-ES-0000129,high_value,morning,carrier_A,46.83,66,0,0,0,low,0,5,el Guinardó,medium,medium,0
+PKG-ES-0000130,standard,afternoon,carrier_A,30.76,88,0,0,0,low,1,11,el Parc i la Llacuna del Poblenou,medium,high,1
+PKG-ES-0000131,standard,afternoon,carrier_C,8.97,33,0,1,0,low,0,0,la Vila Olímpica del Poblenou,medium,high,0
+PKG-ES-0000132,large,morning,carrier_A,77.05,101,0,0,0,low,0,3,Montbau,low,medium,0
+PKG-ES-0000133,locker,night,carrier_B,61.51,53,0,0,0,medium,0,4,la Sagrera,medium,low,1
+PKG-ES-0000134,fragile,night,carrier_C,7.8,31,0,0,0,low,0,10,el Coll,low,low,1
+PKG-ES-0000135,standard,night,carrier_B,14.84,81,0,0,0,low,0,5,la Vall d'Hebron,medium,low,0
+PKG-ES-0000136,standard,morning,carrier_B,66.21,25,0,0,0,low,0,0,la Marina del Prat Vermell,high,medium,0
+PKG-ES-0000137,standard,morning,carrier_D,7.6,79,0,0,0,high,0,4,la Trinitat Vella,medium,medium,1
+PKG-ES-0000138,standard,morning,carrier_A,24.6,47,0,0,0,medium,0,0,la Bordeta,medium,medium,1
+PKG-ES-0000139,standard,afternoon,carrier_D,67.53,25,0,0,0,low,0,4,les Corts,high,high,1
+PKG-ES-0000140,standard,morning,carrier_B,36.95,84,0,0,0,medium,0,5,les Tres Torres,medium,medium,0
+PKG-ES-0000141,standard,afternoon,carrier_B,77.44,102,0,0,0,high,0,2,Sants - Badal,low,high,0
+PKG-ES-0000142,standard,morning,carrier_C,71.6,96,0,0,0,low,0,7,Horta,high,medium,0
+PKG-ES-0000143,fragile,afternoon,carrier_B,37.03,42,0,0,0,low,0,11,el Guinardó,medium,high,1
+PKG-ES-0000144,high_value,afternoon,carrier_B,54.54,30,0,0,0,medium,0,6,Pedralbes,high,high,0
+PKG-ES-0000145,standard,morning,carrier_B,21.48,56,0,0,0,medium,0,4,el Parc i la Llacuna del Poblenou,medium,medium,0
+PKG-ES-0000146,standard,afternoon,carrier_C,53.97,102,0,0,0,low,0,1,la Dreta de l'Eixample,high,high,1
+PKG-ES-0000147,standard,morning,carrier_A,46.65,33,0,0,0,low,0,11,el Guinardó,medium,medium,1
+PKG-ES-0000148,large,afternoon,carrier_C,81.94,26,0,0,0,low,0,0,la Font d'en Fargues,low,high,0
+PKG-ES-0000149,locker,morning,carrier_A,13.22,42,0,0,0,medium,0,12,les Tres Torres,medium,medium,0
+PKG-ES-0000150,standard,night,carrier_A,15.28,112,0,0,0,high,0,9,les Corts,high,low,0
+PKG-ES-0000151,standard,morning,carrier_D,43.63,58,0,0,0,low,0,5,el Congrés i els Indians,low,medium,0
+PKG-ES-0000152,standard,night,carrier_B,31.78,42,0,0,0,low,0,1,la Nova Esquerra de l'Eixample,high,low,0
+PKG-ES-0000153,fragile,afternoon,carrier_A,13.4,102,0,0,0,high,0,6,el Coll,low,high,1
+PKG-ES-0000154,large,morning,carrier_B,17.97,54,0,0,0,low,0,7,el Raval,high,medium,0
+PKG-ES-0000155,standard,afternoon,carrier_A,23.86,19,0,0,0,medium,0,8,el Poblenou,high,high,1
+PKG-ES-0000156,standard,afternoon,carrier_A,20.66,60,0,0,0,low,0,11,Horta,high,high,0
+PKG-ES-0000157,standard,afternoon,carrier_A,25.79,109,0,0,0,high,0,3,la Marina del Prat Vermell,high,high,1
+PKG-ES-0000158,locker,morning,carrier_C,22.56,119,0,0,0,high,0,10,la Verneda i la Pau,low,medium,0
+PKG-ES-0000159,high_value,morning,carrier_B,66.11,27,0,0,0,low,0,11,la Dreta de l'Eixample,high,medium,0
+PKG-ES-0000160,high_value,afternoon,carrier_A,80.34,68,0,1,0,medium,0,9,el Camp de l'Arpa del Clot,high,high,0
+PKG-ES-0000161,locker,afternoon,carrier_A,11.38,23,0,0,0,medium,0,12,Sant Genís dels Agudells,low,high,0
+PKG-ES-0000162,standard,afternoon,carrier_C,31.3,37,0,0,0,low,0,2,Diagonal Mar i el Front Marítim del Poblenou,medium,high,1
+PKG-ES-0000163,standard,afternoon,carrier_B,71.25,111,0,0,0,medium,0,3,la Font de la Guatlla,low,high,0
+PKG-ES-0000164,standard,afternoon,carrier_D,41.44,29,0,0,0,low,0,0,l'Antiga Esquerra de l'Eixample,high,high,0
+PKG-ES-0000165,standard,morning,carrier_B,3.61,102,1,0,0,medium,0,8,Torre Baró,low,medium,1
+PKG-ES-0000166,large,morning,carrier_B,74.94,97,0,0,0,low,0,0,el Poble-sec,high,medium,1
+PKG-ES-0000167,large,afternoon,carrier_A,83.23,60,1,1,0,high,0,0,la Verneda i la Pau,low,high,1
+PKG-ES-0000168,standard,afternoon,carrier_D,54.06,103,0,0,0,medium,0,6,el Camp d'en Grassot i Gràcia Nova,medium,high,0
+PKG-ES-0000169,locker,morning,carrier_A,66.62,58,0,0,0,high,0,7,Sant Antoni,high,medium,1
+PKG-ES-0000170,standard,morning,carrier_C,35.31,46,0,0,0,medium,0,10,la Trinitat Nova,medium,medium,0
+PKG-ES-0000171,standard,night,carrier_A,43.82,39,0,0,0,medium,0,11,l'Antiga Esquerra de l'Eixample,high,low,1
+PKG-ES-0000172,standard,morning,carrier_C,12.04,107,0,0,0,low,1,9,Pedralbes,high,medium,0
+PKG-ES-0000173,fragile,morning,carrier_B,38.53,80,0,0,1,low,1,7,Provençals del Poblenou,high,medium,0
+PKG-ES-0000174,standard,night,carrier_C,77.96,62,0,0,0,medium,1,2,el Fort Pienc,high,low,1
+PKG-ES-0000175,high_value,night,carrier_C,69.27,70,0,0,0,high,0,10,Verdun,low,low,0
+PKG-ES-0000176,fragile,afternoon,carrier_A,40.81,22,0,0,0,low,0,4,el Barri Gòtic,medium,high,0
+PKG-ES-0000177,locker,afternoon,carrier_A,36.58,43,0,0,0,low,0,12,Diagonal Mar i el Front Marítim del Poblenou,medium,high,0
+PKG-ES-0000178,fragile,morning,carrier_A,57.57,113,0,0,0,low,0,11,la Font d'en Fargues,low,medium,0
+PKG-ES-0000179,locker,night,carrier_A,29.83,19,0,0,0,low,0,4,Montbau,low,low,0
+PKG-ES-0000180,locker,night,carrier_B,23.71,49,0,0,0,medium,0,11,el Clot,high,low,0
+PKG-ES-0000181,fragile,morning,carrier_B,47.56,110,0,0,0,low,0,6,Hostafrancs,medium,medium,0
+PKG-ES-0000182,high_value,afternoon,carrier_D,27.25,37,0,0,0,low,0,6,Vilapicina i la Torre Llobeta,medium,high,0
+PKG-ES-0000183,high_value,night,carrier_A,71.83,93,0,0,0,medium,0,4,el Poblenou,high,low,1
+PKG-ES-0000184,standard,morning,carrier_D,60.51,77,0,0,0,low,1,1,el Poblenou,high,medium,0
+PKG-ES-0000185,large,morning,carrier_B,13.31,111,0,0,0,low,1,5,la Guineueta,low,medium,1
+PKG-ES-0000186,high_value,afternoon,carrier_A,76.19,71,0,0,0,low,1,0,la Nova Esquerra de l'Eixample,high,high,0
+PKG-ES-0000187,locker,afternoon,carrier_A,41.3,80,0,0,0,low,0,5,el Poble-sec,high,high,0
+PKG-ES-0000188,standard,afternoon,carrier_B,28.83,28,0,0,0,medium,1,10,la Guineueta,low,high,0
+PKG-ES-0000189,standard,afternoon,carrier_B,37.81,15,0,0,1,low,0,9,el Camp d'en Grassot i Gràcia Nova,medium,high,1
+PKG-ES-0000190,locker,night,carrier_A,61.26,83,0,0,0,low,0,3,el Barri Gòtic,medium,low,0
+PKG-ES-0000191,fragile,night,carrier_C,73.59,112,0,1,0,low,0,11,la Vila de Gràcia,high,low,1
+PKG-ES-0000192,fragile,morning,carrier_B,73.5,117,0,0,0,low,0,9,Vallbona,low,medium,0
+PKG-ES-0000193,standard,morning,carrier_C,25.6,90,0,0,0,low,0,10,la Guineueta,low,medium,0
+PKG-ES-0000194,standard,morning,carrier_A,32.75,23,0,0,0,medium,0,6,el Besòs i el Maresme,low,medium,0
+PKG-ES-0000195,large,afternoon,carrier_B,8.07,98,0,0,0,high,0,3,la Teixonera,low,high,0
+PKG-ES-0000196,large,night,carrier_D,38.06,33,0,0,0,medium,0,12,Sant Andreu,high,low,1
+PKG-ES-0000197,locker,afternoon,carrier_B,14.66,115,0,1,0,high,0,3,la Maternitat i Sant Ramon,high,high,0
+PKG-ES-0000198,fragile,afternoon,carrier_A,73.04,93,0,0,0,low,0,9,la Bordeta,medium,high,1
+PKG-ES-0000199,high_value,afternoon,carrier_A,10.37,103,0,0,0,low,0,2,Pedralbes,high,high,0
+PKG-ES-0000200,high_value,night,carrier_D,52.44,53,0,0,0,low,0,12,Sant Gervasi - la Bonanova,high,low,1
+PKG-ES-0000201,fragile,morning,carrier_C,49.63,109,0,0,0,medium,1,4,el Parc i la Llacuna del Poblenou,medium,medium,0
+PKG-ES-0000202,large,night,carrier_B,62.72,96,0,0,0,low,0,5,Pedralbes,high,low,0
+PKG-ES-0000203,fragile,night,carrier_A,42.2,75,0,0,0,medium,0,10,el Bon Pastor,high,low,0
+PKG-ES-0000204,standard,morning,carrier_A,65.45,89,0,0,0,low,0,12,Canyelles,low,medium,0
+PKG-ES-0000205,locker,afternoon,carrier_B,70.07,82,1,0,0,low,0,9,la Sagrera,medium,high,0
+PKG-ES-0000206,large,morning,carrier_C,50.11,105,0,0,0,low,0,1,el Poble-sec,high,medium,0
+PKG-ES-0000207,standard,morning,carrier_A,65.45,25,0,0,0,medium,0,8,la Trinitat Vella,medium,medium,0
+PKG-ES-0000208,standard,night,carrier_D,52.86,50,0,0,0,medium,0,12,Sant Genís dels Agudells,low,low,0
+PKG-ES-0000209,standard,morning,carrier_D,17.57,72,0,0,0,medium,1,7,la Sagrada Família,high,medium,1
+PKG-ES-0000210,standard,night,carrier_D,50.32,15,0,0,0,high,0,4,la Salut,low,low,0
+PKG-ES-0000211,standard,night,carrier_A,50.94,75,0,0,0,low,0,8,la Maternitat i Sant Ramon,high,low,1
+PKG-ES-0000212,standard,morning,carrier_A,9.9,82,0,0,0,low,0,4,Sant Antoni,high,medium,0
+PKG-ES-0000213,large,afternoon,carrier_B,5.16,45,0,0,0,low,0,5,el Poble-sec,high,high,0
+PKG-ES-0000214,fragile,morning,carrier_C,84.82,22,0,0,0,high,0,7,el Camp de l'Arpa del Clot,high,medium,1
+PKG-ES-0000215,standard,night,carrier_A,26.88,65,0,0,0,medium,0,5,Baró de Viver,low,low,0
+PKG-ES-0000216,large,afternoon,carrier_A,43.04,31,0,1,0,medium,0,10,la Font de la Guatlla,low,high,1
+PKG-ES-0000217,high_value,morning,carrier_B,64.97,117,0,1,0,low,0,0,Pedralbes,high,medium,0
+PKG-ES-0000218,standard,morning,carrier_C,32.0,16,0,0,0,low,0,11,la Clota,low,medium,0
+PKG-ES-0000219,large,morning,carrier_C,14.22,38,0,1,0,low,0,3,les Tres Torres,medium,medium,0
+PKG-ES-0000220,high_value,afternoon,carrier_B,26.96,27,1,0,0,high,0,8,Provençals del Poblenou,high,high,0
+PKG-ES-0000221,standard,night,carrier_B,69.76,27,1,0,0,low,0,7,la Vila de Gràcia,high,low,0
+PKG-ES-0000222,fragile,afternoon,carrier_C,60.98,81,0,0,0,medium,1,2,la Clota,low,high,1
+PKG-ES-0000223,standard,afternoon,carrier_D,68.66,16,0,0,0,medium,0,5,les Tres Torres,medium,high,0
+PKG-ES-0000224,standard,morning,carrier_D,27.31,101,0,0,0,medium,0,1,el Clot,high,medium,0
+PKG-ES-0000225,standard,night,carrier_B,81.76,37,0,0,0,medium,1,9,Navas,medium,low,0
+PKG-ES-0000226,standard,night,carrier_B,74.87,73,0,0,0,low,0,6,el Bon Pastor,high,low,0
+PKG-ES-0000227,standard,night,carrier_B,62.89,77,0,0,0,low,0,10,el Poblenou,high,low,0
+PKG-ES-0000228,standard,morning,carrier_B,32.79,78,0,0,0,medium,0,7,la Marina de Port,high,medium,0
+PKG-ES-0000229,fragile,afternoon,carrier_A,31.79,78,0,0,0,medium,0,4,la Sagrada Família,high,high,0
+PKG-ES-0000230,standard,afternoon,carrier_A,27.41,74,0,0,0,low,0,6,les Tres Torres,medium,high,0
+PKG-ES-0000231,large,night,carrier_B,40.41,54,0,0,0,low,0,3,el Carmel,low,low,0
+PKG-ES-0000232,standard,morning,carrier_C,37.12,57,0,0,0,low,0,6,Sant Martí de Provençals,medium,medium,0
+PKG-ES-0000233,standard,afternoon,carrier_C,34.97,87,0,0,0,low,0,8,Vallcarca i els Penitents,medium,high,0
+PKG-ES-0000234,standard,afternoon,carrier_D,73.23,112,0,0,0,low,0,9,Hostafrancs,medium,high,0
+PKG-ES-0000235,standard,morning,carrier_D,25.56,49,0,0,0,low,0,11,la Dreta de l'Eixample,high,medium,0
+PKG-ES-0000236,fragile,morning,carrier_D,79.43,88,0,0,0,low,0,8,el Parc i la Llacuna del Poblenou,medium,medium,1
+PKG-ES-0000237,large,morning,carrier_A,14.13,44,0,0,0,low,0,8,Can Peguera,low,medium,0
+PKG-ES-0000238,standard,morning,carrier_D,66.7,84,0,0,0,high,0,2,la Nova Esquerra de l'Eixample,high,medium,0
+PKG-ES-0000239,locker,morning,carrier_B,18.94,93,0,0,0,medium,1,9,el Carmel,low,medium,0
+PKG-ES-0000240,standard,night,carrier_B,40.92,85,0,0,0,medium,0,0,la Clota,low,low,0
+PKG-ES-0000241,standard,morning,carrier_B,15.13,82,0,1,0,low,0,3,Pedralbes,high,medium,0
+PKG-ES-0000242,locker,afternoon,carrier_D,41.55,78,0,0,0,low,0,11,la Sagrera,medium,high,1
+PKG-ES-0000243,standard,afternoon,carrier_C,36.19,80,0,0,0,medium,0,2,la Vall d'Hebron,medium,high,0
+PKG-ES-0000244,standard,night,carrier_C,44.41,24,0,0,0,low,1,2,el Besòs i el Maresme,low,low,0
+PKG-ES-0000245,high_value,night,carrier_C,78.46,26,0,0,0,medium,0,1,les Roquetes,low,low,0
+PKG-ES-0000246,standard,night,carrier_A,5.17,17,0,0,0,medium,0,2,la Font de la Guatlla,low,low,0
+PKG-ES-0000247,standard,afternoon,carrier_C,24.31,53,1,0,0,high,0,5,el Guinardó,medium,high,1
+PKG-ES-0000248,fragile,morning,carrier_A,40.99,88,0,0,0,low,0,1,el Coll,low,medium,0
+PKG-ES-0000249,fragile,night,carrier_B,71.14,118,0,1,0,low,0,10,el Camp de l'Arpa del Clot,high,low,0
+PKG-ES-0000250,high_value,afternoon,carrier_C,19.77,66,0,0,0,low,1,8,la Font d'en Fargues,low,high,1
+PKG-ES-0000251,high_value,afternoon,carrier_B,61.88,18,0,0,0,low,0,9,el Congrés i els Indians,low,high,0
+PKG-ES-0000252,large,morning,carrier_B,34.96,118,0,0,0,low,0,0,Provençals del Poblenou,high,medium,0
+PKG-ES-0000253,standard,afternoon,carrier_B,61.15,56,0,0,0,high,0,12,Vilapicina i la Torre Llobeta,medium,high,0
+PKG-ES-0000254,standard,night,carrier_A,49.17,65,0,0,0,low,1,4,Diagonal Mar i el Front Marítim del Poblenou,medium,low,0
+PKG-ES-0000255,large,afternoon,carrier_C,28.22,110,0,0,0,medium,0,9,el Bon Pastor,high,high,1
+PKG-ES-0000256,standard,afternoon,carrier_B,78.35,28,0,0,0,low,0,1,"Sant Pere, Santa Caterina i la Ribera",high,high,0
+PKG-ES-0000257,standard,night,carrier_B,73.8,37,0,0,0,low,0,7,Hostafrancs,medium,low,1
+PKG-ES-0000258,fragile,morning,carrier_A,69.16,77,0,0,0,high,0,3,Sant Antoni,high,medium,1
+PKG-ES-0000259,fragile,afternoon,carrier_C,66.27,54,0,0,0,low,0,12,les Tres Torres,medium,high,0
+PKG-ES-0000260,high_value,afternoon,carrier_B,25.76,44,0,0,0,low,1,8,el Besòs i el Maresme,low,high,0
+PKG-ES-0000261,locker,morning,carrier_C,28.22,50,0,0,0,medium,0,1,el Camp de l'Arpa del Clot,high,medium,1
+PKG-ES-0000262,large,night,carrier_C,56.71,15,0,0,0,low,1,12,Verdun,low,low,0
+PKG-ES-0000263,standard,night,carrier_A,26.9,26,0,0,0,high,0,7,la Trinitat Vella,medium,low,1
+PKG-ES-0000264,standard,morning,carrier_A,77.27,60,0,0,0,low,0,6,Desconegut,medium,medium,0
+PKG-ES-0000265,high_value,night,carrier_D,82.17,97,0,0,0,low,0,9,la Barceloneta,medium,low,1
+PKG-ES-0000266,fragile,afternoon,carrier_C,71.46,17,1,0,0,low,0,4,el Parc i la Llacuna del Poblenou,medium,high,0
+PKG-ES-0000267,standard,afternoon,carrier_D,57.59,34,0,0,0,low,0,7,el Clot,high,high,0
+PKG-ES-0000268,standard,afternoon,carrier_B,36.12,56,0,0,0,medium,0,4,la Trinitat Vella,medium,high,0
+PKG-ES-0000269,standard,afternoon,carrier_A,40.63,87,0,0,0,low,0,0,la Sagrera,medium,high,0
+PKG-ES-0000270,standard,night,carrier_B,67.94,43,0,0,0,low,0,1,el Poble-sec,high,low,0
+PKG-ES-0000271,standard,night,carrier_A,40.0,104,0,0,0,medium,0,8,l'Antiga Esquerra de l'Eixample,high,low,1
+PKG-ES-0000272,standard,morning,carrier_B,33.35,80,0,0,0,low,0,7,Sarrià,high,medium,0
+PKG-ES-0000273,standard,morning,carrier_C,27.81,107,0,0,0,low,0,0,el Baix Guinardó,medium,medium,0
+PKG-ES-0000274,standard,morning,carrier_C,63.78,95,0,0,0,medium,0,1,l'Antiga Esquerra de l'Eixample,high,medium,1
+PKG-ES-0000275,fragile,morning,carrier_A,58.65,94,0,0,0,low,0,10,Porta,medium,medium,1
+PKG-ES-0000276,large,afternoon,carrier_B,18.28,119,0,0,0,medium,0,6,la Teixonera,low,high,0
+PKG-ES-0000277,standard,afternoon,carrier_B,73.97,83,0,0,0,low,0,10,la Prosperitat,medium,high,0
+PKG-ES-0000278,high_value,afternoon,carrier_C,29.03,40,0,0,0,high,0,7,la Sagrera,medium,high,0
+PKG-ES-0000279,high_value,afternoon,carrier_B,65.68,61,1,0,0,low,0,9,la Marina del Prat Vermell,high,high,0
+PKG-ES-0000280,fragile,morning,carrier_B,58.35,73,0,0,0,high,1,12,Sants,medium,medium,0
+PKG-ES-0000281,standard,afternoon,carrier_A,14.5,120,0,0,0,low,0,1,la Vall d'Hebron,medium,high,1
+PKG-ES-0000282,locker,night,carrier_B,62.84,91,0,0,0,medium,0,12,Sant Gervasi - Galvany,high,low,1
+PKG-ES-0000283,standard,morning,carrier_A,50.18,25,0,0,0,low,0,9,Sant Gervasi - Galvany,high,medium,0
+PKG-ES-0000284,standard,night,carrier_C,50.18,36,0,0,1,low,0,7,Porta,medium,low,1
+PKG-ES-0000285,standard,afternoon,carrier_B,61.83,109,0,0,0,low,0,3,Canyelles,low,high,0
+PKG-ES-0000286,high_value,morning,carrier_A,50.53,42,0,0,0,medium,0,12,la Salut,low,medium,0
+PKG-ES-0000287,standard,afternoon,carrier_B,53.67,114,0,0,0,low,0,4,Vallbona,low,high,0
+PKG-ES-0000288,large,afternoon,carrier_D,81.09,35,0,0,0,low,0,12,la Font d'en Fargues,low,high,0
+PKG-ES-0000289,standard,night,carrier_A,24.29,115,0,0,0,high,0,11,el Putxet i el Farró,medium,low,0
+PKG-ES-0000290,standard,morning,carrier_C,63.57,68,0,0,0,low,0,1,la Dreta de l'Eixample,high,medium,1
+PKG-ES-0000291,standard,night,carrier_B,60.46,17,0,0,0,high,1,4,el Poble-sec,high,low,0
+PKG-ES-0000292,standard,afternoon,carrier_C,18.54,65,0,0,0,low,0,0,la Guineueta,low,high,1
+PKG-ES-0000293,locker,night,carrier_A,59.95,57,0,0,0,low,0,6,el Putxet i el Farró,medium,low,1
+PKG-ES-0000294,fragile,afternoon,carrier_C,27.17,28,0,1,1,low,0,6,Hostafrancs,medium,high,1
+PKG-ES-0000295,standard,afternoon,carrier_A,17.31,57,1,0,0,low,0,3,Sant Genís dels Agudells,low,high,1
+PKG-ES-0000296,high_value,morning,carrier_C,27.92,71,0,0,0,high,0,9,el Barri Gòtic,medium,medium,0
+PKG-ES-0000297,fragile,night,carrier_B,74.37,42,0,0,0,medium,0,4,Diagonal Mar i el Front Marítim del Poblenou,medium,low,0
+PKG-ES-0000298,standard,morning,carrier_A,64.43,98,0,0,0,low,0,6,Vallbona,low,medium,0
+PKG-ES-0000299,large,afternoon,carrier_B,73.5,104,0,0,0,low,0,8,la Marina del Prat Vermell,high,high,0
+PKG-ES-0000300,large,night,carrier_B,54.57,111,0,0,0,low,0,4,"Sant Pere, Santa Caterina i la Ribera",high,low,1
+PKG-ES-0000301,standard,afternoon,carrier_C,34.61,57,0,0,0,low,0,12,Pedralbes,high,high,0
+PKG-ES-0000302,standard,morning,carrier_A,39.93,95,0,0,0,low,0,5,Vilapicina i la Torre Llobeta,medium,medium,1
+PKG-ES-0000303,standard,morning,carrier_A,66.17,30,0,0,0,low,0,4,la Maternitat i Sant Ramon,high,medium,0
+PKG-ES-0000304,standard,morning,carrier_B,77.69,28,0,0,0,medium,1,11,el Carmel,low,medium,0
+PKG-ES-0000305,locker,afternoon,carrier_B,68.98,44,0,0,1,low,0,6,la Nova Esquerra de l'Eixample,high,high,1
+PKG-ES-0000306,fragile,afternoon,carrier_D,3.93,77,0,0,0,low,0,10,el Barri Gòtic,medium,high,1
+PKG-ES-0000307,standard,morning,carrier_A,50.41,58,0,1,0,low,1,2,Vallcarca i els Penitents,medium,medium,1
+PKG-ES-0000308,standard,morning,carrier_A,68.8,88,0,0,0,low,1,1,Sant Gervasi - Galvany,high,medium,0
+PKG-ES-0000309,large,night,carrier_B,78.79,17,0,0,0,low,0,6,Desconegut,medium,low,0
+PKG-ES-0000310,standard,afternoon,carrier_C,29.11,99,0,1,0,low,0,2,la Trinitat Nova,medium,high,1
+PKG-ES-0000311,large,morning,carrier_C,67.43,107,0,0,0,medium,0,10,la Font d'en Fargues,low,medium,1
+PKG-ES-0000312,locker,afternoon,carrier_C,29.78,63,0,0,0,low,0,9,la Prosperitat,medium,high,0
+PKG-ES-0000313,locker,night,carrier_B,84.59,106,0,0,0,low,0,6,Sarrià,high,low,0
+PKG-ES-0000314,standard,afternoon,carrier_B,84.75,81,1,1,1,medium,1,3,Sant Andreu,high,high,0
+PKG-ES-0000315,standard,morning,carrier_B,27.61,93,0,0,0,low,1,9,Porta,medium,medium,0
+PKG-ES-0000316,locker,night,carrier_A,17.15,82,0,0,0,low,0,7,la Vall d'Hebron,medium,low,0
+PKG-ES-0000317,large,afternoon,carrier_A,76.33,100,0,0,0,medium,0,0,la Font de la Guatlla,low,high,0
+PKG-ES-0000318,standard,afternoon,carrier_B,10.17,95,0,1,0,high,0,12,Navas,medium,high,1
+PKG-ES-0000319,fragile,afternoon,carrier_B,46.65,105,0,0,0,low,0,12,la Marina del Prat Vermell,high,high,0
+PKG-ES-0000320,standard,morning,carrier_C,17.42,116,0,0,0,medium,0,8,el Coll,low,medium,0
+PKG-ES-0000321,high_value,afternoon,carrier_C,32.56,78,0,0,0,low,0,12,la Font d'en Fargues,low,high,0
+PKG-ES-0000322,standard,afternoon,carrier_C,82.34,29,0,0,0,medium,0,7,la Prosperitat,medium,high,0
+PKG-ES-0000323,standard,morning,carrier_C,28.67,60,1,0,0,low,0,4,el Camp d'en Grassot i Gràcia Nova,medium,medium,0
+PKG-ES-0000324,locker,morning,carrier_C,18.19,76,0,1,0,medium,0,1,el Barri Gòtic,medium,medium,1
+PKG-ES-0000325,locker,afternoon,carrier_C,72.56,116,0,0,0,low,0,0,Hostafrancs,medium,high,0
+PKG-ES-0000326,standard,afternoon,carrier_B,23.55,57,0,0,0,low,0,2,el Congrés i els Indians,low,high,0
+PKG-ES-0000327,high_value,night,carrier_B,64.9,41,0,0,0,high,0,2,el Carmel,low,low,1
+PKG-ES-0000328,high_value,night,carrier_B,30.46,73,0,0,0,low,0,3,Montbau,low,low,0
+PKG-ES-0000329,fragile,afternoon,carrier_C,67.96,106,0,0,0,low,0,6,el Camp d'en Grassot i Gràcia Nova,medium,high,1
+PKG-ES-0000330,fragile,afternoon,carrier_D,28.99,120,0,0,0,low,0,8,"Vallvidrera, el Tibidabo i les Planes",low,high,0
+PKG-ES-0000331,standard,afternoon,carrier_B,33.96,97,0,0,1,low,0,4,el Barri Gòtic,medium,high,0
+PKG-ES-0000332,locker,morning,carrier_C,81.3,67,0,0,0,medium,0,12,la Barceloneta,medium,medium,0
+PKG-ES-0000333,standard,afternoon,carrier_A,4.28,76,0,0,0,low,0,10,la Font d'en Fargues,low,high,0
+PKG-ES-0000334,high_value,morning,carrier_B,72.54,81,1,0,0,low,0,10,Canyelles,low,medium,0
+PKG-ES-0000335,standard,afternoon,carrier_C,46.08,58,0,0,0,high,0,7,la Font d'en Fargues,low,high,0
+PKG-ES-0000336,standard,morning,carrier_B,72.03,113,1,0,0,low,0,1,la Trinitat Vella,medium,medium,0
+PKG-ES-0000337,large,afternoon,carrier_A,82.6,85,0,0,0,low,0,2,el Turó de la Peira,low,high,0
+PKG-ES-0000338,standard,afternoon,carrier_A,44.3,91,0,0,0,low,0,12,Can Baró,low,high,1
+PKG-ES-0000339,standard,morning,carrier_D,33.85,83,0,1,0,low,0,11,la Sagrada Família,high,medium,1
+PKG-ES-0000340,standard,afternoon,carrier_A,32.99,89,0,0,0,medium,0,5,Sant Martí de Provençals,medium,high,0
+PKG-ES-0000341,standard,morning,carrier_C,84.43,37,0,0,0,low,0,2,"Sant Pere, Santa Caterina i la Ribera",high,medium,0
+PKG-ES-0000342,fragile,afternoon,carrier_C,47.65,56,0,0,0,low,0,4,Navas,medium,high,0
+PKG-ES-0000343,standard,afternoon,carrier_A,30.87,70,0,0,0,high,0,2,Horta,high,high,1
+PKG-ES-0000344,standard,morning,carrier_D,32.36,98,1,0,0,medium,0,1,Can Baró,low,medium,0
+PKG-ES-0000345,high_value,afternoon,carrier_C,27.98,114,0,0,0,low,0,7,la Marina del Prat Vermell,high,high,0
+PKG-ES-0000346,standard,night,carrier_A,42.84,57,0,0,0,high,0,11,Canyelles,low,low,0
+PKG-ES-0000347,standard,morning,carrier_B,19.36,42,0,0,0,medium,1,7,la Bordeta,medium,medium,1
+PKG-ES-0000348,standard,afternoon,carrier_C,83.64,30,0,0,0,low,0,5,les Roquetes,low,high,0
+PKG-ES-0000349,standard,afternoon,carrier_D,75.22,89,0,0,0,high,0,3,la Salut,low,high,1
+PKG-ES-0000350,high_value,night,carrier_B,67.31,39,0,0,0,medium,0,11,el Poblenou,high,low,0
+PKG-ES-0000351,standard,morning,carrier_C,11.43,91,0,1,0,low,0,12,el Besòs i el Maresme,low,medium,0
+PKG-ES-0000352,standard,morning,carrier_A,6.29,117,0,0,0,low,0,5,el Baix Guinardó,medium,medium,0
+PKG-ES-0000353,fragile,morning,carrier_B,79.07,77,0,0,0,high,0,8,Sant Andreu,high,medium,1
+PKG-ES-0000354,standard,night,carrier_B,11.18,49,0,0,0,high,0,2,la Nova Esquerra de l'Eixample,high,low,0
+PKG-ES-0000355,large,night,carrier_D,2.69,77,0,0,0,low,0,1,Horta,high,low,0
+PKG-ES-0000356,standard,afternoon,carrier_C,12.06,49,0,0,0,low,0,10,Montbau,low,high,0
+PKG-ES-0000357,fragile,afternoon,carrier_A,26.76,86,1,0,0,medium,0,8,la Vila Olímpica del Poblenou,medium,high,0
+PKG-ES-0000358,standard,night,carrier_A,23.76,51,0,0,0,low,0,8,Vilapicina i la Torre Llobeta,medium,low,0
+PKG-ES-0000359,standard,morning,carrier_C,45.16,76,0,0,0,low,0,4,la Verneda i la Pau,low,medium,1
+PKG-ES-0000360,fragile,afternoon,carrier_B,26.87,52,0,0,0,low,0,7,la Sagrera,medium,high,0
+PKG-ES-0000361,locker,afternoon,carrier_C,57.94,114,0,0,0,low,1,6,la Nova Esquerra de l'Eixample,high,high,1
+PKG-ES-0000362,standard,morning,carrier_A,66.01,28,0,0,0,medium,0,4,Porta,medium,medium,0
+PKG-ES-0000363,standard,night,carrier_D,83.15,88,0,0,0,low,0,1,Horta,high,low,0
+PKG-ES-0000364,standard,night,carrier_C,29.29,94,0,0,0,medium,0,6,el Poblenou,high,low,1
+PKG-ES-0000365,fragile,night,carrier_A,64.21,16,1,0,0,low,0,10,el Besòs i el Maresme,low,low,0
+PKG-ES-0000366,locker,morning,carrier_A,19.82,44,0,0,0,low,0,2,Sarrià,high,medium,0
+PKG-ES-0000367,high_value,morning,carrier_B,52.14,50,0,0,0,low,0,10,la Vila de Gràcia,high,medium,0
+PKG-ES-0000368,large,night,carrier_A,57.68,50,0,0,1,low,0,1,el Baix Guinardó,medium,low,1
+PKG-ES-0000369,standard,morning,carrier_B,47.42,61,0,0,0,medium,1,0,la Font de la Guatlla,low,medium,1
+PKG-ES-0000370,high_value,afternoon,carrier_B,15.24,37,0,0,0,low,0,4,la Maternitat i Sant Ramon,high,high,0
+PKG-ES-0000371,high_value,night,carrier_D,80.85,114,1,0,0,medium,0,11,Sant Genís dels Agudells,low,low,1
+PKG-ES-0000372,standard,night,carrier_A,30.75,99,0,0,0,medium,0,10,Torre Baró,low,low,0
+PKG-ES-0000373,high_value,morning,carrier_B,5.91,87,0,0,0,medium,0,11,Sant Genís dels Agudells,low,medium,0
+PKG-ES-0000374,standard,morning,carrier_B,62.61,98,0,0,0,low,0,1,Pedralbes,high,medium,0
+PKG-ES-0000375,standard,night,carrier_B,80.13,78,0,0,0,medium,1,8,la Font d'en Fargues,low,low,0
+PKG-ES-0000376,standard,afternoon,carrier_C,75.32,65,0,0,0,low,0,12,el Camp d'en Grassot i Gràcia Nova,medium,high,0
+PKG-ES-0000377,locker,afternoon,carrier_C,31.66,115,0,0,0,low,0,1,Diagonal Mar i el Front Marítim del Poblenou,medium,high,0
+PKG-ES-0000378,standard,morning,carrier_C,28.28,112,0,0,0,low,0,8,la Marina de Port,high,medium,0
+PKG-ES-0000379,locker,morning,carrier_A,32.02,74,0,0,0,medium,1,6,l'Antiga Esquerra de l'Eixample,high,medium,1
+PKG-ES-0000380,standard,night,carrier_C,5.78,81,0,0,0,low,0,2,la Prosperitat,medium,low,1
+PKG-ES-0000381,standard,afternoon,carrier_A,56.41,79,0,0,0,low,1,9,el Bon Pastor,high,high,0
+PKG-ES-0000382,standard,afternoon,carrier_A,33.46,87,0,0,0,medium,0,3,el Congrés i els Indians,low,high,0
+PKG-ES-0000383,standard,afternoon,carrier_A,34.47,104,0,0,0,low,0,3,Sant Genís dels Agudells,low,high,0
+PKG-ES-0000384,locker,morning,carrier_C,2.6,20,0,0,0,low,0,10,el Camp d'en Grassot i Gràcia Nova,medium,medium,0
+PKG-ES-0000385,standard,afternoon,carrier_A,18.45,35,0,0,0,low,0,10,la Guineueta,low,high,0
+PKG-ES-0000386,standard,afternoon,carrier_C,15.9,43,0,0,0,low,0,0,la Marina del Prat Vermell,high,high,1
+PKG-ES-0000387,fragile,morning,carrier_D,36.86,18,0,0,0,low,0,11,la Guineueta,low,medium,1
+PKG-ES-0000388,large,night,carrier_B,74.62,57,0,0,0,low,0,12,la Prosperitat,medium,low,0
+PKG-ES-0000389,standard,afternoon,carrier_B,50.45,68,0,0,0,low,0,7,"Vallvidrera, el Tibidabo i les Planes",low,high,0
+PKG-ES-0000390,high_value,night,carrier_D,27.25,64,0,0,0,high,0,11,la Vila Olímpica del Poblenou,medium,low,0
+PKG-ES-0000391,fragile,morning,carrier_B,31.23,59,1,1,0,high,0,9,el Raval,high,medium,1
+PKG-ES-0000392,locker,night,carrier_C,50.85,81,0,0,0,low,0,5,Horta,high,low,0
+PKG-ES-0000393,fragile,morning,carrier_A,55.21,112,0,0,0,high,0,10,Verdun,low,medium,0
+PKG-ES-0000394,standard,morning,carrier_B,26.12,119,0,0,0,medium,0,5,Baró de Viver,low,medium,1
+PKG-ES-0000395,fragile,night,carrier_B,8.64,59,0,0,0,low,0,7,Vilapicina i la Torre Llobeta,medium,low,0
+PKG-ES-0000396,standard,afternoon,carrier_C,7.61,51,0,0,0,low,0,11,la Salut,low,high,0
+PKG-ES-0000397,high_value,night,carrier_C,14.37,77,0,0,0,medium,0,8,"Sant Pere, Santa Caterina i la Ribera",high,low,0
+PKG-ES-0000398,locker,afternoon,carrier_A,15.23,70,1,0,0,low,1,7,Canyelles,low,high,0
+PKG-ES-0000399,high_value,afternoon,carrier_B,11.79,56,0,0,1,high,0,1,la Font de la Guatlla,low,high,1
+PKG-ES-0000400,standard,afternoon,carrier_A,64.5,118,0,0,0,low,0,7,el Poblenou,high,high,0
+PKG-ES-0000401,standard,morning,carrier_A,24.13,62,0,0,0,low,1,9,el Putxet i el Farró,medium,medium,1
+PKG-ES-0000402,high_value,afternoon,carrier_B,20.62,32,0,0,0,high,0,9,la Barceloneta,medium,high,0
+PKG-ES-0000403,standard,afternoon,carrier_A,27.96,21,0,1,0,high,0,5,la Font de la Guatlla,low,high,0
+PKG-ES-0000404,large,afternoon,carrier_D,29.24,38,0,0,0,low,0,1,la Guineueta,low,high,0
+PKG-ES-0000405,standard,morning,carrier_A,28.96,101,0,0,1,medium,0,4,Can Peguera,low,medium,1
+PKG-ES-0000406,standard,night,carrier_C,54.84,45,0,0,0,low,0,2,la Nova Esquerra de l'Eixample,high,low,0
+PKG-ES-0000407,locker,morning,carrier_A,53.51,16,1,0,1,low,0,2,Can Peguera,low,medium,1
+PKG-ES-0000408,high_value,afternoon,carrier_B,66.38,21,0,0,0,low,0,5,el Bon Pastor,high,high,0
+PKG-ES-0000409,locker,morning,carrier_C,17.2,34,0,0,0,low,0,1,Porta,medium,medium,1
+PKG-ES-0000410,fragile,night,carrier_A,46.08,107,0,0,0,low,0,11,el Putxet i el Farró,medium,low,1
+PKG-ES-0000411,standard,night,carrier_B,9.57,115,1,0,0,medium,0,10,Pedralbes,high,low,0
+PKG-ES-0000412,standard,afternoon,carrier_C,38.86,118,0,1,0,medium,0,12,Can Baró,low,high,1
+PKG-ES-0000413,locker,morning,carrier_B,4.23,36,1,0,0,low,0,3,Vilapicina i la Torre Llobeta,medium,medium,1
+PKG-ES-0000414,standard,afternoon,carrier_C,47.32,27,0,0,0,low,0,0,el Camp d'en Grassot i Gràcia Nova,medium,high,0
+PKG-ES-0000415,standard,morning,carrier_D,18.02,58,0,0,0,low,1,11,la Marina de Port,high,medium,0
+PKG-ES-0000416,large,night,carrier_C,49.42,106,0,0,0,medium,0,5,Hostafrancs,medium,low,1
+PKG-ES-0000417,fragile,afternoon,carrier_B,73.37,77,0,0,0,medium,1,9,el Camp d'en Grassot i Gràcia Nova,medium,high,1
+PKG-ES-0000418,fragile,morning,carrier_C,5.22,54,0,0,0,low,0,1,el Parc i la Llacuna del Poblenou,medium,medium,0
+PKG-ES-0000419,standard,morning,carrier_B,24.52,37,0,0,0,high,0,6,la Sagrada Família,high,medium,0
+PKG-ES-0000420,standard,night,carrier_B,14.51,22,0,0,0,low,1,7,Vallbona,low,low,0
+PKG-ES-0000421,high_value,morning,carrier_C,82.24,44,0,0,0,low,0,6,Can Baró,low,medium,0
+PKG-ES-0000422,standard,morning,carrier_A,13.53,22,0,0,0,low,1,5,Sant Martí de Provençals,medium,medium,0
+PKG-ES-0000423,fragile,afternoon,carrier_A,71.58,30,0,0,0,high,0,8,"Vallvidrera, el Tibidabo i les Planes",low,high,0
+PKG-ES-0000424,standard,afternoon,carrier_D,10.83,104,0,0,0,low,0,10,la Prosperitat,medium,high,1
+PKG-ES-0000425,standard,night,carrier_A,53.29,95,0,0,0,high,0,2,la Font d'en Fargues,low,low,0
+PKG-ES-0000426,standard,night,carrier_C,63.6,23,0,0,0,low,0,10,la Marina del Prat Vermell,high,low,1
+PKG-ES-0000427,fragile,afternoon,carrier_A,40.36,62,0,0,0,medium,0,0,Sant Gervasi - Galvany,high,high,1
+PKG-ES-0000428,standard,afternoon,carrier_A,27.67,59,0,0,0,medium,0,10,l'Antiga Esquerra de l'Eixample,high,high,0
+PKG-ES-0000429,locker,morning,carrier_B,18.92,85,0,0,0,low,0,2,les Roquetes,low,medium,0
+PKG-ES-0000430,large,morning,carrier_A,19.07,117,0,0,0,low,0,0,Can Baró,low,medium,0
+PKG-ES-0000431,standard,afternoon,carrier_C,7.58,68,0,0,0,medium,0,3,la Vall d'Hebron,medium,high,0
+PKG-ES-0000432,fragile,morning,carrier_A,53.01,52,0,0,0,low,0,4,el Poblenou,high,medium,1
+PKG-ES-0000433,large,night,carrier_B,50.07,64,0,0,0,low,0,3,Pedralbes,high,low,0
+PKG-ES-0000434,locker,afternoon,carrier_A,18.69,25,0,0,0,medium,0,0,el Camp d'en Grassot i Gràcia Nova,medium,high,0
+PKG-ES-0000435,large,afternoon,carrier_C,60.9,46,0,0,0,medium,0,3,Sant Martí de Provençals,medium,high,0
+PKG-ES-0000436,large,morning,carrier_D,77.91,15,0,0,0,low,0,7,la Trinitat Vella,medium,medium,0
+PKG-ES-0000437,fragile,afternoon,carrier_A,83.16,91,1,0,0,low,0,7,la Verneda i la Pau,low,high,0
+PKG-ES-0000438,fragile,night,carrier_A,59.6,87,1,0,0,low,0,6,Sarrià,high,low,0
+PKG-ES-0000439,standard,morning,carrier_D,23.7,36,0,0,0,low,1,1,el Guinardó,medium,medium,1
+PKG-ES-0000440,locker,morning,carrier_B,30.81,91,0,0,0,medium,0,0,el Carmel,low,medium,0
+PKG-ES-0000441,locker,afternoon,carrier_A,17.88,103,0,0,0,medium,1,3,Canyelles,low,high,0
+PKG-ES-0000442,large,morning,carrier_C,71.27,87,1,0,1,medium,0,0,"Sant Pere, Santa Caterina i la Ribera",high,medium,0
+PKG-ES-0000443,standard,afternoon,carrier_A,46.45,87,0,0,0,low,0,1,Sarrià,high,high,0
+PKG-ES-0000444,large,afternoon,carrier_A,22.0,78,0,0,0,low,0,7,Sant Martí de Provençals,medium,high,0
+PKG-ES-0000445,standard,night,carrier_A,61.82,96,0,0,0,low,0,6,"Vallvidrera, el Tibidabo i les Planes",low,low,0
+PKG-ES-0000446,standard,morning,carrier_A,78.53,21,0,0,0,medium,0,7,la Trinitat Vella,medium,medium,0
+PKG-ES-0000447,locker,morning,carrier_A,31.49,60,1,0,0,high,0,6,el Poble-sec,high,medium,1
+PKG-ES-0000448,standard,morning,carrier_A,13.69,60,0,0,0,low,0,12,la Font de la Guatlla,low,medium,0
+PKG-ES-0000449,standard,night,carrier_B,3.61,74,0,0,0,high,0,5,el Raval,high,low,0
+PKG-ES-0000450,high_value,night,carrier_A,42.23,60,0,0,0,medium,0,11,el Carmel,low,low,1
+PKG-ES-0000451,high_value,morning,carrier_B,65.45,30,0,0,0,medium,0,11,Can Peguera,low,medium,0
+PKG-ES-0000452,standard,afternoon,carrier_A,77.42,109,0,0,0,low,0,10,el Putxet i el Farró,medium,high,0
+PKG-ES-0000453,standard,night,carrier_B,28.02,59,0,0,0,medium,0,4,la Clota,low,low,1
+PKG-ES-0000454,large,night,carrier_B,38.6,15,0,0,0,high,0,2,el Carmel,low,low,1
+PKG-ES-0000455,fragile,afternoon,carrier_A,83.74,38,0,0,0,low,0,7,el Poblenou,high,high,0
+PKG-ES-0000456,standard,morning,carrier_A,2.2,51,0,0,0,medium,0,5,Can Baró,low,medium,0
+PKG-ES-0000457,standard,night,carrier_D,61.05,23,0,0,0,low,0,2,Sant Antoni,high,low,1
+PKG-ES-0000458,locker,morning,carrier_C,82.46,117,0,0,0,low,0,4,la Trinitat Vella,medium,medium,0
+PKG-ES-0000459,fragile,afternoon,carrier_C,50.44,112,0,0,0,high,1,2,Sants,medium,high,0
+PKG-ES-0000460,standard,afternoon,carrier_A,37.05,84,0,0,0,low,0,6,la Teixonera,low,high,0
+PKG-ES-0000461,large,morning,carrier_B,66.87,24,0,0,0,low,0,5,la Font d'en Fargues,low,medium,0
+PKG-ES-0000462,standard,morning,carrier_B,64.37,38,0,0,0,medium,0,4,Sant Martí de Provençals,medium,medium,0
+PKG-ES-0000463,high_value,morning,carrier_C,33.3,21,0,0,0,medium,0,5,el Bon Pastor,high,medium,0
+PKG-ES-0000464,high_value,afternoon,carrier_D,26.11,41,0,0,0,medium,0,0,el Putxet i el Farró,medium,high,1
+PKG-ES-0000465,large,night,carrier_B,26.85,65,0,0,0,medium,0,1,el Bon Pastor,high,low,0
+PKG-ES-0000466,standard,morning,carrier_A,18.13,72,1,0,0,medium,0,10,Vilapicina i la Torre Llobeta,medium,medium,0
+PKG-ES-0000467,standard,morning,carrier_A,80.13,62,1,0,0,low,0,6,Montbau,low,medium,1
+PKG-ES-0000468,fragile,afternoon,carrier_B,60.58,88,0,0,0,low,0,8,la Font d'en Fargues,low,high,1
+PKG-ES-0000469,locker,afternoon,carrier_A,34.86,115,0,0,0,low,0,11,Sants - Badal,low,high,0
+PKG-ES-0000470,fragile,afternoon,carrier_A,28.67,69,0,0,0,medium,1,5,Sant Antoni,high,high,0
+PKG-ES-0000471,fragile,night,carrier_D,37.36,36,1,0,0,low,0,0,"Vallvidrera, el Tibidabo i les Planes",low,low,0
+PKG-ES-0000472,standard,afternoon,carrier_C,37.42,78,0,0,1,high,0,0,la Marina del Prat Vermell,high,high,1
+PKG-ES-0000473,standard,night,carrier_A,5.17,70,0,0,1,low,0,12,el Fort Pienc,high,low,1
+PKG-ES-0000474,locker,afternoon,carrier_B,8.18,115,0,0,0,medium,0,10,la Font de la Guatlla,low,high,0
+PKG-ES-0000475,high_value,afternoon,carrier_A,11.96,24,0,0,0,low,0,11,Sant Martí de Provençals,medium,high,0
+PKG-ES-0000476,standard,night,carrier_A,58.08,68,0,0,0,high,0,2,Sants - Badal,low,low,0
+PKG-ES-0000477,standard,night,carrier_B,54.81,109,0,0,0,low,0,2,la Bordeta,medium,low,1
+PKG-ES-0000478,large,morning,carrier_C,34.3,110,0,0,0,low,1,3,Horta,high,medium,1
+PKG-ES-0000479,standard,morning,carrier_A,77.06,86,0,0,0,low,0,2,el Poble-sec,high,medium,0
+PKG-ES-0000480,standard,morning,carrier_D,84.29,112,0,0,0,medium,0,1,la Salut,low,medium,0
+PKG-ES-0000481,high_value,morning,carrier_C,70.44,52,0,0,0,low,0,8,Sant Gervasi - la Bonanova,high,medium,0
+PKG-ES-0000482,high_value,morning,carrier_A,9.18,97,0,0,1,low,0,5,el Camp d'en Grassot i Gràcia Nova,medium,medium,1
+PKG-ES-0000483,standard,afternoon,carrier_A,19.0,109,0,0,0,low,0,9,Vilapicina i la Torre Llobeta,medium,high,0
+PKG-ES-0000484,high_value,afternoon,carrier_B,70.91,59,0,0,0,low,0,2,la Vall d'Hebron,medium,high,1
+PKG-ES-0000485,fragile,afternoon,carrier_A,57.66,95,1,0,0,low,0,4,el Camp d'en Grassot i Gràcia Nova,medium,high,1
+PKG-ES-0000486,standard,afternoon,carrier_B,24.84,83,0,0,0,high,0,5,Ciutat Meridiana,low,high,1
+PKG-ES-0000487,high_value,morning,carrier_C,7.97,52,0,0,0,medium,0,10,"Vallvidrera, el Tibidabo i les Planes",low,medium,0
+PKG-ES-0000488,standard,afternoon,carrier_A,33.09,64,0,0,0,low,0,11,Baró de Viver,low,high,0
+PKG-ES-0000489,large,morning,carrier_A,51.93,60,0,0,0,medium,0,1,la Clota,low,medium,0
+PKG-ES-0000490,fragile,afternoon,carrier_C,18.36,21,0,0,0,low,0,1,Sant Gervasi - Galvany,high,high,1
+PKG-ES-0000491,fragile,afternoon,carrier_B,42.36,59,0,0,0,low,1,4,el Guinardó,medium,high,0
+PKG-ES-0000492,standard,afternoon,carrier_D,83.3,35,0,0,0,high,0,6,Desconegut,medium,high,1
+PKG-ES-0000493,standard,night,carrier_A,3.27,31,0,0,0,medium,0,4,la Sagrada Família,high,low,1
+PKG-ES-0000494,standard,afternoon,carrier_C,25.08,18,0,0,0,high,0,2,Vallbona,low,high,1
+PKG-ES-0000495,high_value,afternoon,carrier_B,12.26,107,0,0,0,low,0,8,la Nova Esquerra de l'Eixample,high,high,1
+PKG-ES-0000496,standard,afternoon,carrier_C,56.12,107,1,0,0,high,0,2,el Clot,high,high,1
+PKG-ES-0000497,large,morning,carrier_C,56.32,59,0,0,0,low,0,8,la Maternitat i Sant Ramon,high,medium,0
+PKG-ES-0000498,locker,afternoon,carrier_A,17.34,33,0,0,0,low,0,5,"Vallvidrera, el Tibidabo i les Planes",low,high,0
+PKG-ES-0000499,large,night,carrier_B,83.2,62,0,0,0,low,0,11,la Maternitat i Sant Ramon,high,low,0
+PKG-ES-0000500,standard,afternoon,carrier_C,73.5,116,1,0,1,low,0,7,Vallbona,low,high,1
+PKG-ES-0000501,standard,morning,carrier_A,19.62,84,0,0,0,low,0,9,Horta,high,medium,0
+PKG-ES-0000502,locker,morning,carrier_B,36.06,63,0,0,0,medium,1,9,la Maternitat i Sant Ramon,high,medium,0
+PKG-ES-0000503,standard,afternoon,carrier_A,79.49,43,0,0,0,low,0,8,Sant Antoni,high,high,0
+PKG-ES-0000504,locker,night,carrier_C,44.09,30,0,0,1,medium,0,8,Diagonal Mar i el Front Marítim del Poblenou,medium,low,1
+PKG-ES-0000505,fragile,afternoon,carrier_B,35.36,19,1,0,0,low,0,11,la Bordeta,medium,high,0
+PKG-ES-0000506,high_value,morning,carrier_D,67.1,113,1,0,0,low,0,12,la Marina del Prat Vermell,high,medium,1
+PKG-ES-0000507,standard,morning,carrier_A,29.04,41,0,0,0,medium,0,12,la Font de la Guatlla,low,medium,0
+PKG-ES-0000508,standard,morning,carrier_C,42.62,50,0,0,0,low,1,9,Sants - Badal,low,medium,1
+PKG-ES-0000509,standard,night,carrier_B,29.88,92,0,0,0,high,0,8,les Roquetes,low,low,0
+PKG-ES-0000510,high_value,afternoon,carrier_B,69.21,66,0,0,0,low,0,11,el Camp de l'Arpa del Clot,high,high,1
+PKG-ES-0000511,standard,night,carrier_A,30.17,95,0,0,0,low,0,5,Sant Andreu,high,low,0
+PKG-ES-0000512,locker,morning,carrier_B,38.38,41,0,0,0,low,0,3,Sant Antoni,high,medium,0
+PKG-ES-0000513,high_value,night,carrier_B,34.13,53,0,1,0,medium,1,3,la Guineueta,low,low,0
+PKG-ES-0000514,high_value,afternoon,carrier_D,27.77,101,0,0,0,medium,0,12,el Coll,low,high,0
+PKG-ES-0000515,standard,morning,carrier_D,20.88,66,0,0,0,medium,0,0,el Camp d'en Grassot i Gràcia Nova,medium,medium,1
+PKG-ES-0000516,standard,afternoon,carrier_C,5.52,117,0,0,0,low,0,8,la Marina de Port,high,high,1
+PKG-ES-0000517,fragile,morning,carrier_D,47.94,15,0,0,0,medium,0,6,el Poblenou,high,medium,1
+PKG-ES-0000518,large,afternoon,carrier_D,6.92,58,0,0,0,low,0,0,el Poblenou,high,high,1
+PKG-ES-0000519,high_value,afternoon,carrier_A,21.32,83,1,0,0,medium,0,9,la Bordeta,medium,high,0
+PKG-ES-0000520,standard,morning,carrier_D,71.34,58,0,0,0,medium,0,10,la Teixonera,low,medium,1
+PKG-ES-0000521,standard,morning,carrier_C,14.94,80,0,0,0,low,0,3,les Roquetes,low,medium,0
+PKG-ES-0000522,standard,morning,carrier_D,54.22,99,0,0,0,low,0,4,la Vila de Gràcia,high,medium,1
+PKG-ES-0000523,fragile,afternoon,carrier_B,15.09,64,0,0,0,low,0,9,la Nova Esquerra de l'Eixample,high,high,0
+PKG-ES-0000524,fragile,afternoon,carrier_B,50.16,69,0,1,0,low,0,11,la Vila Olímpica del Poblenou,medium,high,0
+PKG-ES-0000525,standard,morning,carrier_C,24.63,81,0,0,0,low,0,12,el Barri Gòtic,medium,medium,0
+PKG-ES-0000526,standard,afternoon,carrier_B,30.87,119,0,0,0,medium,0,9,Sant Andreu,high,high,0
+PKG-ES-0000527,standard,morning,carrier_A,52.08,87,0,0,0,low,0,8,la Salut,low,medium,0
+PKG-ES-0000528,locker,morning,carrier_B,17.66,69,0,0,0,medium,0,11,el Congrés i els Indians,low,medium,1
+PKG-ES-0000529,locker,night,carrier_A,37.08,42,0,0,0,low,0,7,Pedralbes,high,low,0
+PKG-ES-0000530,large,morning,carrier_D,21.69,120,1,0,0,low,0,5,Verdun,low,medium,1
+PKG-ES-0000531,fragile,morning,carrier_D,35.67,109,0,0,0,medium,0,1,la Barceloneta,medium,medium,0
+PKG-ES-0000532,standard,morning,carrier_A,32.02,36,0,0,0,high,0,8,la Teixonera,low,medium,1
+PKG-ES-0000533,standard,night,carrier_A,35.69,66,0,1,0,low,0,11,Baró de Viver,low,low,0
+PKG-ES-0000534,standard,morning,carrier_B,23.89,120,0,0,0,high,0,9,les Tres Torres,medium,medium,1
+PKG-ES-0000535,high_value,afternoon,carrier_B,18.33,77,0,0,0,low,0,8,Sant Genís dels Agudells,low,high,1
+PKG-ES-0000536,large,morning,carrier_A,66.54,86,0,0,0,low,0,7,Montbau,low,medium,0
+PKG-ES-0000537,high_value,morning,carrier_C,9.09,74,0,0,0,low,1,6,Diagonal Mar i el Front Marítim del Poblenou,medium,medium,1
+PKG-ES-0000538,large,night,carrier_B,13.12,110,0,0,0,medium,0,4,Sant Martí de Provençals,medium,low,0
+PKG-ES-0000539,standard,morning,carrier_A,60.57,54,0,0,0,medium,0,3,el Guinardó,medium,medium,1
+PKG-ES-0000540,standard,afternoon,carrier_A,51.8,34,0,0,0,low,1,3,Hostafrancs,medium,high,1
+PKG-ES-0000541,standard,morning,carrier_B,79.01,89,0,0,0,low,0,12,la Vila Olímpica del Poblenou,medium,medium,0
+PKG-ES-0000542,high_value,afternoon,carrier_A,24.47,91,0,0,0,low,0,2,Verdun,low,high,0
+PKG-ES-0000543,fragile,morning,carrier_B,66.65,21,1,0,0,low,0,8,la Font de la Guatlla,low,medium,0
+PKG-ES-0000544,standard,night,carrier_D,52.09,57,0,0,0,low,0,8,la Vila de Gràcia,high,low,0
+PKG-ES-0000545,standard,night,carrier_A,58.55,102,1,0,0,low,0,5,la Prosperitat,medium,low,0
+PKG-ES-0000546,locker,morning,carrier_A,30.4,118,0,0,0,high,1,6,Baró de Viver,low,medium,0
+PKG-ES-0000547,high_value,night,carrier_A,26.74,36,0,0,0,low,0,9,el Parc i la Llacuna del Poblenou,medium,low,0
+PKG-ES-0000548,locker,night,carrier_C,58.47,109,0,0,0,high,0,12,el Fort Pienc,high,low,1
+PKG-ES-0000549,standard,morning,carrier_B,15.47,72,0,0,0,low,0,7,la Sagrera,medium,medium,1
+PKG-ES-0000550,standard,afternoon,carrier_A,71.92,74,0,0,0,medium,0,12,Ciutat Meridiana,low,high,0
+PKG-ES-0000551,locker,night,carrier_A,80.55,64,0,0,0,low,0,11,la Sagrada Família,high,low,0
+PKG-ES-0000552,locker,afternoon,carrier_B,9.22,56,0,0,0,low,0,1,Diagonal Mar i el Front Marítim del Poblenou,medium,high,1
+PKG-ES-0000553,standard,night,carrier_B,58.24,62,0,0,0,low,1,1,Sant Antoni,high,low,0
+PKG-ES-0000554,standard,afternoon,carrier_C,38.57,46,0,0,0,low,0,12,la Verneda i la Pau,low,high,0
+PKG-ES-0000555,standard,afternoon,carrier_A,80.31,104,0,0,0,high,0,3,el Poble-sec,high,high,1
+PKG-ES-0000556,high_value,morning,carrier_C,48.34,102,1,0,0,low,0,7,Porta,medium,medium,0
+PKG-ES-0000557,large,afternoon,carrier_B,19.43,55,0,1,0,medium,0,11,la Maternitat i Sant Ramon,high,high,1
+PKG-ES-0000558,high_value,night,carrier_D,16.0,47,0,0,0,low,0,10,Vallcarca i els Penitents,medium,low,0
+PKG-ES-0000559,locker,afternoon,carrier_B,69.34,116,0,0,0,low,0,6,Horta,high,high,0
+PKG-ES-0000560,standard,night,carrier_C,12.94,68,0,0,0,medium,0,0,la Trinitat Vella,medium,low,1
+PKG-ES-0000561,standard,morning,carrier_C,27.93,28,0,0,0,low,0,12,la Trinitat Nova,medium,medium,0
+PKG-ES-0000562,standard,morning,carrier_A,72.88,38,0,0,0,high,0,5,el Fort Pienc,high,medium,0
+PKG-ES-0000563,standard,morning,carrier_A,31.16,119,0,0,0,low,0,7,Porta,medium,medium,0
+PKG-ES-0000564,standard,morning,carrier_A,39.37,48,0,0,0,low,0,2,Sant Gervasi - la Bonanova,high,medium,0
+PKG-ES-0000565,fragile,morning,carrier_D,32.17,104,0,0,0,high,0,2,la Teixonera,low,medium,0
+PKG-ES-0000566,fragile,morning,carrier_C,72.06,93,0,0,0,low,0,7,la Trinitat Nova,medium,medium,1
+PKG-ES-0000567,standard,morning,carrier_A,75.38,57,0,0,0,low,0,1,Verdun,low,medium,0
+PKG-ES-0000568,high_value,afternoon,carrier_C,7.65,115,0,0,0,low,0,10,la Bordeta,medium,high,0
+PKG-ES-0000569,high_value,night,carrier_C,22.74,65,0,0,0,low,0,10,el Carmel,low,low,0
+PKG-ES-0000570,locker,afternoon,carrier_A,17.93,39,0,0,0,low,0,6,Can Peguera,low,high,0
+PKG-ES-0000571,high_value,night,carrier_C,81.81,116,0,0,0,low,0,3,el Baix Guinardó,medium,low,0
+PKG-ES-0000572,fragile,morning,carrier_B,42.87,108,0,0,0,low,0,2,la Dreta de l'Eixample,high,medium,0
+PKG-ES-0000573,standard,morning,carrier_C,45.38,61,0,0,0,medium,0,0,Sant Andreu,high,medium,0
+PKG-ES-0000574,high_value,night,carrier_A,50.94,20,0,0,0,medium,0,4,el Raval,high,low,1
+PKG-ES-0000575,standard,night,carrier_C,16.85,106,0,0,0,medium,1,0,Canyelles,low,low,1
+PKG-ES-0000576,standard,afternoon,carrier_B,38.24,112,1,0,0,low,0,4,la Vila de Gràcia,high,high,0
+PKG-ES-0000577,large,morning,carrier_D,67.64,35,0,0,0,high,0,1,"Vallvidrera, el Tibidabo i les Planes",low,medium,0
+PKG-ES-0000578,standard,morning,carrier_A,47.04,97,0,0,0,low,0,12,el Putxet i el Farró,medium,medium,0
+PKG-ES-0000579,large,morning,carrier_A,30.05,31,0,0,0,medium,0,0,la Font d'en Fargues,low,medium,0
+PKG-ES-0000580,standard,night,carrier_A,72.25,97,0,0,0,low,0,2,la Font d'en Fargues,low,low,0
+PKG-ES-0000581,fragile,afternoon,carrier_A,39.81,113,0,0,0,low,0,1,el Camp d'en Grassot i Gràcia Nova,medium,high,0
+PKG-ES-0000582,standard,morning,carrier_C,5.49,22,0,0,0,low,0,10,Can Baró,low,medium,0
+PKG-ES-0000583,high_value,morning,carrier_D,73.17,67,0,0,0,medium,0,5,el Barri Gòtic,medium,medium,0
+PKG-ES-0000584,fragile,morning,carrier_C,11.19,91,0,0,0,low,0,5,Sarrià,high,medium,0
+PKG-ES-0000585,locker,afternoon,carrier_B,65.47,40,0,0,0,high,0,1,el Poble-sec,high,high,0
+PKG-ES-0000586,standard,morning,carrier_A,81.76,109,0,0,1,medium,1,7,Canyelles,low,medium,1
+PKG-ES-0000587,fragile,night,carrier_C,47.88,65,0,0,0,low,0,7,Sant Genís dels Agudells,low,low,0
+PKG-ES-0000588,large,morning,carrier_D,10.84,29,0,0,0,high,0,12,la Font de la Guatlla,low,medium,0
+PKG-ES-0000589,standard,night,carrier_A,58.01,88,0,0,0,medium,0,5,Vallbona,low,low,0
+PKG-ES-0000590,standard,night,carrier_B,32.19,50,0,0,0,high,1,8,Sant Genís dels Agudells,low,low,1
+PKG-ES-0000591,standard,afternoon,carrier_A,9.84,71,0,0,0,high,0,7,Sant Andreu,high,high,1
+PKG-ES-0000592,standard,morning,carrier_A,24.5,20,0,0,0,low,0,9,Ciutat Meridiana,low,medium,0
+PKG-ES-0000593,standard,morning,carrier_A,15.83,96,0,0,1,low,0,0,la Vila de Gràcia,high,medium,1
+PKG-ES-0000594,standard,afternoon,carrier_B,63.27,72,0,0,0,high,0,1,la Prosperitat,medium,high,0
+PKG-ES-0000595,fragile,afternoon,carrier_A,65.61,19,0,0,0,low,0,12,la Vall d'Hebron,medium,high,0
+PKG-ES-0000596,high_value,afternoon,carrier_C,33.87,97,1,0,0,high,0,11,la Prosperitat,medium,high,0
+PKG-ES-0000597,fragile,afternoon,carrier_D,31.61,94,0,0,0,high,0,9,Can Baró,low,high,1
+PKG-ES-0000598,standard,morning,carrier_A,14.94,17,0,0,0,medium,0,3,Verdun,low,medium,0
+PKG-ES-0000599,standard,afternoon,carrier_D,23.89,77,0,0,0,medium,1,0,Desconegut,medium,high,0
+PKG-ES-0000600,large,morning,carrier_C,58.49,20,1,0,0,low,1,6,Sant Genís dels Agudells,low,medium,0
+PKG-ES-0000601,fragile,afternoon,carrier_A,4.64,33,0,0,0,low,0,4,Sants - Badal,low,high,0
+PKG-ES-0000602,standard,morning,carrier_A,52.53,116,0,0,0,high,0,8,les Corts,high,medium,0
+PKG-ES-0000603,fragile,afternoon,carrier_B,70.66,46,0,0,0,medium,0,6,la Guineueta,low,high,0
+PKG-ES-0000604,standard,night,carrier_B,17.19,51,0,0,1,low,0,4,les Roquetes,low,low,1
+PKG-ES-0000605,fragile,morning,carrier_C,32.74,27,0,0,0,high,0,3,la Sagrada Família,high,medium,1
+PKG-ES-0000606,fragile,morning,carrier_B,17.27,82,0,0,0,low,0,10,Desconegut,medium,medium,0
+PKG-ES-0000607,standard,afternoon,carrier_A,79.91,50,0,0,1,medium,0,4,la Nova Esquerra de l'Eixample,high,high,1
+PKG-ES-0000608,large,afternoon,carrier_D,64.37,59,0,0,0,medium,0,8,Vilapicina i la Torre Llobeta,medium,high,0
+PKG-ES-0000609,fragile,morning,carrier_C,12.34,110,0,0,0,low,0,11,el Bon Pastor,high,medium,0
+PKG-ES-0000610,standard,afternoon,carrier_A,26.56,83,0,0,0,low,0,3,la Nova Esquerra de l'Eixample,high,high,0
+PKG-ES-0000611,large,afternoon,carrier_A,36.74,69,1,0,0,low,0,8,"Sant Pere, Santa Caterina i la Ribera",high,high,1
+PKG-ES-0000612,standard,afternoon,carrier_C,63.62,61,0,1,0,high,0,0,les Roquetes,low,high,1
+PKG-ES-0000613,high_value,morning,carrier_A,25.88,108,0,0,0,low,0,3,Torre Baró,low,medium,0
+PKG-ES-0000614,high_value,morning,carrier_A,42.73,30,1,0,0,low,0,2,Sants,medium,medium,0
+PKG-ES-0000615,standard,morning,carrier_C,28.03,102,0,0,0,low,0,3,Sants,medium,medium,0
+PKG-ES-0000616,fragile,afternoon,carrier_B,57.99,23,0,0,0,low,0,9,el Putxet i el Farró,medium,high,1
+PKG-ES-0000617,standard,afternoon,carrier_C,9.38,22,0,0,0,medium,0,8,la Verneda i la Pau,low,high,0
+PKG-ES-0000618,large,night,carrier_B,20.37,64,1,0,0,medium,0,11,Verdun,low,low,0
+PKG-ES-0000619,standard,morning,carrier_A,11.75,47,0,0,0,high,0,0,el Raval,high,medium,0
+PKG-ES-0000620,large,afternoon,carrier_B,39.71,62,0,0,0,medium,0,12,"Sant Pere, Santa Caterina i la Ribera",high,high,1
+PKG-ES-0000621,standard,morning,carrier_C,18.34,62,0,1,0,low,0,6,Horta,high,medium,0
+PKG-ES-0000622,large,afternoon,carrier_D,52.98,78,0,0,0,high,1,9,"Sant Pere, Santa Caterina i la Ribera",high,high,1
+PKG-ES-0000623,fragile,night,carrier_A,37.93,23,1,0,0,low,1,0,la Nova Esquerra de l'Eixample,high,low,0
+PKG-ES-0000624,standard,morning,carrier_C,4.47,98,0,0,0,medium,0,12,el Carmel,low,medium,0
+PKG-ES-0000625,standard,afternoon,carrier_B,35.71,27,0,0,0,low,1,10,la Bordeta,medium,high,0
+PKG-ES-0000626,high_value,night,carrier_B,83.92,19,1,0,0,medium,0,12,el Carmel,low,low,0
+PKG-ES-0000627,fragile,afternoon,carrier_C,59.86,116,0,0,0,medium,1,11,la Salut,low,high,1
+PKG-ES-0000628,standard,morning,carrier_A,20.48,78,0,0,0,low,0,7,Sant Gervasi - la Bonanova,high,medium,0
+PKG-ES-0000629,locker,afternoon,carrier_A,9.57,27,0,0,0,low,0,0,la Guineueta,low,high,0
+PKG-ES-0000630,standard,afternoon,carrier_C,14.8,17,0,0,0,medium,0,6,el Barri Gòtic,medium,high,0
+PKG-ES-0000631,high_value,morning,carrier_A,41.12,45,0,0,0,low,1,6,Hostafrancs,medium,medium,0
+PKG-ES-0000632,standard,afternoon,carrier_A,18.99,29,0,0,0,low,0,1,el Congrés i els Indians,low,high,0
+PKG-ES-0000633,locker,morning,carrier_A,76.0,51,0,0,1,low,1,5,la Sagrera,medium,medium,0
+PKG-ES-0000634,locker,morning,carrier_B,4.46,60,1,0,0,medium,0,8,Baró de Viver,low,medium,0
+PKG-ES-0000635,high_value,afternoon,carrier_A,72.26,76,0,0,0,medium,0,7,la Teixonera,low,high,0
+PKG-ES-0000636,standard,morning,carrier_C,36.1,37,0,0,0,medium,1,6,el Barri Gòtic,medium,medium,0
+PKG-ES-0000637,standard,morning,carrier_B,49.88,113,0,0,0,low,0,7,la Font de la Guatlla,low,medium,1
+PKG-ES-0000638,standard,morning,carrier_B,31.17,79,0,0,0,medium,0,6,Diagonal Mar i el Front Marítim del Poblenou,medium,medium,0
+PKG-ES-0000639,high_value,afternoon,carrier_B,74.96,51,0,0,0,high,0,4,la Vila Olímpica del Poblenou,medium,high,0
+PKG-ES-0000640,fragile,night,carrier_B,45.41,101,0,0,0,medium,0,9,Sant Gervasi - Galvany,high,low,1
+PKG-ES-0000641,high_value,night,carrier_A,40.64,26,0,0,0,high,0,7,el Camp de l'Arpa del Clot,high,low,0
+PKG-ES-0000642,fragile,afternoon,carrier_A,8.79,28,0,0,0,medium,0,7,"Vallvidrera, el Tibidabo i les Planes",low,high,0
+PKG-ES-0000643,large,afternoon,carrier_A,53.86,52,0,0,0,low,0,8,el Baix Guinardó,medium,high,0
+PKG-ES-0000644,high_value,night,carrier_B,39.59,77,1,0,0,low,0,8,la Sagrada Família,high,low,0
+PKG-ES-0000645,standard,morning,carrier_D,83.62,102,0,0,0,high,0,5,Sant Martí de Provençals,medium,medium,0
+PKG-ES-0000646,standard,morning,carrier_A,40.61,49,0,0,0,low,0,8,Canyelles,low,medium,0
+PKG-ES-0000647,standard,morning,carrier_B,67.0,21,0,0,0,high,0,5,el Fort Pienc,high,medium,1
+PKG-ES-0000648,standard,night,carrier_A,72.51,94,1,0,0,medium,0,6,el Poblenou,high,low,1
+PKG-ES-0000649,high_value,night,carrier_B,50.16,79,0,0,0,low,0,9,la Dreta de l'Eixample,high,low,1
+PKG-ES-0000650,standard,morning,carrier_D,44.6,116,0,0,0,medium,0,3,el Raval,high,medium,0
+PKG-ES-0000651,locker,morning,carrier_A,34.22,71,0,0,0,low,0,12,Sants,medium,medium,0
+PKG-ES-0000652,standard,afternoon,carrier_C,58.67,50,0,0,0,low,0,3,Hostafrancs,medium,high,1
+PKG-ES-0000653,standard,afternoon,carrier_D,20.31,36,0,0,0,high,0,2,el Raval,high,high,0
+PKG-ES-0000654,large,morning,carrier_D,60.64,29,0,0,0,low,0,7,el Camp de l'Arpa del Clot,high,medium,1
+PKG-ES-0000655,high_value,morning,carrier_D,83.85,89,0,1,0,medium,0,12,Sant Antoni,high,medium,0
+PKG-ES-0000656,locker,night,carrier_B,46.79,97,0,0,0,low,1,1,el Barri Gòtic,medium,low,1
+PKG-ES-0000657,standard,afternoon,carrier_A,7.14,20,0,1,0,low,0,7,les Corts,high,high,0
+PKG-ES-0000658,fragile,afternoon,carrier_C,73.39,45,0,0,0,medium,0,2,la Bordeta,medium,high,0
+PKG-ES-0000659,fragile,morning,carrier_A,26.0,81,0,0,0,low,0,1,la Font de la Guatlla,low,medium,0
+PKG-ES-0000660,standard,afternoon,carrier_C,49.1,16,0,0,0,high,0,4,la Sagrera,medium,high,0
+PKG-ES-0000661,standard,morning,carrier_A,79.96,75,0,0,0,low,0,4,la Vila Olímpica del Poblenou,medium,medium,0
+PKG-ES-0000662,locker,night,carrier_C,2.39,27,0,0,0,low,0,0,la Clota,low,low,0
+PKG-ES-0000663,locker,morning,carrier_B,53.14,80,0,1,0,low,0,4,les Corts,high,medium,1
+PKG-ES-0000664,large,afternoon,carrier_B,40.86,29,1,0,0,medium,0,11,Porta,medium,high,0
+PKG-ES-0000665,standard,morning,carrier_D,9.31,38,0,0,0,low,0,10,el Bon Pastor,high,medium,0
+PKG-ES-0000666,fragile,afternoon,carrier_C,61.18,53,0,0,0,low,1,11,Sant Genís dels Agudells,low,high,0
+PKG-ES-0000667,high_value,afternoon,carrier_A,60.45,22,0,0,0,low,0,7,Sarrià,high,high,0
+PKG-ES-0000668,locker,afternoon,carrier_C,37.07,47,0,0,0,medium,0,9,Pedralbes,high,high,0
+PKG-ES-0000669,high_value,morning,carrier_C,21.6,99,0,0,0,low,0,10,el Barri Gòtic,medium,medium,0
+PKG-ES-0000670,standard,morning,carrier_C,18.1,20,0,0,0,high,0,11,el Camp de l'Arpa del Clot,high,medium,0
+PKG-ES-0000671,standard,morning,carrier_D,82.45,48,1,0,0,high,1,8,Can Baró,low,medium,1
+PKG-ES-0000672,standard,night,carrier_D,49.81,75,0,0,0,medium,0,8,el Putxet i el Farró,medium,low,0
+PKG-ES-0000673,high_value,afternoon,carrier_B,46.83,62,0,0,0,low,0,6,Porta,medium,high,1
+PKG-ES-0000674,large,morning,carrier_B,82.73,93,0,1,0,low,0,9,les Tres Torres,medium,medium,1
+PKG-ES-0000675,fragile,afternoon,carrier_A,53.96,41,0,0,0,high,0,6,el Barri Gòtic,medium,high,1
+PKG-ES-0000676,large,afternoon,carrier_A,56.92,16,1,0,0,low,0,1,la Font de la Guatlla,low,high,0
+PKG-ES-0000677,standard,morning,carrier_C,14.25,68,0,0,0,medium,0,8,Baró de Viver,low,medium,1
+PKG-ES-0000678,locker,morning,carrier_A,9.57,87,0,0,1,high,0,9,la Dreta de l'Eixample,high,medium,1
+PKG-ES-0000679,high_value,night,carrier_C,3.17,105,0,0,0,low,0,6,Montbau,low,low,1
+PKG-ES-0000680,high_value,night,carrier_B,40.65,82,0,0,0,low,0,4,el Camp d'en Grassot i Gràcia Nova,medium,low,0
+PKG-ES-0000681,standard,afternoon,carrier_C,69.25,99,0,0,0,low,0,8,la Vila de Gràcia,high,high,0
+PKG-ES-0000682,large,morning,carrier_C,71.18,120,0,0,0,low,0,1,la Barceloneta,medium,medium,0
+PKG-ES-0000683,standard,morning,carrier_C,51.9,29,0,0,0,low,0,10,l'Antiga Esquerra de l'Eixample,high,medium,0
+PKG-ES-0000684,standard,morning,carrier_A,67.81,61,0,0,0,medium,0,10,l'Antiga Esquerra de l'Eixample,high,medium,0
+PKG-ES-0000685,high_value,afternoon,carrier_C,23.16,56,0,0,0,low,0,12,les Roquetes,low,high,1
+PKG-ES-0000686,standard,morning,carrier_C,32.23,54,0,0,0,medium,0,5,el Poble-sec,high,medium,0
+PKG-ES-0000687,locker,afternoon,carrier_A,34.87,64,0,0,1,high,0,3,la Trinitat Vella,medium,high,1
+PKG-ES-0000688,locker,night,carrier_B,84.85,89,0,0,0,medium,0,3,el Congrés i els Indians,low,low,0
+PKG-ES-0000689,large,morning,carrier_B,76.91,41,0,0,0,medium,0,11,"Sant Pere, Santa Caterina i la Ribera",high,medium,1
+PKG-ES-0000690,fragile,night,carrier_C,52.76,45,0,0,0,low,0,12,Provençals del Poblenou,high,low,0
+PKG-ES-0000691,fragile,afternoon,carrier_A,72.42,88,0,0,0,high,0,6,la Dreta de l'Eixample,high,high,1
+PKG-ES-0000692,standard,morning,carrier_A,6.34,68,0,0,0,high,0,9,Sant Genís dels Agudells,low,medium,0
+PKG-ES-0000693,fragile,night,carrier_C,44.66,21,0,0,0,low,0,1,Sant Antoni,high,low,0
+PKG-ES-0000694,fragile,afternoon,carrier_A,36.11,66,0,0,1,high,1,12,Canyelles,low,high,0
+PKG-ES-0000695,standard,afternoon,carrier_C,46.81,106,0,0,0,low,0,11,el Guinardó,medium,high,0
+PKG-ES-0000696,large,afternoon,carrier_B,16.4,36,0,0,0,low,0,9,"Vallvidrera, el Tibidabo i les Planes",low,high,0
+PKG-ES-0000697,standard,night,carrier_A,15.94,94,0,0,0,low,0,2,"Vallvidrera, el Tibidabo i les Planes",low,low,0
+PKG-ES-0000698,standard,night,carrier_A,64.71,117,0,1,0,high,0,0,la Vila Olímpica del Poblenou,medium,low,0
+PKG-ES-0000699,standard,afternoon,carrier_B,81.58,105,0,0,0,medium,0,4,la Font de la Guatlla,low,high,0
+PKG-ES-0000700,high_value,night,carrier_C,80.67,113,0,0,0,low,0,5,Diagonal Mar i el Front Marítim del Poblenou,medium,low,1
+PKG-ES-0000701,standard,morning,carrier_A,13.25,110,0,0,0,medium,0,7,Sant Genís dels Agudells,low,medium,0
+PKG-ES-0000702,high_value,afternoon,carrier_C,59.1,58,0,0,0,medium,0,11,el Barri Gòtic,medium,high,0
+PKG-ES-0000703,locker,morning,carrier_A,34.09,42,0,0,0,low,0,7,Vallbona,low,medium,0
+PKG-ES-0000704,high_value,afternoon,carrier_A,22.17,46,0,0,0,medium,0,9,la Sagrada Família,high,high,0
+PKG-ES-0000705,high_value,morning,carrier_D,71.83,56,0,0,0,medium,0,7,la Nova Esquerra de l'Eixample,high,medium,0
+PKG-ES-0000706,high_value,afternoon,carrier_C,62.68,49,0,0,0,low,0,3,la Vall d'Hebron,medium,high,1
+PKG-ES-0000707,locker,night,carrier_A,16.95,107,1,0,1,medium,1,0,la Sagrada Família,high,low,1
+PKG-ES-0000708,standard,morning,carrier_B,82.0,88,0,0,0,low,0,2,la Teixonera,low,medium,1
+PKG-ES-0000709,locker,morning,carrier_A,59.41,74,0,0,0,medium,0,2,Desconegut,medium,medium,0
+PKG-ES-0000710,standard,morning,carrier_C,5.79,88,0,0,0,medium,0,1,la Vila de Gràcia,high,medium,0
+PKG-ES-0000711,standard,afternoon,carrier_A,66.23,120,0,0,0,low,0,12,les Corts,high,high,1
+PKG-ES-0000712,fragile,night,carrier_B,56.79,29,1,0,0,low,0,7,el Clot,high,low,0
+PKG-ES-0000713,fragile,morning,carrier_A,6.91,98,0,1,0,medium,0,9,el Carmel,low,medium,0
+PKG-ES-0000714,standard,morning,carrier_B,84.88,65,0,0,0,low,0,2,Sant Genís dels Agudells,low,medium,0
+PKG-ES-0000715,standard,afternoon,carrier_B,66.39,24,0,0,1,low,0,5,el Raval,high,high,1
+PKG-ES-0000716,locker,night,carrier_B,42.26,39,0,0,0,medium,0,1,Verdun,low,low,0
+PKG-ES-0000717,locker,morning,carrier_C,6.73,58,0,0,0,low,1,6,la Vall d'Hebron,medium,medium,0
+PKG-ES-0000718,standard,morning,carrier_A,76.08,98,0,0,0,medium,0,7,Torre Baró,low,medium,0
+PKG-ES-0000719,large,afternoon,carrier_B,32.08,57,0,0,0,low,1,6,Sant Gervasi - la Bonanova,high,high,0
+PKG-ES-0000720,standard,morning,carrier_B,29.23,87,0,0,0,low,0,12,el Baix Guinardó,medium,medium,0
+PKG-ES-0000721,high_value,night,carrier_C,13.11,114,0,0,0,low,0,12,el Bon Pastor,high,low,1
+PKG-ES-0000722,standard,morning,carrier_C,22.22,18,1,0,0,low,0,6,el Bon Pastor,high,medium,0
+PKG-ES-0000723,large,afternoon,carrier_C,83.0,72,0,0,0,high,0,3,les Corts,high,high,0
+PKG-ES-0000724,standard,morning,carrier_D,7.7,47,0,0,0,low,0,5,la Trinitat Vella,medium,medium,1
+PKG-ES-0000725,standard,night,carrier_C,24.25,116,0,0,0,medium,0,11,Canyelles,low,low,0
+PKG-ES-0000726,standard,afternoon,carrier_A,40.6,91,0,0,0,medium,0,2,Vilapicina i la Torre Llobeta,medium,high,0
+PKG-ES-0000727,fragile,morning,carrier_B,31.07,58,0,0,0,medium,1,9,la Bordeta,medium,medium,0
+PKG-ES-0000728,standard,afternoon,carrier_D,58.83,16,0,0,0,medium,0,12,la Barceloneta,medium,high,1
+PKG-ES-0000729,fragile,night,carrier_A,11.51,39,0,0,0,medium,0,8,el Fort Pienc,high,low,1
+PKG-ES-0000730,locker,afternoon,carrier_A,16.08,84,0,1,0,low,0,9,el Guinardó,medium,high,0
+PKG-ES-0000731,large,morning,carrier_A,69.92,87,0,0,0,high,0,10,el Putxet i el Farró,medium,medium,0
+PKG-ES-0000732,high_value,morning,carrier_B,67.2,42,0,0,0,medium,0,12,la Barceloneta,medium,medium,0
+PKG-ES-0000733,large,night,carrier_B,3.77,110,0,0,0,low,0,8,la Teixonera,low,low,0
+PKG-ES-0000734,standard,morning,carrier_D,65.41,74,0,0,0,medium,0,4,la Prosperitat,medium,medium,1
+PKG-ES-0000735,locker,afternoon,carrier_B,42.71,61,0,0,0,medium,1,12,Porta,medium,high,0
+PKG-ES-0000736,standard,afternoon,carrier_D,40.3,113,0,0,0,low,0,0,Canyelles,low,high,0
+PKG-ES-0000737,fragile,night,carrier_A,41.55,115,0,0,0,low,0,6,Porta,medium,low,1
+PKG-ES-0000738,high_value,afternoon,carrier_A,78.72,88,0,0,0,low,0,12,el Baix Guinardó,medium,high,0
+PKG-ES-0000739,fragile,afternoon,carrier_C,78.89,82,0,0,0,low,0,12,Sarrià,high,high,0
+PKG-ES-0000740,fragile,morning,carrier_D,48.6,66,1,0,0,low,0,3,Torre Baró,low,medium,1
+PKG-ES-0000741,high_value,afternoon,carrier_A,60.65,34,0,0,0,high,0,8,la Bordeta,medium,high,0
+PKG-ES-0000742,standard,afternoon,carrier_A,52.14,21,0,0,0,medium,0,11,el Parc i la Llacuna del Poblenou,medium,high,0
+PKG-ES-0000743,high_value,morning,carrier_D,28.97,30,0,0,0,medium,0,6,Desconegut,medium,medium,0
+PKG-ES-0000744,locker,afternoon,carrier_B,62.44,107,0,0,0,low,0,10,la Dreta de l'Eixample,high,high,0
+PKG-ES-0000745,standard,morning,carrier_A,82.41,107,0,0,0,medium,0,1,la Font de la Guatlla,low,medium,0
+PKG-ES-0000746,standard,morning,carrier_A,61.21,118,0,0,0,low,0,1,Sant Andreu,high,medium,0
+PKG-ES-0000747,standard,afternoon,carrier_D,81.84,44,0,0,0,low,0,5,el Poble-sec,high,high,1
+PKG-ES-0000748,standard,afternoon,carrier_A,37.57,98,0,0,0,low,0,12,la Salut,low,high,1
+PKG-ES-0000749,standard,afternoon,carrier_A,37.62,91,0,0,0,low,0,4,la Vall d'Hebron,medium,high,0
+PKG-ES-0000750,large,morning,carrier_C,3.18,58,0,0,0,high,0,12,la Guineueta,low,medium,1
+PKG-ES-0000751,high_value,afternoon,carrier_C,73.87,116,0,0,0,low,0,7,Can Baró,low,high,0
+PKG-ES-0000752,standard,afternoon,carrier_A,52.69,113,0,0,0,low,0,0,Porta,medium,high,0
+PKG-ES-0000753,large,afternoon,carrier_B,15.58,117,0,0,0,high,0,1,el Guinardó,medium,high,0
+PKG-ES-0000754,locker,afternoon,carrier_A,69.01,89,0,0,0,medium,0,12,el Turó de la Peira,low,high,0
+PKG-ES-0000755,large,afternoon,carrier_C,38.06,83,0,0,0,medium,0,10,Montbau,low,high,0
+PKG-ES-0000756,locker,night,carrier_B,15.81,91,0,0,0,low,0,9,el Besòs i el Maresme,low,low,1
+PKG-ES-0000757,standard,afternoon,carrier_B,21.59,41,0,0,0,low,0,0,el Bon Pastor,high,high,0
+PKG-ES-0000758,standard,afternoon,carrier_A,32.16,79,0,1,0,low,0,3,Ciutat Meridiana,low,high,0
+PKG-ES-0000759,standard,afternoon,carrier_D,59.05,114,0,0,0,high,0,10,Can Baró,low,high,1
+PKG-ES-0000760,locker,afternoon,carrier_A,28.72,82,0,0,0,medium,0,2,Montbau,low,high,0
+PKG-ES-0000761,large,afternoon,carrier_B,82.98,81,0,0,0,low,0,8,la Trinitat Vella,medium,high,0
+PKG-ES-0000762,fragile,night,carrier_C,60.44,72,0,0,0,low,0,11,Montbau,low,low,1
+PKG-ES-0000763,standard,afternoon,carrier_C,57.71,82,0,1,0,low,0,9,la Nova Esquerra de l'Eixample,high,high,0
+PKG-ES-0000764,standard,afternoon,carrier_A,7.86,61,0,0,0,low,0,12,el Raval,high,high,0
+PKG-ES-0000765,standard,morning,carrier_A,59.87,102,0,0,0,low,0,10,Vallcarca i els Penitents,medium,medium,0
+PKG-ES-0000766,fragile,morning,carrier_A,73.99,55,0,1,0,medium,0,2,Sants,medium,medium,0
+PKG-ES-0000767,standard,afternoon,carrier_A,54.1,116,0,0,0,low,0,8,el Carmel,low,high,0
+PKG-ES-0000768,standard,morning,carrier_B,68.31,99,0,0,0,low,0,7,el Coll,low,medium,0
+PKG-ES-0000769,locker,morning,carrier_D,27.19,105,0,0,0,low,0,8,el Parc i la Llacuna del Poblenou,medium,medium,0
+PKG-ES-0000770,locker,afternoon,carrier_A,52.97,35,0,0,0,low,0,12,Pedralbes,high,high,0
+PKG-ES-0000771,fragile,afternoon,carrier_A,56.52,72,0,0,0,medium,0,10,la Clota,low,high,1
+PKG-ES-0000772,standard,morning,carrier_C,62.66,47,0,0,0,medium,0,2,la Clota,low,medium,0
+PKG-ES-0000773,standard,morning,carrier_B,17.78,37,0,0,0,low,0,4,el Raval,high,medium,0
+PKG-ES-0000774,fragile,morning,carrier_D,42.41,63,0,0,0,medium,0,11,Sants - Badal,low,medium,0
+PKG-ES-0000775,large,night,carrier_B,37.72,105,0,0,0,medium,0,5,el Congrés i els Indians,low,low,0
+PKG-ES-0000776,high_value,night,carrier_B,81.58,86,0,0,0,medium,0,3,la Font de la Guatlla,low,low,0
+PKG-ES-0000777,high_value,night,carrier_A,65.92,15,0,0,0,low,0,1,Sant Martí de Provençals,medium,low,1
+PKG-ES-0000778,fragile,morning,carrier_C,68.93,78,0,0,0,medium,1,10,Canyelles,low,medium,0
+PKG-ES-0000779,standard,morning,carrier_A,27.81,86,1,0,0,medium,1,9,la Font d'en Fargues,low,medium,0
+PKG-ES-0000780,fragile,morning,carrier_A,59.85,36,0,0,0,medium,0,7,la Sagrada Família,high,medium,0
+PKG-ES-0000781,standard,morning,carrier_A,57.44,52,0,0,0,medium,0,12,les Corts,high,medium,0
+PKG-ES-0000782,locker,morning,carrier_D,57.93,94,0,0,0,medium,0,7,la Clota,low,medium,0
+PKG-ES-0000783,standard,night,carrier_D,53.41,94,0,0,0,low,0,5,Sant Andreu,high,low,1
+PKG-ES-0000784,fragile,morning,carrier_B,61.14,34,0,0,0,low,0,2,Pedralbes,high,medium,0
+PKG-ES-0000785,locker,night,carrier_A,37.79,115,0,0,0,low,0,5,la Teixonera,low,low,0
+PKG-ES-0000786,standard,night,carrier_B,8.22,22,0,0,0,low,0,8,la Trinitat Vella,medium,low,0
+PKG-ES-0000787,high_value,morning,carrier_B,5.6,54,0,0,0,medium,1,1,la Guineueta,low,medium,0
+PKG-ES-0000788,locker,morning,carrier_A,43.79,119,0,0,0,low,0,5,el Bon Pastor,high,medium,1
+PKG-ES-0000789,locker,morning,carrier_B,46.07,38,0,0,0,low,0,6,el Carmel,low,medium,0
+PKG-ES-0000790,large,morning,carrier_B,71.29,72,0,0,0,low,0,9,"Vallvidrera, el Tibidabo i les Planes",low,medium,0
+PKG-ES-0000791,high_value,afternoon,carrier_C,65.07,26,0,1,0,medium,0,5,la Vall d'Hebron,medium,high,0
+PKG-ES-0000792,high_value,morning,carrier_B,48.13,37,0,0,0,high,0,0,Sant Antoni,high,medium,1
+PKG-ES-0000793,standard,night,carrier_A,33.98,118,0,0,0,low,0,5,Sant Andreu,high,low,0
+PKG-ES-0000794,high_value,afternoon,carrier_C,60.75,104,0,0,0,medium,0,8,la Salut,low,high,0
+PKG-ES-0000795,standard,afternoon,carrier_A,62.74,95,0,0,0,low,0,11,la Trinitat Nova,medium,high,0
+PKG-ES-0000796,standard,morning,carrier_C,79.08,17,0,0,0,high,1,5,la Verneda i la Pau,low,medium,1
+PKG-ES-0000797,high_value,night,carrier_A,34.23,82,0,1,0,high,0,8,el Camp de l'Arpa del Clot,high,low,0
+PKG-ES-0000798,high_value,night,carrier_D,4.43,77,0,0,0,low,0,1,Pedralbes,high,low,1
+PKG-ES-0000799,standard,afternoon,carrier_D,61.58,60,1,0,0,high,0,4,Porta,medium,high,0
+PKG-ES-0000800,fragile,afternoon,carrier_C,55.09,51,0,0,0,low,1,2,l'Antiga Esquerra de l'Eixample,high,high,1
+PKG-ES-0000801,large,morning,carrier_A,81.79,50,0,0,0,medium,0,6,el Turó de la Peira,low,medium,0
+PKG-ES-0000802,standard,afternoon,carrier_A,26.75,16,0,0,0,medium,0,0,Navas,medium,high,0
+PKG-ES-0000803,standard,morning,carrier_A,3.26,78,1,0,0,medium,0,0,el Baix Guinardó,medium,medium,0
+PKG-ES-0000804,large,morning,carrier_C,4.35,87,0,0,0,medium,0,6,la Trinitat Vella,medium,medium,1
+PKG-ES-0000805,standard,afternoon,carrier_B,67.17,80,0,0,0,high,0,9,Vallcarca i els Penitents,medium,high,0
+PKG-ES-0000806,standard,afternoon,carrier_D,18.58,31,0,0,0,medium,0,6,Montbau,low,high,1
+PKG-ES-0000807,standard,afternoon,carrier_C,45.76,35,0,0,0,medium,0,4,el Bon Pastor,high,high,0
+PKG-ES-0000808,fragile,night,carrier_D,33.16,34,0,0,0,low,0,9,Desconegut,medium,low,0
+PKG-ES-0000809,high_value,night,carrier_A,3.06,66,0,0,0,low,0,1,Can Baró,low,low,0
+PKG-ES-0000810,standard,morning,carrier_A,45.42,42,0,0,0,low,0,10,el Parc i la Llacuna del Poblenou,medium,medium,0
+PKG-ES-0000811,fragile,afternoon,carrier_C,80.46,51,1,0,0,low,0,7,el Fort Pienc,high,high,0
+PKG-ES-0000812,locker,afternoon,carrier_B,82.07,76,0,1,0,low,0,7,la Sagrada Família,high,high,1
+PKG-ES-0000813,standard,morning,carrier_C,13.03,72,0,0,0,high,0,3,el Clot,high,medium,0
+PKG-ES-0000814,large,morning,carrier_C,53.51,69,1,0,0,low,0,8,el Poblenou,high,medium,1
+PKG-ES-0000815,standard,afternoon,carrier_B,74.52,100,0,0,0,low,0,11,Canyelles,low,high,1
+PKG-ES-0000816,standard,morning,carrier_A,40.75,119,0,0,0,medium,0,4,Sant Genís dels Agudells,low,medium,0
+PKG-ES-0000817,standard,night,carrier_D,71.95,112,0,0,0,low,1,0,les Corts,high,low,1
+PKG-ES-0000818,locker,night,carrier_C,61.05,97,0,0,0,medium,0,4,les Tres Torres,medium,low,0
+PKG-ES-0000819,standard,night,carrier_B,6.11,81,1,0,1,high,0,10,el Coll,low,low,1
+PKG-ES-0000820,standard,afternoon,carrier_D,67.65,36,0,0,0,low,0,11,el Poblenou,high,high,0
+PKG-ES-0000821,standard,afternoon,carrier_A,83.38,42,0,0,0,high,1,10,"Vallvidrera, el Tibidabo i les Planes",low,high,1
+PKG-ES-0000822,standard,morning,carrier_A,33.0,69,0,0,0,low,0,1,la Sagrera,medium,medium,0
+PKG-ES-0000823,large,night,carrier_C,34.53,108,0,0,0,low,0,12,Hostafrancs,medium,low,0
+PKG-ES-0000824,standard,morning,carrier_B,54.21,52,1,0,1,high,0,9,la Maternitat i Sant Ramon,high,medium,1
+PKG-ES-0000825,high_value,afternoon,carrier_C,3.77,109,0,0,0,low,0,7,el Guinardó,medium,high,1
+PKG-ES-0000826,large,night,carrier_C,63.27,116,0,0,0,low,0,0,el Turó de la Peira,low,low,0
+PKG-ES-0000827,standard,morning,carrier_A,36.42,46,1,1,0,medium,0,0,la Vila de Gràcia,high,medium,0
+PKG-ES-0000828,standard,morning,carrier_A,20.44,83,0,0,0,low,1,4,Provençals del Poblenou,high,medium,0
+PKG-ES-0000829,large,morning,carrier_B,45.14,35,0,0,0,low,1,11,la Font d'en Fargues,low,medium,0
+PKG-ES-0000830,standard,morning,carrier_A,71.31,49,0,0,0,medium,0,12,la Marina de Port,high,medium,0
+PKG-ES-0000831,standard,morning,carrier_A,63.06,39,0,0,0,low,0,7,la Trinitat Vella,medium,medium,0
+PKG-ES-0000832,standard,morning,carrier_D,61.22,41,0,0,0,medium,0,5,la Nova Esquerra de l'Eixample,high,medium,0
+PKG-ES-0000833,locker,morning,carrier_B,53.56,102,1,0,0,low,0,11,les Roquetes,low,medium,1
+PKG-ES-0000834,standard,afternoon,carrier_C,28.34,39,0,0,0,high,0,3,el Poble-sec,high,high,0
+PKG-ES-0000835,high_value,night,carrier_B,48.76,41,0,0,0,low,0,11,la Vila de Gràcia,high,low,1
+PKG-ES-0000836,standard,morning,carrier_B,74.87,40,0,0,0,low,0,4,Torre Baró,low,medium,0
+PKG-ES-0000837,standard,morning,carrier_A,21.83,110,0,0,0,medium,0,11,el Poblenou,high,medium,1
+PKG-ES-0000838,standard,morning,carrier_C,58.5,101,0,0,0,low,0,3,Hostafrancs,medium,medium,0
+PKG-ES-0000839,fragile,morning,carrier_C,75.6,38,0,0,0,high,0,1,la Font de la Guatlla,low,medium,0
+PKG-ES-0000840,high_value,morning,carrier_C,32.6,101,0,0,0,low,0,12,Vallcarca i els Penitents,medium,medium,0
+PKG-ES-0000841,locker,morning,carrier_A,31.98,60,0,0,0,low,0,11,la Vila Olímpica del Poblenou,medium,medium,0
+PKG-ES-0000842,large,afternoon,carrier_A,27.22,32,0,0,0,low,0,9,el Raval,high,high,0
+PKG-ES-0000843,standard,night,carrier_C,4.19,43,0,0,0,high,0,3,la Font de la Guatlla,low,low,0
+PKG-ES-0000844,fragile,afternoon,carrier_A,41.78,69,0,0,0,low,0,8,Torre Baró,low,high,0
+PKG-ES-0000845,standard,night,carrier_D,12.91,48,0,0,0,medium,0,6,la Teixonera,low,low,1
+PKG-ES-0000846,high_value,afternoon,carrier_B,48.34,96,0,0,0,high,0,0,el Poblenou,high,high,1
+PKG-ES-0000847,locker,morning,carrier_B,19.21,19,0,0,0,low,0,1,"Vallvidrera, el Tibidabo i les Planes",low,medium,0
+PKG-ES-0000848,standard,afternoon,carrier_A,50.49,21,0,0,0,medium,0,2,el Parc i la Llacuna del Poblenou,medium,high,0
+PKG-ES-0000849,high_value,afternoon,carrier_A,6.78,22,0,0,0,low,0,10,la Vila Olímpica del Poblenou,medium,high,1
+PKG-ES-0000850,standard,morning,carrier_D,4.96,103,1,0,0,low,1,3,Can Baró,low,medium,0
+PKG-ES-0000851,locker,morning,carrier_A,66.8,73,0,0,0,high,0,1,Sant Gervasi - Galvany,high,medium,1
+PKG-ES-0000852,standard,night,carrier_A,82.05,44,0,0,0,low,0,0,Sant Gervasi - la Bonanova,high,low,0
+PKG-ES-0000853,high_value,afternoon,carrier_B,26.42,52,1,1,0,low,0,11,el Besòs i el Maresme,low,high,0
+PKG-ES-0000854,standard,afternoon,carrier_C,51.78,60,0,0,0,medium,0,12,el Besòs i el Maresme,low,high,1
+PKG-ES-0000855,standard,afternoon,carrier_C,53.94,25,0,0,0,high,1,0,el Parc i la Llacuna del Poblenou,medium,high,1
+PKG-ES-0000856,large,morning,carrier_A,28.28,84,0,0,0,low,0,11,la Marina del Prat Vermell,high,medium,1
+PKG-ES-0000857,standard,afternoon,carrier_D,4.34,23,0,0,0,high,0,2,Sant Martí de Provençals,medium,high,0
+PKG-ES-0000858,large,afternoon,carrier_B,6.89,94,0,0,0,medium,0,3,la Vila Olímpica del Poblenou,medium,high,0
+PKG-ES-0000859,fragile,afternoon,carrier_A,78.76,38,0,0,0,high,1,4,les Tres Torres,medium,high,1
+PKG-ES-0000860,locker,afternoon,carrier_A,4.61,45,0,0,0,low,0,8,Sants,medium,high,0
+PKG-ES-0000861,standard,morning,carrier_D,26.65,31,0,0,0,low,0,2,la Trinitat Nova,medium,medium,1
+PKG-ES-0000862,standard,morning,carrier_A,55.48,86,0,0,0,high,0,0,la Bordeta,medium,medium,0
+PKG-ES-0000863,locker,night,carrier_C,46.57,22,0,0,0,medium,0,12,la Maternitat i Sant Ramon,high,low,0
+PKG-ES-0000864,fragile,afternoon,carrier_D,82.03,53,0,0,0,medium,0,5,la Trinitat Nova,medium,high,0
+PKG-ES-0000865,large,morning,carrier_C,45.34,85,0,0,0,medium,0,11,el Parc i la Llacuna del Poblenou,medium,medium,0
+PKG-ES-0000866,fragile,morning,carrier_C,17.04,79,0,0,0,low,1,8,el Clot,high,medium,0
+PKG-ES-0000867,standard,morning,carrier_A,28.45,78,0,0,0,low,0,4,el Guinardó,medium,medium,0
+PKG-ES-0000868,standard,afternoon,carrier_C,50.23,97,0,0,1,medium,0,7,Ciutat Meridiana,low,high,1
+PKG-ES-0000869,locker,night,carrier_B,11.9,87,0,0,0,low,0,10,la Vila de Gràcia,high,low,0
+PKG-ES-0000870,locker,morning,carrier_C,40.66,57,0,1,0,low,0,12,la Trinitat Vella,medium,medium,0
+PKG-ES-0000871,standard,afternoon,carrier_B,7.11,36,0,0,0,low,0,9,Provençals del Poblenou,high,high,0
+PKG-ES-0000872,standard,afternoon,carrier_B,18.28,97,1,0,0,low,0,6,la Dreta de l'Eixample,high,high,0
+PKG-ES-0000873,standard,morning,carrier_B,23.24,113,0,0,0,low,0,1,la Marina de Port,high,medium,1
+PKG-ES-0000874,standard,afternoon,carrier_A,13.61,33,0,0,0,medium,0,10,Verdun,low,high,1
+PKG-ES-0000875,standard,afternoon,carrier_B,24.73,52,0,0,0,medium,0,3,Sants,medium,high,0
+PKG-ES-0000876,locker,afternoon,carrier_B,67.44,106,0,0,0,low,0,3,Can Baró,low,high,0
+PKG-ES-0000877,fragile,morning,carrier_A,38.03,86,0,0,0,low,1,11,la Nova Esquerra de l'Eixample,high,medium,1
+PKG-ES-0000878,standard,night,carrier_B,64.43,45,0,0,0,medium,0,5,Torre Baró,low,low,0
+PKG-ES-0000879,standard,morning,carrier_A,5.98,95,0,0,0,low,0,12,Vilapicina i la Torre Llobeta,medium,medium,0
+PKG-ES-0000880,standard,afternoon,carrier_A,46.55,54,0,0,0,low,0,6,el Congrés i els Indians,low,high,0
+PKG-ES-0000881,locker,morning,carrier_A,61.72,38,0,0,0,low,0,9,la Teixonera,low,medium,0
+PKG-ES-0000882,locker,morning,carrier_A,79.41,68,0,0,0,medium,0,2,la Dreta de l'Eixample,high,medium,1
+PKG-ES-0000883,locker,night,carrier_D,47.35,20,0,0,0,medium,0,10,la Vila de Gràcia,high,low,0
+PKG-ES-0000884,standard,afternoon,carrier_D,56.03,111,0,0,0,medium,0,12,el Coll,low,high,1
+PKG-ES-0000885,locker,night,carrier_A,83.69,86,0,0,0,low,0,12,el Camp de l'Arpa del Clot,high,low,1
+PKG-ES-0000886,standard,morning,carrier_C,17.16,72,0,0,0,low,0,12,el Clot,high,medium,0
+PKG-ES-0000887,standard,night,carrier_B,11.64,68,0,0,0,low,0,5,el Baix Guinardó,medium,low,0
+PKG-ES-0000888,locker,night,carrier_B,24.82,27,0,0,0,high,0,8,Sants - Badal,low,low,0
+PKG-ES-0000889,standard,morning,carrier_D,7.49,114,0,0,0,high,0,11,Torre Baró,low,medium,1
+PKG-ES-0000890,standard,morning,carrier_A,35.53,20,0,0,0,medium,0,12,la Marina del Prat Vermell,high,medium,1
+PKG-ES-0000891,standard,night,carrier_B,38.97,42,0,0,0,high,0,5,la Marina de Port,high,low,0
+PKG-ES-0000892,locker,morning,carrier_D,58.39,21,0,0,0,high,0,5,el Camp de l'Arpa del Clot,high,medium,1
+PKG-ES-0000893,fragile,night,carrier_B,59.65,17,0,0,0,medium,1,5,Vallbona,low,low,0
+PKG-ES-0000894,standard,afternoon,carrier_C,33.77,49,0,0,0,medium,0,8,Sant Gervasi - Galvany,high,high,1
+PKG-ES-0000895,standard,afternoon,carrier_B,19.96,63,0,0,0,low,0,8,les Roquetes,low,high,0
+PKG-ES-0000896,standard,morning,carrier_B,58.99,81,0,0,0,medium,0,6,"Vallvidrera, el Tibidabo i les Planes",low,medium,0
+PKG-ES-0000897,locker,night,carrier_C,25.56,87,0,0,0,low,0,7,el Congrés i els Indians,low,low,0
+PKG-ES-0000898,standard,afternoon,carrier_C,78.72,101,0,0,0,low,0,7,Sant Andreu,high,high,0
+PKG-ES-0000899,large,afternoon,carrier_A,66.46,48,0,0,0,low,0,12,la Verneda i la Pau,low,high,1
+PKG-ES-0000900,standard,afternoon,carrier_B,52.77,87,0,0,0,low,1,6,Can Baró,low,high,0
+PKG-ES-0000901,fragile,night,carrier_D,49.41,55,0,0,0,low,0,6,Sant Martí de Provençals,medium,low,0
+PKG-ES-0000902,large,night,carrier_C,9.75,71,0,0,1,low,1,3,Vallbona,low,low,1
+PKG-ES-0000903,standard,afternoon,carrier_A,69.06,52,0,0,0,medium,1,8,el Clot,high,high,1
+PKG-ES-0000904,fragile,afternoon,carrier_D,23.29,80,0,0,0,low,0,1,la Verneda i la Pau,low,high,0
+PKG-ES-0000905,standard,night,carrier_C,49.01,72,0,0,0,low,0,6,el Raval,high,low,0
+PKG-ES-0000906,large,afternoon,carrier_A,58.43,75,0,0,0,low,0,7,el Parc i la Llacuna del Poblenou,medium,high,0
+PKG-ES-0000907,standard,afternoon,carrier_C,70.78,108,0,0,0,low,0,0,el Coll,low,high,0
+PKG-ES-0000908,high_value,afternoon,carrier_A,54.5,22,0,0,0,low,1,0,el Barri Gòtic,medium,high,0
+PKG-ES-0000909,standard,afternoon,carrier_A,35.41,37,1,0,0,low,0,10,"Vallvidrera, el Tibidabo i les Planes",low,high,0
+PKG-ES-0000910,high_value,morning,carrier_C,34.96,107,0,0,0,high,0,10,la Font de la Guatlla,low,medium,1
+PKG-ES-0000911,large,afternoon,carrier_D,7.1,104,1,0,0,low,0,1,el Besòs i el Maresme,low,high,0
+PKG-ES-0000912,high_value,afternoon,carrier_B,3.98,69,0,0,0,high,0,9,l'Antiga Esquerra de l'Eixample,high,high,0
+PKG-ES-0000913,standard,morning,carrier_B,31.32,56,0,0,0,low,0,1,Verdun,low,medium,1
+PKG-ES-0000914,large,night,carrier_A,69.95,29,0,0,0,high,0,4,Sant Genís dels Agudells,low,low,0
+PKG-ES-0000915,locker,morning,carrier_C,19.86,24,1,0,1,low,0,5,la Sagrada Família,high,medium,1
+PKG-ES-0000916,standard,morning,carrier_C,65.83,63,0,0,0,medium,0,8,la Trinitat Nova,medium,medium,0
+PKG-ES-0000917,locker,afternoon,carrier_A,71.82,101,0,1,0,low,0,9,Vallbona,low,high,1
+PKG-ES-0000918,standard,morning,carrier_C,27.48,110,0,0,0,low,0,11,la Marina del Prat Vermell,high,medium,1
+PKG-ES-0000919,fragile,morning,carrier_B,7.48,34,1,0,0,low,0,3,"Vallvidrera, el Tibidabo i les Planes",low,medium,0
+PKG-ES-0000920,standard,morning,carrier_B,44.55,30,0,0,0,low,0,0,Vilapicina i la Torre Llobeta,medium,medium,0
+PKG-ES-0000921,high_value,morning,carrier_C,68.7,95,0,0,0,medium,0,4,la Sagrada Família,high,medium,0
+PKG-ES-0000922,locker,morning,carrier_C,7.17,18,0,0,0,medium,0,12,Sant Genís dels Agudells,low,medium,0
+PKG-ES-0000923,large,night,carrier_A,80.47,27,0,0,0,high,1,4,Baró de Viver,low,low,0
+PKG-ES-0000924,large,night,carrier_C,66.15,60,0,0,0,low,0,7,Diagonal Mar i el Front Marítim del Poblenou,medium,low,1
+PKG-ES-0000925,standard,night,carrier_D,53.98,97,0,0,0,low,0,3,Desconegut,medium,low,0
+PKG-ES-0000926,standard,morning,carrier_A,62.37,80,0,0,0,medium,0,8,Provençals del Poblenou,high,medium,0
+PKG-ES-0000927,large,morning,carrier_C,20.94,42,0,0,0,high,0,7,Pedralbes,high,medium,0
+PKG-ES-0000928,locker,afternoon,carrier_B,21.34,24,0,0,0,low,0,10,Pedralbes,high,high,0
+PKG-ES-0000929,large,night,carrier_A,36.76,89,0,0,0,low,0,11,les Corts,high,low,1
+PKG-ES-0000930,high_value,morning,carrier_A,4.86,72,0,0,0,low,0,2,la Nova Esquerra de l'Eixample,high,medium,1
+PKG-ES-0000931,standard,afternoon,carrier_A,23.03,31,0,0,0,low,0,6,la Clota,low,high,0
+PKG-ES-0000932,locker,afternoon,carrier_C,52.9,46,0,0,0,low,0,11,Sant Andreu,high,high,0
+PKG-ES-0000933,high_value,night,carrier_A,10.31,45,0,0,0,medium,1,11,Sant Gervasi - la Bonanova,high,low,0
+PKG-ES-0000934,standard,morning,carrier_B,61.24,22,0,0,0,medium,0,5,la Vila de Gràcia,high,medium,0
+PKG-ES-0000935,standard,afternoon,carrier_C,30.63,105,0,0,0,low,0,0,el Coll,low,high,0
+PKG-ES-0000936,standard,morning,carrier_C,63.99,41,0,0,0,low,0,7,Sants,medium,medium,0
+PKG-ES-0000937,standard,night,carrier_A,15.73,17,0,0,0,low,0,11,Vallbona,low,low,0
+PKG-ES-0000938,high_value,morning,carrier_C,24.16,30,0,0,0,low,0,2,el Parc i la Llacuna del Poblenou,medium,medium,1
+PKG-ES-0000939,fragile,morning,carrier_A,18.04,44,0,0,0,medium,0,4,el Bon Pastor,high,medium,0
+PKG-ES-0000940,high_value,morning,carrier_A,60.05,73,0,0,0,low,0,1,Sant Gervasi - Galvany,high,medium,1
+PKG-ES-0000941,high_value,morning,carrier_A,83.56,19,0,0,0,high,1,4,Diagonal Mar i el Front Marítim del Poblenou,medium,medium,0
+PKG-ES-0000942,high_value,morning,carrier_A,41.68,119,0,0,0,low,0,2,el Besòs i el Maresme,low,medium,0
+PKG-ES-0000943,standard,afternoon,carrier_D,50.81,38,0,0,0,low,0,3,la Clota,low,high,0
+PKG-ES-0000944,standard,afternoon,carrier_C,60.11,70,0,0,0,low,0,2,el Camp d'en Grassot i Gràcia Nova,medium,high,0
+PKG-ES-0000945,large,afternoon,carrier_B,4.78,81,0,0,0,low,1,8,les Tres Torres,medium,high,1
+PKG-ES-0000946,large,afternoon,carrier_B,26.27,79,0,0,0,medium,0,9,"Sant Pere, Santa Caterina i la Ribera",high,high,0
+PKG-ES-0000947,standard,afternoon,carrier_A,19.0,64,0,0,0,medium,0,6,Sant Gervasi - Galvany,high,high,0
+PKG-ES-0000948,fragile,night,carrier_C,19.79,16,0,0,0,medium,0,4,la Vila de Gràcia,high,low,1
+PKG-ES-0000949,standard,morning,carrier_A,28.03,84,0,0,0,medium,0,2,la Sagrada Família,high,medium,0
+PKG-ES-0000950,high_value,morning,carrier_A,73.56,97,0,0,0,low,0,2,les Tres Torres,medium,medium,0
+PKG-ES-0000951,standard,afternoon,carrier_A,46.22,30,0,0,0,medium,0,5,Sarrià,high,high,0
+PKG-ES-0000952,large,afternoon,carrier_A,46.36,94,0,0,0,medium,0,9,Diagonal Mar i el Front Marítim del Poblenou,medium,high,0
+PKG-ES-0000953,standard,afternoon,carrier_C,53.88,54,0,0,0,low,0,12,Provençals del Poblenou,high,high,0
+PKG-ES-0000954,standard,night,carrier_B,15.83,54,0,0,0,low,0,8,la Nova Esquerra de l'Eixample,high,low,0
+PKG-ES-0000955,standard,night,carrier_B,23.93,15,0,0,0,high,0,8,l'Antiga Esquerra de l'Eixample,high,low,0
+PKG-ES-0000956,locker,afternoon,carrier_A,27.75,55,0,0,0,low,0,0,la Bordeta,medium,high,0
+PKG-ES-0000957,fragile,night,carrier_C,27.69,82,0,0,0,medium,1,7,Sants - Badal,low,low,1
+PKG-ES-0000958,locker,afternoon,carrier_C,8.49,78,0,0,0,low,0,8,la Teixonera,low,high,0
+PKG-ES-0000959,standard,morning,carrier_A,14.73,40,0,0,0,low,0,6,Sant Gervasi - la Bonanova,high,medium,0
+PKG-ES-0000960,standard,afternoon,carrier_B,57.79,81,1,0,0,medium,1,0,Pedralbes,high,high,0
+PKG-ES-0000961,standard,afternoon,carrier_A,61.48,51,0,0,0,low,0,7,la Dreta de l'Eixample,high,high,0
+PKG-ES-0000962,standard,night,carrier_C,57.47,100,0,0,0,low,0,3,la Verneda i la Pau,low,low,0
+PKG-ES-0000963,high_value,morning,carrier_A,29.52,33,0,0,0,low,0,4,Baró de Viver,low,medium,0
+PKG-ES-0000964,standard,morning,carrier_A,74.44,37,0,0,0,low,0,10,les Corts,high,medium,0
+PKG-ES-0000965,large,morning,carrier_D,69.58,53,0,0,0,low,0,11,el Fort Pienc,high,medium,0
+PKG-ES-0000966,standard,night,carrier_B,68.11,44,0,0,0,low,0,1,Ciutat Meridiana,low,low,0
+PKG-ES-0000967,standard,night,carrier_C,39.36,89,1,0,0,low,0,8,la Trinitat Nova,medium,low,0
+PKG-ES-0000968,high_value,morning,carrier_B,3.32,112,0,0,0,high,0,4,l'Antiga Esquerra de l'Eixample,high,medium,0
+PKG-ES-0000969,locker,afternoon,carrier_C,30.35,98,0,0,0,medium,0,9,el Bon Pastor,high,high,0
+PKG-ES-0000970,fragile,afternoon,carrier_C,43.0,18,1,0,0,low,0,0,el Carmel,low,high,0
+PKG-ES-0000971,standard,morning,carrier_A,71.45,92,0,0,1,low,0,5,la Maternitat i Sant Ramon,high,medium,1
+PKG-ES-0000972,large,night,carrier_B,80.22,30,0,0,0,low,0,1,Can Peguera,low,low,0
+PKG-ES-0000973,standard,night,carrier_B,44.03,47,0,0,0,low,0,10,Montbau,low,low,0
+PKG-ES-0000974,standard,afternoon,carrier_A,2.8,60,0,0,0,low,0,10,Canyelles,low,high,0
+PKG-ES-0000975,locker,night,carrier_A,54.48,91,0,0,0,high,0,1,Canyelles,low,low,0
+PKG-ES-0000976,locker,morning,carrier_A,15.93,84,0,0,0,low,0,3,Desconegut,medium,medium,1
+PKG-ES-0000977,fragile,afternoon,carrier_A,12.05,36,0,0,0,medium,0,0,el Parc i la Llacuna del Poblenou,medium,high,0
+PKG-ES-0000978,locker,afternoon,carrier_B,69.67,70,0,0,0,low,0,10,l'Antiga Esquerra de l'Eixample,high,high,1
+PKG-ES-0000979,large,morning,carrier_A,16.66,16,1,0,0,high,0,2,el Bon Pastor,high,medium,0
+PKG-ES-0000980,standard,morning,carrier_A,81.91,73,0,0,0,low,0,7,Sant Gervasi - la Bonanova,high,medium,0
+PKG-ES-0000981,locker,afternoon,carrier_B,33.75,86,0,0,0,low,0,7,Sant Genís dels Agudells,low,high,0
+PKG-ES-0000982,standard,afternoon,carrier_C,14.3,103,0,0,0,low,0,10,la Vall d'Hebron,medium,high,0
+PKG-ES-0000983,standard,afternoon,carrier_A,76.24,89,0,0,1,low,0,1,el Poble-sec,high,high,1
+PKG-ES-0000984,locker,afternoon,carrier_D,44.99,117,0,0,0,high,0,6,la Barceloneta,medium,high,0
+PKG-ES-0000985,standard,afternoon,carrier_D,28.96,83,0,0,0,high,0,12,Can Peguera,low,high,0
+PKG-ES-0000986,standard,afternoon,carrier_C,76.67,105,0,0,0,low,0,3,Montbau,low,high,1
+PKG-ES-0000987,fragile,morning,carrier_C,17.78,52,1,0,0,low,0,7,Baró de Viver,low,medium,0
+PKG-ES-0000988,standard,afternoon,carrier_A,45.0,94,0,0,0,low,0,5,Verdun,low,high,0
+PKG-ES-0000989,high_value,night,carrier_B,26.81,47,0,0,0,low,0,4,l'Antiga Esquerra de l'Eixample,high,low,0
+PKG-ES-0000990,standard,morning,carrier_B,49.93,104,0,0,0,low,0,10,Sant Genís dels Agudells,low,medium,1
+PKG-ES-0000991,standard,afternoon,carrier_A,65.93,15,0,0,0,medium,1,10,la Vall d'Hebron,medium,high,1
+PKG-ES-0000992,locker,night,carrier_A,38.81,47,0,0,0,medium,1,1,Verdun,low,low,0
+PKG-ES-0000993,standard,night,carrier_A,71.77,32,0,0,0,high,0,12,Hostafrancs,medium,low,1
+PKG-ES-0000994,standard,afternoon,carrier_B,32.14,32,0,0,0,low,0,1,el Fort Pienc,high,high,0
+PKG-ES-0000995,locker,afternoon,carrier_C,29.37,82,0,0,0,medium,0,9,Canyelles,low,high,0
+PKG-ES-0000996,standard,night,carrier_A,78.64,95,0,0,0,high,0,8,Sant Antoni,high,low,0
+PKG-ES-0000997,high_value,morning,carrier_A,58.02,99,0,0,1,high,0,1,la Vall d'Hebron,medium,medium,1
+PKG-ES-0000998,standard,afternoon,carrier_B,6.39,41,0,0,0,low,0,8,el Baix Guinardó,medium,high,0
+PKG-ES-0000999,high_value,morning,carrier_C,16.61,101,0,0,0,high,0,3,la Nova Esquerra de l'Eixample,high,medium,1
+PKG-ES-0001000,standard,morning,carrier_C,78.89,79,0,0,0,low,0,1,el Fort Pienc,high,medium,0

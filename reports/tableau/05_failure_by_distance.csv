@@ -1,0 +1,4 @@
+distance_bucket,distance_label,total_packages,failures,failure_rate_pct,avg_route_distance_km,min_route_distance_km,max_route_distance_km,avg_packages_in_route,vs_avg_pct_points,urban_density_note
+1. Under 40 km,Dense urban (< 40 km),1006,19,1.89,30.54,25.93,33.57,254.3,1.19,Urban density paradox: dense LA areas have more access barriers
+2. 40-60 km,Suburban mixed (40-60 km),2141,6,0.28,48.92,40.18,58.07,241.4,-0.42,Suburban mix: moderate access complexity
+3. Over 60 km,Long-haul (> 60 km),412,0,0.0,75.13,70.17,80.6,206.5,-0.7,"Long-haul: single-family homes, direct door access"
