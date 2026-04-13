@@ -37,6 +37,16 @@ data/Correlation one dataset/
 Thumbs.db
 desktop.ini
 
+# ── Portfolio Professionalization (Hide from GitHub) ─────────────────────────
+deliverables/
+reports/
+scripts/
+*.docx
+*.xlsx
+*.db
+!sql/run_eda.py
+!sql/eda_queries.sql
+
 # ── IDE ───────────────────────────────────────────────────────────────────────
 .vscode/
 .idea/

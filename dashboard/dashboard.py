@@ -1,28 +1,14 @@
-"""
-Amazon LA — Delivery Failure Prediction Dashboard
-Streamlit application with 3 operational pages.
+import pickle
+from pathlib import Path
 
-Run with:  streamlit run dashboard/dashboard.py
-"""
-
+import numpy as np
+import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import seaborn as sns
 import streamlit as st
-
-# ── Micro-Diagnostic ──
-st.write("🔍 DEBUG: Starting App Bootstrap...")
-try:
-    import pickle
-    from pathlib import Path
-    import numpy as np
-    import pandas as pd
-    import matplotlib
-    matplotlib.use('Agg')
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-    import traceback
-    st.success("✅ Imports & Path: OK")
-except Exception as e:
-    st.error(f"❌ Boot Error: {e}")
-    st.stop()
+import traceback
 
 # ── Paths ────────────────────────────────────
 ROOT        = Path(__file__).parent.parent
