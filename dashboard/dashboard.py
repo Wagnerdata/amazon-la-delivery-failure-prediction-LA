@@ -215,6 +215,15 @@ artifact = load_model()
 # ═══════════════════════════════════
 if page == "Operations Overview":
 
+    # ── KPI Calculations ──
+    total          = len(df)
+    fail_rate      = df['delivery_failed'].mean() * 100
+    n_failed       = df['delivery_failed'].sum()
+    top_carrier    = (df.groupby('carrier')['delivery_failed'].mean()
+                       .idxmax().replace('carrier_D', 'carrier_D (Local Courier)'))
+    top_fail       = df.groupby('carrier')['delivery_failed'].mean().max() * 100
+    cr_miss_rate   = df['cr_number_missing'].mean() * 100
+
     st.markdown(f"""
     <div class='main-header'>
         <h1>📦 Amazon LA — Last-Mile Operations Overview</h1>
@@ -223,14 +232,6 @@ if page == "Operations Overview":
     """, unsafe_allow_html=True)
 
     # ── KPI Cards ──
-    total          = len(df)
-    fail_rate      = df['delivery_failed'].mean() * 100
-    n_failed       = df['delivery_failed'].sum()
-    top_carrier    = (df.groupby('carrier')['delivery_failed'].mean()
-                       .idxmax().replace('carrier_D', 'carrier_D (Correos)'))
-    top_fail       = df.groupby('carrier')['delivery_failed'].mean().max() * 100
-    cr_miss_rate   = df['cr_number_missing'].mean() * 100
-
     c1, c2, c3, c4 = st.columns(4)
     with c1:
         st.markdown(f"""
@@ -266,8 +267,8 @@ if page == "Operations Overview":
         st.markdown("<div class='section-title'>Failure Rate by Carrier</div>",
                     unsafe_allow_html=True)
         carrier_stats = (df.groupby('carrier')['delivery_failed'].mean() * 100).sort_values()
-        carrier_names = {'carrier_A': 'Amazon Lgx', 'carrier_B': 'SEUR',
-                          'carrier_C': 'DHL', 'carrier_D': 'Correos'}
+        carrier_names = {'carrier_A': 'Amazon Lgx', 'carrier_B': 'Regional Hub',
+                          'carrier_C': 'Express Hub', 'carrier_D': 'Local Courier'}
         labels  = [carrier_names[c] for c in carrier_stats.index]
         colors  = [AMAZON_RED if v > 25 else AMAZON_ORANGE if v > 18 else AMAZON_GREEN
                    for v in carrier_stats.values]
@@ -300,8 +301,8 @@ if page == "Operations Overview":
         st.markdown("<div class='section-title'>Carrier × Weather Risk Heatmap</div>",
                     unsafe_allow_html=True)
         pivot = (df.groupby(['carrier', 'weather_risk'])['delivery_failed']
-                  .mean().unstack() * 100)[['low', 'medium', 'high']]
-        pivot.index = ['Amazon Lgx', 'SEUR', 'DHL', 'Correos']
+                  .mean().unstack() * 100).reindex(columns=['low', 'medium', 'high'], fill_value=0)
+        pivot.index = ['Amazon Lgx', 'Regional Hub', 'Express Hub', 'Local Courier']
         pivot.columns = ['Low', 'Medium', 'High']
 
         fig3, ax3 = plt.subplots(figsize=(7, 4.5))
@@ -343,8 +344,8 @@ if page == "Operations Overview":
     ).round(3)
     summary['Failure_Rate'] = (summary['Failure_Rate'] * 100).map('{:.1f}%'.format)
     summary['Avg_Distance'] = summary['Avg_Distance'].map('{:.1f} km'.format)
-    summary.index = summary.index.map({'carrier_A':'Amazon Lgx (A)', 'carrier_B':'SEUR (B)',
-                                        'carrier_C':'DHL (C)', 'carrier_D':'Correos (D)'})
+    summary.index = summary.index.map({'carrier_A':'Amazon Lgx (A)', 'carrier_B':'Regional Hub (B)',
+                                        'carrier_C':'Express Hub (C)', 'carrier_D':'Local Courier (D)'})
     st.dataframe(summary, use_container_width=True)
 
 
@@ -385,9 +386,9 @@ elif page == "Package Risk Scoring":
                 ['carrier_A', 'carrier_B', 'carrier_C', 'carrier_D'],
                 format_func=lambda x: {
                     'carrier_A': 'carrier_A — Amazon Logistics',
-                    'carrier_B': 'carrier_B — SEUR',
-                    'carrier_C': 'carrier_C — DHL',
-                    'carrier_D': 'carrier_D — Correos',
+                    'carrier_B': 'carrier_B — Regional Hub',
+                    'carrier_C': 'carrier_C — Express Hub',
+                    'carrier_D': 'carrier_D — Local Courier',
                 }[x],
                 help="carrier_D has highest failure rates on long routes",
             )
@@ -470,7 +471,7 @@ elif page == "Package Risk Scoring":
             # Risk factor summary
             risk_factors = []
             if carrier == 'carrier_D' and route_distance_km > 50:
-                risk_factors.append("🔴 Correos + long route (>50km) — high-risk combination")
+                risk_factors.append("🔴 Local Courier + long route (>50km) — high-risk combination")
             if shift == 'night':
                 risk_factors.append("🟠 Night shift — elevated failure baseline")
             if double_scan:
@@ -525,8 +526,8 @@ elif page == "Route Analysis":
             "Filter by Carrier",
             options=['carrier_A', 'carrier_B', 'carrier_C', 'carrier_D'],
             default=['carrier_A', 'carrier_B', 'carrier_C', 'carrier_D'],
-            format_func=lambda x: {'carrier_A':'Amazon Lgx','carrier_B':'SEUR',
-                                    'carrier_C':'DHL','carrier_D':'Correos'}[x],
+            format_func=lambda x: {'carrier_A':'Amazon Lgx','carrier_B':'Reg. Hub',
+                                    'carrier_C':'Exp. Hub','carrier_D':'Local Courier'}[x],
         )
     with col_f2:
         shift_filter = st.multiselect(
@@ -615,8 +616,8 @@ elif page == "Route Analysis":
 
     carrier_perf['Failure_Rate_Pct'] = (carrier_perf['Failure_Rate'] * 100).round(1)
     carrier_perf['carrier'] = carrier_perf['carrier'].map({
-        'carrier_A': 'Amazon Logistics (A)', 'carrier_B': 'SEUR (B)',
-        'carrier_C': 'DHL (C)', 'carrier_D': 'Correos (D)',
+        'carrier_A': 'Amazon Logistics (A)', 'carrier_B': 'Regional Hub (B)',
+        'carrier_C': 'Express Hub (C)', 'carrier_D': 'Local Courier (D)',
     })
     carrier_perf = carrier_perf.drop('Failure_Rate', axis=1).rename(
         columns={'carrier': 'Carrier', 'Failure_Rate_Pct': 'Failure Rate (%)',

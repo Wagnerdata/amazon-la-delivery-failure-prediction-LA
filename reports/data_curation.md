@@ -13,14 +13,13 @@ This project uses a synthetic dataset generated from operational patterns of Ama
 
 1. **Base distributions**: Carrier market share, shift patterns, and package type splits were calibrated against Amazon LA logistics public disclosures and industry reports.
 2. **Failure correlations**: Business logic relationships (e.g., carrier_D + long distance, damaged packages, night shift risk) were encoded as probabilistic increments to simulate real operational failure modes.
-3. **Volume**: 7,500 total records (5,000 train / 1,500 validation / 1,000 test) to ensure statistical stability across segments.
+3. **Volume**: 3,559 total records (2,384 train / 1,175 validation) to ensure statistical stability across segments.
 
 ### Files
 | File | Records | Split Purpose |
 |---|---|---|
-| `data/packages_train.csv` | 5,000 | Model training |
-| `data/packages_validation.csv` | 1,500 | Hyperparameter evaluation |
-| `data/packages_test.csv` | 1,000 | Final holdout (not used in training) |
+| `data/packages_train.csv` | 2,384 | Model training |
+| `data/packages_validation.csv` | 1,175 | Hyperparameter evaluation |
 
 ---
 
@@ -31,7 +30,7 @@ This project uses a synthetic dataset generated from operational patterns of Ama
 **Schema:**
 | Column | Dtype | Min | Max | Distinct Values |
 |---|---|---|---|---|
-| package_id | string | PKG-ES-0000001 | PKG-ES-0005000 | 5,000 (unique) |
+| package_id | string | PackageID_76d208eb... | PackageID_eb5027eb... | 2,386 (unique) |
 | package_type | string | — | — | 5 categories |
 | shift | string | — | — | 3 categories |
 | carrier | string | — | — | 4 categories |
@@ -75,7 +74,7 @@ This project uses a synthetic dataset generated from operational patterns of Ama
 | locker_issue | ~6% |
 | damaged_on_arrival | ~4% |
 | cr_number_missing | ~10% |
-| **delivery_failed (target)** | **~19.4%** |
+| **delivery_failed (target)** | **~0.70%** |
 
 **Numerical Feature Statistics:**
 | Feature | Mean | Std | Min | 25% | 50% | 75% | Max |
@@ -136,7 +135,7 @@ Given that RandomForest is inherently robust to outliers (tree splits are ordina
 
 ### 3.4 Class Imbalance Treatment
 
-The target class has ~19.4% positive rate (delivery_failed=1). While not severely imbalanced, this is addressed in the model with `class_weight='balanced'`, which automatically adjusts sample weights inversely proportional to class frequency.
+The target class has ~0.70% positive rate (delivery_failed=1). This extreme 140:1 imbalance is addressed in the model with SMOTE oversampling and `class_weight='balanced'`, which automatically adjusts sample weights inversely proportional to class frequency.
 
 ---
 

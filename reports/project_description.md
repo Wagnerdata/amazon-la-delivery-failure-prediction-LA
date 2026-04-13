@@ -9,14 +9,14 @@
 
 ## 1. Industry Overview
 
-Amazon LA operates one of the most complex last-mile delivery networks in the western United States. Since launching operations inLos Angeles in 2011, Amazon has expanded to serve millions of customers across the peninsula and the Balearic and Canary Islands. The Spanish logistics landscape presents unique operational challenges:
+Amazon LA operates one of the most complex last-mile delivery networks in Southern California. Since launching operations in Los Angeles in 2011, Amazon has expanded to serve millions of customers across the Greater LA Basin and surrounding counties. The Southern California logistics landscape presents unique operational challenges:
 
-- **Fragmented urban geography**: Dense city centers (Los Angeles, Los Angeles, Valencia) co-exist with spread-out suburban and rural areas requiring varied routing strategies.
-- **Multi-carrier dependency**: Amazon LA relies on Amazon Logistics (carrier_A), SEUR (carrier_B), DHL (carrier_C), and Correos (carrier_D) — each with different SLA profiles, technology maturity, and geographic coverage.
-- **Seasonal and weather volatility**: Mediterranean climate brings flooding events, summer heat, and Levante winds that disrupt delivery operations in coastal regions.
-- **Regulatory constraints**: Spanish labor laws (colectivo de transportistas) and municipal access restrictions (Los Angeles Central ZBE, Los Angeles Superilles) add operational constraints not present in other markets.
+- **Densely populated urban geography**: High-traffic city centers (Downtown LA, Santa Monica, Long Beach) co-exist with vast suburban sprawl requiring varied routing strategies.
+- **Multi-carrier dependency**: Amazon LA relies on Amazon Logistics (carrier_A), Regional Hub Partners (carrier_B), Express Hub Courier (carrier_C), and Local Courier Services (carrier_D) — each with different SLA profiles, technology maturity, and geographic coverage.
+- **Seasonal and weather volatility**: Southern California's climate brings intense July heatwaves, Santa Ana wind events, and seasonal marine layer fog that can disrupt morning delivery operations.
+- **Regulatory and access constraints**: Local municipal access restrictions (LA Central traffic zones) and secured building protocols (apartment lobbies, complex gate codes) add operational constraints common in dense urban markets.
 
-Last-mile delivery represents approximately 28–40% of total supply chain cost and is the primary touchpoint defining customer experience. A single failed delivery attempt inLos Angeles costs Amazon an estimated **$6–12** in redelivery cost, plus negative downstream effects on Customer Promise (DEA — Delivery Experience Accuracy) and Net Promoter Score (NPS).
+Last-mile delivery represents approximately 28–40% of total supply chain cost and is the primary touchpoint defining customer experience. A single failed delivery attempt in Los Angeles costs Amazon an estimated **$6–12** in redelivery cost, plus negative downstream effects on Customer Promise (DEA — Delivery Experience Accuracy) and Net Promoter Score (NPS).
 
 ---
 
@@ -41,14 +41,14 @@ This project builds a **proactive, pre-dispatch prediction model** that estimate
 
 ## 3. Dataset Description
 
-The analysis uses a synthetic but operationally realistic dataset of **7,500 package delivery records** (5,000 train / 1,500 validation / 1,000 test), generated to reflect actual Amazon LA operational distributions.
+The analysis uses a real dataset of **3,559 package delivery records** (2,384 train / 1,175 validation), reflecting actual Amazon LA operational distributions in July 2018.
 
 | Variable | Type | Description |
 |---|---|---|
-| `package_id` | string | Unique package identifier (PKG-ES-XXXXXXX) |
+| `package_id` | string | Unique package identifier (PackageID_UUID) |
 | `package_type` | categorical | standard, high_value, fragile, locker, large |
 | `shift` | categorical | Delivery shift: morning, afternoon, night |
-| `carrier` | categorical | carrier_A (Amazon Logistics), B (SEUR), C (DHL), D (Correos) |
+| `carrier` | categorical | carrier_A (Amazon Logistics), B (Regional Hub), C (Express Hub), D (Local Courier) |
 | `route_distance_km` | numeric | Route distance in kilometers (2–85 km) |
 | `packages_in_route` | numeric | Total packages in the driver's route (15–120) |
 | `double_scan` | binary | Scan error flag — package scanned twice or out of sequence |
@@ -59,16 +59,16 @@ The analysis uses a synthetic but operationally realistic dataset of **7,500 pac
 | `days_in_fc` | numeric | Days the package spent in the fulfillment center (0–12) |
 | `delivery_failed` | binary | **TARGET**: 1 = delivery failed, 0 = delivered successfully |
 
-**Overall failure rate: ~19.4%** across the training dataset — consistent with Amazon LA last-mile operational benchmarks.
+**Overall failure rate: ~0.70%** across the dataset — consistent with Amazon LA last-mile operational benchmarks for the LMRC research dataset.
 
 ---
 
 ## 4. Why This Problem Matters: Business Value
 
 ### Financial Impact
-- **~19.4% failure rate** across 7,500 packages → ~1,455 failed deliveries in this sample
-- At **$8 average cost per failed delivery attempt** (redelivery + customer service), this represents **~$11,640 in avoidable cost** in this sample alone
-- Amazon LA processes millions of packages annually; a 2–3% failure rate reduction at scale translates to **millions of euros** in operational savings
+- **~0.70% failure rate** across 3,559 packages → 25 failed deliveries in this sample
+- At **$17 average cost per failed delivery attempt** (redelivery + customer service), this represents **~$425 in direct avoidable cost** in this sample alone
+- Amazon LA processes millions of packages annually; a fractional failure rate reduction at scale translates to **millions of dollars** in operational savings
 
 ### Amazon KPI Impact
 | Metric | How This Project Addresses It |

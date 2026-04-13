@@ -43,7 +43,7 @@ def tool_operational_analysis(row: dict[str, Any]) -> dict[str, Any]:
 
     # ── Carrier & route flags ────────────────────────────────────────────────
     if row.get("carrier") == "carrier_D":
-        flags.append("WARNING: Carrier D (Correos) — baseline underperformance")
+        flags.append("WARNING: Carrier D (Local Courier) — baseline underperformance")
         route_km = row.get("route_distance_km", 0)
         if route_km > 50:
             flags.append(f"WARNING: Carrier D + long route ({route_km:.1f} km) — high SLA miss risk")

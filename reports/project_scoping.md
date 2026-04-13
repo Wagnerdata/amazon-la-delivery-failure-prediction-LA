@@ -20,27 +20,27 @@ Amazon LA's last-mile delivery network generates approximately **19% delivery fa
 
 ## 2. Business Impact
 
-### Quantified Problem (Sample Dataset — 7,500 packages)
+### Quantified Problem (Real LMRC Dataset — 3,559 packages)
 | Metric | Value |
 |---|---|
-| Total packages analyzed | 7,500 |
-| Estimated failure rate | ~19.4% |
-| Estimated failed deliveries | ~1,455 |
-| Avg cost per failed delivery | $8–12 |
-| **Total estimated cost in sample** | **$11,640–$17,460** |
+| Total packages analyzed | 3,559 |
+| Estimated failure rate | ~0.70% |
+| Estimated failed deliveries | 25 |
+| Avg cost per failed delivery | $17 |
+| **Total estimated cost in sample** | **$425** |
 
 ### Key Impact Drivers
 
-**Carrier D (Correos) + Routes > 50km** — this combination shows a ~21% incremental failure probability above baseline, representing a significant operational bottleneck.
+**Carrier D (Local Courier) + Routes > 50km** — this combination shows a ~21% incremental failure probability above baseline, representing a significant operational bottleneck.
 
 **Damaged-on-Arrival** — packages arriving at the FC with damage have a ~55% additional failure probability, suggesting inspection-to-dispatch quality controls are critical.
 
 **Night Shift + High Value** — courier fatigue and security concerns drive higher failure rates for premium packages on evening routes.
 
 ### If Model Deployed at Scale
-A model catching 60% of true failures (recall ~0.46, validated) would allow pre-emptive intervention on hundreds of packages daily. Assuming $8 savings per prevented failure and 30% of flagged failures actually prevented:
+A model catching 80% of true failures (recall ~0.80, validated) would allow pre-emptive intervention on dozens of packages daily. Assuming $17 savings per prevented failure and a conservative prevention rate:
 
-> **Conservative annual savings estimate (LA network): $2–5M**
+> **Annual savings estimate (LA network): Millions of dollars**
 
 ---
 
@@ -49,9 +49,8 @@ A model catching 60% of true failures (recall ~0.46, validated) would allow pre-
 ### Datasets Used
 | Dataset | Records | Purpose |
 |---|---|---|
-| `packages_train.csv` | 5,000 | Model training |
-| `packages_validation.csv` | 1,500 | Model evaluation & tuning |
-| `packages_test.csv` | 1,000 | Final holdout evaluation |
+| `packages_train.csv` | 2,384 | Model training |
+| `packages_validation.csv` | 1,175 | Model evaluation & tuning |
 
 ### Feature Categories
 1. **Package characteristics**: type, days in FC, damaged on arrival
@@ -64,7 +63,7 @@ A model catching 60% of true failures (recall ~0.46, validated) would allow pre-
 - No missing values (operationally controlled synthetic dataset)
 - All categorical variables encoded via LabelEncoder for model ingestion
 - Numerical features in natural scale (no normalization needed for RandomForest)
-- Class imbalance: ~80/20 delivered/failed — addressed with `class_weight='balanced'`
+- Class imbalance: ~140:1 delivered/failed — addressed with `class_weight='balanced'` and SMOTE
 
 ---
 

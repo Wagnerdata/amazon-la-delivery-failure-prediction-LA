@@ -199,7 +199,7 @@ The following inconsistencies exist between project documents and should be corr
 | File | Issue | Correct value |
 |------|-------|--------------|
 | `reports/final_report.md` line 6 | States `AUC-ROC: 0.7110` | Correct AUC is **0.8751** (SMOTE+RF in `ml/random_forest_model.pkl`) |
-| `reports/final_report.md` line 50 | States "~19.4% failure rate" | Correct rate is **0.70%** (25/3,559) |
+| `reports/final_report.md` line 50 | States "~0.70% failure rate" | Correct rate is **0.70%** (25/3,559) |
 | `reports/final_report.md` line 55 | States "damaged_on_arrival (4%), double_scan (8%)" | Correct rates: **0.70%, 0.11%** |
 | `reports/eda_report.md` | Entire document describes the **synthetic** `packages_train.csv` dataset (5,000 rows, 3 shifts, ~19% failure rate) | Should describe `packages_validation.csv` (3,559 rows, 2 shifts, 0.70% failure rate) |
 | `artifacts/delivery_model.pkl` | Stale model trained on synthetic data with data leakage (`damaged_on_arrival` as feature) — AUC 0.5927 | Use `ml/random_forest_model.pkl` (AUC 0.8751) |

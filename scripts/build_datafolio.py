@@ -197,14 +197,12 @@ Class imbalance handled via class_weight='balanced' and SMOTE comparison. \
 Threshold tuned for maximum recall (cost of missing a failure >> false alarm cost).
 
 Tools & Stack
-• Python 3.9+  •  scikit-learn  •  imbalanced-learn (SMOTE)
-• pandas / numpy  •  matplotlib / seaborn
-• SQLite (EDA queries)  •  CrewAI agents (dispatcher reports)
+• Python / Scikit-Learn Ecosystem
+• SMOTE (Imbalance Resolution)
+• Executive Dashboard (Streamlit)
+• Pre-dispatch Decision Layer
 
-Why Recall Over Accuracy
-A naive classifier that always predicts "Delivered" achieves 99.3% accuracy — \
-and catches zero failures. Recall is the business-relevant metric: \
-each missed failure costs $17; a false alarm costs a quick manual check."""
+Accuracy is an operational trap in high-imbalance scenarios. Predicting 'Delivered' 100% of the time yields 99.3% accuracy but zero savings. Recall is our key KPI: catching the $17 failure is the objective."""
 
 add_text(slide, body1, cx + 0.15, cy + 0.90, COL_W - 0.3, 14.0,
          font_size=9.5, color=C_NAVY)
@@ -434,9 +432,7 @@ supervisor review. This combination concentrates all three top risk factors.
 carrier_B or carrier_A, which demonstrate significantly lower failure rates \
 on equivalent geographic footprints.
 
-3. Implement a morning-shift access-verification protocol: confirm delivery \
-access codes, intercom numbers, or locker availability before dispatch \
-for packages on sub-40 km urban routes.
+3. PREVENTIVE ACCESS PROTOCOL: For high-risk urban routes, implement a 07:00 Access-Verification protocol. Resolving gate codes and intercom issues before dispatch addresses the Urban Density Paradox at the source.
 """
 add_text(slide, conclusions_text, cx + 0.15, cy + 0.90, COL_W - 0.3, 9.5,
          font_size=9.5, color=C_NAVY)
@@ -481,11 +477,11 @@ The full Amazon LMRC 2021 dataset covers ~6,000 routes. Scaling from 15 \
 routes to the full dataset would provide sufficient failure examples to \
 train a more robust model without SMOTE dependence.
 
-Barcelona Open Data Validation Layer
+Multi-city Validation Layer
 A planned extension would test whether urban-density failure patterns \
-generalize to other markets using Barcelona Open Data (accident risk \
-by neighborhood, traffic congestion by shift). This would validate \
-whether the U.S.-specific findings translate to European delivery networks.
+generalize to other markets within the full LMRC dataset (Seattle, \
+Chicago, and Boston). This would validate whether the U.S.-specific \
+findings translate across different operational environments.
 
 CrewAI Agent Integration
 The agents_crew.py module is designed to generate per-package executive \

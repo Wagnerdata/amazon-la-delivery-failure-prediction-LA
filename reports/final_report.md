@@ -208,7 +208,15 @@ The Streamlit dashboard (`dashboard/dashboard.py`) provides three operational vi
 - Collect actual delivery outcomes and implement monthly model retraining cadence
 - Extend features to include real-time weather API data (currently excluded due to zero variance in training data)
 
-### 5.3 Future Work
+### 5.3 Technical Rationale: Python ML vs. Manual Spreadsheet Analysis
+
+To ensure professional-grade delivery and scalability for Amazon LA, this project utilizes a **Python-based Machine Learning pipeline** rather than traditional spreadsheet analysis. This technical choice provides several critical operational advantages:
+
+*   **Handling Class Imbalance (SMOTE):** With a failure rate of 0.7% (140:1), manual analysis in Excel often fails to identify predictive signals. The use of **SMOTE (Synthetic Minority Oversampling Technique)** ensures the model learns robust failure patterns rather than simply predicting "success" for every package.
+*   **Capturing Non-Linear Interactions:** Logistic operations are driven by complex interactions (e.g., Carrier D × Urban Density × Time of Day). While spreadsheets measure averages, the **Random Forest** architecture captures these structural dependencies for more precise risk scoring.
+*   **Production Readiness:** Unlike static Excel reports, this Python-native architecture (utilizing Streamlit and Scikit-Learn) is ready for REST API integration into Amazon's existing Warehouse Management Systems (WMS) for real-time dispatch scoring.
+
+### 5.4 Future Work
 
 **Model Enhancements:**
 - Add temporal features (day of week, holiday proximity, peak season flags)
