@@ -1,5 +1,0 @@
-carrier,total_packages,failures,failure_rate_pct,avg_route_distance_km,min_route_distance_km,max_route_distance_km,avg_packages_in_route,unique_routes,vs_avg_pct_points,risk_vs_avg
-carrier_D,789,11,1.39,47.52,30.45,58.07,263.7,3,0.69,Above average
-carrier_A,1477,11,0.74,40.19,25.93,56.5,248.7,6,0.04,Above average
-carrier_C,881,3,0.34,43.81,40.18,51.75,223.8,4,-0.36,Below average
-carrier_B,412,0,0.0,75.13,70.17,80.6,206.5,2,-0.7,Below average

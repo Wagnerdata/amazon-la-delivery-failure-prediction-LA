@@ -1,3 +1,0 @@
-shift,total_packages,failures,failure_rate_pct,avg_route_distance_km,avg_packages_in_route,vs_avg_pct_points,shift_order
-morning,657,9,1.37,58.47,220.8,0.67,1
-afternoon,2902,16,0.55,44.11,245.5,-0.15,2

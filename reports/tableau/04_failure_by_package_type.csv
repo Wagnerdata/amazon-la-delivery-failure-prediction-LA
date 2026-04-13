@@ -1,3 +1,0 @@
-package_type,total_packages,failures,failure_rate_pct,double_scan_count,locker_issue_count,cr_missing_count,avg_route_distance_km,vs_avg_pct_points
-standard,2142,16,0.75,2,3,1944,46.31,0.05
-high_value,1417,9,0.64,2,3,1297,47.44,-0.06

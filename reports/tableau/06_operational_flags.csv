@@ -1,5 +1,0 @@
-flag,flagged_count,total,flag_rate_pct,failure_rate_when_active_pct,overall_failure_rate_pct,risk_multiplier,operational_action
-cr_number_missing,3241,3559,91.06,0.46,0.7,0.65,Trigger customer contact before dispatch
-damaged_on_arrival,25,3559,0.7,100.0,0.7,142.36,QA hold before dispatch — do not send damaged packages
-locker_issue,6,3559,0.17,100.0,0.7,142.36,Reassign to home delivery or alternative locker
-double_scan,4,3559,0.11,50.0,0.7,71.18,Rescan / escalate to warehouse team

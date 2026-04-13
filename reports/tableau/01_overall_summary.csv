@@ -1,2 +1,0 @@
-total_packages,total_failures,failure_rate_pct,cr_missing_pct,double_scan_pct,locker_issue_pct,n_carriers,n_shifts,avg_route_distance_km,min_route_distance_km,max_route_distance_km,min_packages_in_route,max_packages_in_route,model_name,model_auc_roc,model_recall_at_t,model_threshold,packages_flagged,dataset_source,dataset_location,dataset_period
-3559,25,0.7,91.06,0.11,0.17,4,2,46.76,25.93,80.6,196,276,SMOTE+RF,0.8751,0.8,0.05,890,Amazon LMRC 2021,"Los Angeles, CA",July 2018
