@@ -41,9 +41,19 @@ desktop.ini
 deliverables/
 reports/
 scripts/
+data/raw/
+ml/
 *.docx
 *.xlsx
 *.db
+create_deliverables.py
+update_final_report.py
+retrain_smote.py
+DEPLOY_INSTRUCTIONS.md
+notebooks/01_project_description.ipynb
+notebooks/02_project_scoping.ipynb
+notebooks/03_data_curation.ipynb
+notebooks/06_final_report.ipynb
 !sql/run_eda.py
 !sql/eda_queries.sql
 
