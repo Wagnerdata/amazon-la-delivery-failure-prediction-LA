@@ -102,13 +102,26 @@ st.markdown(f"""
 # ── Data & model loaders ─
 @st.cache_data
 def load_data():
-    return pd.read_csv(DATA_PATH)
-
+    try:
+        if not DATA_PATH.exists():
+            st.sidebar.error(f"Data file not found: {DATA_PATH}")
+            return None
+        return pd.read_csv(DATA_PATH)
+    except Exception as e:
+        st.sidebar.error(f"Error loading data: {e}")
+        return None
 
 @st.cache_resource
 def load_model():
-    with open(MODEL_PATH, 'rb') as f:
-        return pickle.load(f)
+    try:
+        if not MODEL_PATH.exists():
+            st.sidebar.error(f"Model file not found: {MODEL_PATH}")
+            return None
+        with open(MODEL_PATH, 'rb') as f:
+            return pickle.load(f)
+    except Exception as e:
+        st.sidebar.error(f"Error loading model: {e}")
+        return None
 
 
 DIST_BINS = [0, 15, 30, 50, 70, 85]
@@ -210,10 +223,31 @@ st.sidebar.markdown(f"""
 df       = load_data()
 artifact = load_model()
 
+# ── System Status ──
+st.sidebar.markdown("---")
+with st.sidebar.expander("🛠️ System Status", expanded=True):
+    if df is not None:
+        st.success(f"Data Loaded: {len(df):,} rows")
+        if 'delivery_failed' in df.columns:
+            st.info(f"Target logic: Found")
+        else:
+            st.warning("Target logic: MISSING")
+            st.code(df.columns.tolist())
+    else:
+        st.error("Data Loaded: FAILED")
+
+    if artifact is not None:
+        st.success("Model Loaded: READY")
+    else:
+        st.error("Model Loaded: FAILED")
+
 # ══════════════════════════════════════
 # PAGE 1 — OPERATIONS OVERVIEW
 # ═══════════════════════════════════
 if page == "Operations Overview":
+    if df is None or artifact is None:
+        st.error("Unable to load data or model. Check System Status in sidebar.")
+        st.stop()
 
     # ── KPI Calculations ──
     total          = len(df)
