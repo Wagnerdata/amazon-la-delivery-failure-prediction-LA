@@ -15,6 +15,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import traceback
 
 # ── Paths ────────────────────────────────────
 ROOT        = Path(__file__).parent.parent
@@ -35,6 +36,9 @@ st.set_page_config(
     layout='wide',
     initial_sidebar_state='expanded',
 )
+
+# ── Main Script with Error Handling ──
+try:
 
 # ── Custom CSS — Amazon styling ────
 st.markdown(f"""
@@ -669,3 +673,8 @@ elif page == "Route Analysis":
         st.dataframe(filtered.reset_index(drop=True), use_container_width=True,
                       height=400)
         st.caption(f"Showing {len(filtered):,} rows. Download from the dataframe toolbar.")
+
+except Exception as main_err:
+    st.error("🚨 Critical Error during app startup!")
+    st.code(traceback.format_exc())
+    st.info("Check System Status or contact the developer.")
