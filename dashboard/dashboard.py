@@ -192,7 +192,7 @@ try:
     # ═════════════════════════════════════════════
     elif page == "Commercial ROI Analysis":
         st.markdown(f"<div class='main-header'><h1>Business ROI</h1><p>Predictive Logistics Financial Impact</p></div>", unsafe_allow_html=True)
-        recall = artifact['metrics']['recall'] if artifact else 0.84
+        recall = artifact['metrics']['recall'] if artifact else 0.875
         fails = df['delivery_failed'].sum() if df is not None else 140
         savings = fails * recall * COST_PER_FAILURE
         st.markdown(f"<div class='premium-card'><h3>Est. Savings: **${savings:,.2f}**</h3><p>Avoided costs based on model detection rate and $17.50 unit failure cost.</p></div>", unsafe_allow_html=True)

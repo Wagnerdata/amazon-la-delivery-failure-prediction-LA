@@ -12,6 +12,7 @@ build/
 .venv
 env/
 venv/
+scratch/
 
 # ── Jupyter ───────────────────────────────────────────────────────────────────
 .ipynb_checkpoints/
@@ -37,9 +38,19 @@ data/Correlation one dataset/
 Thumbs.db
 desktop.ini
 
-# ── Portfolio Professionalization (Hide from GitHub) ─────────────────────────
+# ── Portfolio Professionalization (Visible on GitHub) ────────────────────────
+!reports/
+reports/*
+!reports/final_report.md
+!reports/eda_report.md
+!reports/project_description.md
+!reports/data_wrangling.md
+!reports/Wagner_Campos_Professional_CV.md
+!reports/figures/
+!reports/figures/**
+
+# ── Hidden from GitHub ────────────────────────────────────────────────────────
 deliverables/
-reports/
 scripts/
 data/raw/
 ml/

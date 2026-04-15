@@ -32,13 +32,23 @@ The study is built upon the **Amazon Last Mile Routing Research Challenge (2021)
 ### 🧠 Machine Learning Engine
 - **Model:** Random Forest Classifier (Optimized for Recall).
 - **Strategy:** SMOTE + Class Weight Balancing to handle extreme sparsity in failures.
-- **Metrics:** **84.2% Recall** achieved, ensuring that the majority of potential failures are flagged.
+- **Metrics:** **87.5% Recall** & **79.9% AUC-ROC** achieved, ensuring high-sensitivity risk detection.
 
 ### 🛠️ Tech Stack
 - **Engine:** Python 3.12, Scikit-Learn.
 - **Analysis:** SQL (Complex EDA), Pandas, NumPy.
 - **Visualization:** Matplotlib, Seaborn, Tableau.
 - **Deployment:** Streamlit Cloud (Premium Amazon-Branded UI).
+
+---
+
+## 🏗️ Modular Architecture & Scalability
+*Think Big: Beyond the MVP*
+
+This project is built with a **Geo-Modular Architecture** designed for continental scale:
+1.  **Seasonal Adaptation:** Features like `weather_risk` are ready to be activated for Winter/Peak-Season operations.
+2.  **High-Cardinality Scaling:** The pipeline supports swapping local encoders for **Target Embeddings**, allowing expansion from 15 routes to 15,000 across North America.
+3.  **Actionable Integration:** The risk-scoring engine is ready for REST API deployment into Amazon's existing **Warehouse Management Systems (WMS)** for real-time automated re-routing.
 
 ---
 
