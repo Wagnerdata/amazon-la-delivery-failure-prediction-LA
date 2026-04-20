@@ -72,3 +72,13 @@ notebooks/06_final_report.ipynb
 .vscode/
 .idea/
 *.code-workspace
+
+# ── Docker / env ──────────────────────────────────────────────────────────────
+.env
+.env.local
+
+# ── Trained model binaries ────────────────────────────────────────────────────
+*.pkl
+
+# ── Dataset CSVs (large / regenerable) ───────────────────────────────────────
+data/*.csv
